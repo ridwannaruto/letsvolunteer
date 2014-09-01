@@ -1,0 +1,279 @@
+<?php
+
+namespace Ridwan\EntityBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Volunteerpersonal
+ */
+class Volunteerpersonal
+{
+    /**
+     * @var string
+     */
+    private $preferredname;
+
+    /**
+     * @var string
+     */
+    private $fullname;
+
+    /**
+     * @var string
+     */
+    private $nicorpassport;
+
+    /**
+     * @var boolean
+     */
+    private $gender;
+
+    /**
+     * @var \DateTime
+     */
+    private $dateofbirth;
+
+    /**
+     * @var string
+     */
+    private $nationality;
+
+    /**
+     * @var string
+     */
+    private $category;
+
+    /**
+     * @var boolean
+     */
+    private $civilstatus;
+
+    /**
+     * @var integer
+     */
+    private $status;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+
+    /**
+     * Set preferredname
+     *
+     * @param string $preferredname
+     * @return Volunteerpersonal
+     */
+    public function setPreferredname($preferredname)
+    {
+        $this->preferredname = $preferredname;
+
+        return $this;
+    }
+
+    /**
+     * Get preferredname
+     *
+     * @return string 
+     */
+    public function getPreferredname()
+    {
+        return $this->preferredname;
+    }
+
+    /**
+     * Set fullname
+     *
+     * @param string $fullname
+     * @return Volunteerpersonal
+     */
+    public function setFullname($fullname)
+    {
+        $this->fullname = $fullname;
+
+        return $this;
+    }
+
+    /**
+     * Get fullname
+     *
+     * @return string 
+     */
+    public function getFullname()
+    {
+        return $this->fullname;
+    }
+
+    /**
+     * Set nicorpassport
+     *
+     * @param string $nicorpassport
+     * @return Volunteerpersonal
+     */
+    public function setNicorpassport($nicorpassport)
+    {
+        $this->nicorpassport = $nicorpassport;
+
+        return $this;
+    }
+
+    /**
+     * Get nicorpassport
+     *
+     * @return string 
+     */
+    public function getNicorpassport()
+    {
+        return $this->nicorpassport;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param boolean $gender
+     * @return Volunteerpersonal
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return boolean 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set dateofbirth
+     *
+     * @param \DateTime $dateofbirth
+     * @return Volunteerpersonal
+     */
+    public function setDateofbirth($dateofbirth)
+    {
+        $this->dateofbirth = $dateofbirth;
+
+        return $this;
+    }
+
+    /**
+     * Get dateofbirth
+     *
+     * @return \DateTime 
+     */
+    public function getDateofbirth()
+    {
+        return $this->dateofbirth;
+    }
+
+    /**
+     * Set nationality
+     *
+     * @param string $nationality
+     * @return Volunteerpersonal
+     */
+    public function setNationality($nationality)
+    {
+        $this->nationality = $nationality;
+
+        return $this;
+    }
+
+    /**
+     * Get nationality
+     *
+     * @return string 
+     */
+    public function getNationality()
+    {
+        return $this->nationality;
+    }
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     * @return Volunteerpersonal
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set civilstatus
+     *
+     * @param boolean $civilstatus
+     * @return Volunteerpersonal
+     */
+    public function setCivilstatus($civilstatus)
+    {
+        $this->civilstatus = $civilstatus;
+
+        return $this;
+    }
+
+    /**
+     * Get civilstatus
+     *
+     * @return boolean 
+     */
+    public function getCivilstatus()
+    {
+        return $this->civilstatus;
+    }
+
+    /**
+     * Set status
+     *
+     * @param integer $status
+     * @return Volunteerpersonal
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return integer 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

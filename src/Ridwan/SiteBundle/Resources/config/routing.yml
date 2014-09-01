@@ -1,0 +1,36 @@
+ridwan_site_home:
+    path:     /home
+    defaults: { _controller: RidwanSiteBundle:Home:home }
+
+ridwan_site_loginpage:
+    path:     /login
+    defaults: { _controller: RidwanSiteBundle:Signing:login }
+
+ridwan_auth_login:
+    path:     /Authlogin
+    defaults: { _controller: RidwanSiteBundle:Signing:check }
+    methods: POST
+
+ridwan_auth_register:
+    path:     /register
+    defaults: {_controller: FOSUserBundle:Registration:register  }
+
+
+ridwan_auth_Activate:
+    pattern:  /activate/{userID}
+    defaults: { _controller: RidwanSiteBundle:Authentication:activate }
+
+ridwan_auth_Reject:
+    pattern:  /reject/{userID}
+    defaults: { _controller: RidwanSiteBundle:Authentication:reject }
+
+ridwan_auth_checkUserName:
+    pattern: /checkUserName/{name}
+    defaults: {_controller: RidwanSiteBundle:Authentication:checkUserName}
+    methods: POST
+
+ridwan_auth_checkEmail:
+    pattern: /checkEmail/{email}
+    defaults: {_controller: RidwanSiteBundle:Authentication:checkEmail}
+    methods: POST
+

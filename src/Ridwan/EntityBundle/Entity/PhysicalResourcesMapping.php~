@@ -1,0 +1,111 @@
+<?php
+
+namespace Ridwan\EntityBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PhysicalResourcesMapping
+ */
+class PhysicalResourcesMapping
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \Ridwan\EntityBundle\Entity\PhysicalResources
+     */
+    private $resource;
+
+    /**
+     * @var \Ridwan\EntityBundle\Entity\VolunteerPersonal
+     */
+    private $volunteer;
+
+    /**
+     * @var \Ridwan\EntityBundle\Entity\Organization
+     */
+    private $organization;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set resource
+     *
+     * @param \Ridwan\EntityBundle\Entity\PhysicalResources $resource
+     * @return PhysicalResourcesMapping
+     */
+    public function setResource(\Ridwan\EntityBundle\Entity\PhysicalResources $resource = null)
+    {
+        $this->resource = $resource;
+
+        return $this;
+    }
+
+    /**
+     * Get resource
+     *
+     * @return \Ridwan\EntityBundle\Entity\PhysicalResources 
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * Set volunteer
+     *
+     * @param \Ridwan\EntityBundle\Entity\VolunteerPersonal $volunteer
+     * @return PhysicalResourcesMapping
+     */
+    public function setVolunteer(\Ridwan\EntityBundle\Entity\VolunteerPersonal $volunteer = null)
+    {
+        $this->volunteer = $volunteer;
+
+        return $this;
+    }
+
+    /**
+     * Get volunteer
+     *
+     * @return \Ridwan\EntityBundle\Entity\VolunteerPersonal 
+     */
+    public function getVolunteer()
+    {
+        return $this->volunteer;
+    }
+
+    /**
+     * Set organization
+     *
+     * @param \Ridwan\EntityBundle\Entity\Organization $organization
+     * @return PhysicalResourcesMapping
+     */
+    public function setOrganization(\Ridwan\EntityBundle\Entity\Organization $organization = null)
+    {
+        $this->organization = $organization;
+
+        return $this;
+    }
+
+    /**
+     * Get organization
+     *
+     * @return \Ridwan\EntityBundle\Entity\Organization 
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
+}

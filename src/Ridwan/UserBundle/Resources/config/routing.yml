@@ -1,0 +1,34 @@
+ridwan_profile:
+    pattern:  /profile/{userID}
+    defaults: { _controller: RidwanUserBundle:Profile:index }  
+    
+ridwan_account:
+    pattern:  /account
+    defaults: { _controller: RidwanUserBundle:Account:index }  
+    
+ridwan_profile_edit:
+    pattern:  /editprofile
+    defaults: { _controller: RidwanUserBundle:Profile:edit }  
+    
+ridwan_profile_picture:
+    pattern:  /profilepicture
+    defaults: { _controller: RidwanUserBundle:Profile:picture }
+
+ridwan_user_volunteer_welcome:
+    pattern: /volunteer/welcome
+    defaults: {_controller: RidwanUserBundle:Volunteer:welcome}
+
+ridwan_user_volunteer_education:
+    pattern: /volunteer/education
+    defaults: {_controller: RidwanUserBundle:Volunteer:education}
+
+ridwan_user_volunteer_personal:
+    pattern: /volunteer/personal
+    defaults: {_controller: RidwanUserBundle:Volunteer:personal}
+
+ridwan_user_volunteer_contacts:
+    pattern: /volunteer/contacts
+    defaults: {_controller: RidwanUserBundle:Volunteer:contact}
+
+
+

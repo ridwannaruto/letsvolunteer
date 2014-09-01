@@ -1,0 +1,34 @@
+ridwan_task_index:
+    pattern:  /tasks
+    defaults: { _controller: RidwanTaskBundle:Task:index }  
+    
+ridwan_task_details:
+    pattern:  /taskdetails/{taskID}
+    defaults: { _controller: RidwanTaskBundle:Task:detail } 
+    
+ridwan_task_details_notification:
+    pattern:  /taskdetails/{taskID}/{notificationID}
+    defaults: { _controller: RidwanTaskBundle:Task:notification }
+    
+ridwan_task_new:
+    pattern:  /newTask
+    defaults: { _controller: RidwanTaskBundle:Task:newTask } 
+    
+ridwan_task_edit:
+    pattern:  /editTask/{taskID}
+    defaults: { _controller: RidwanTaskBundle:Task:editTask } 
+    
+ridwan_task_delete:
+    pattern:  /deleteTask/{taskID}
+    defaults: { _controller: RidwanTaskBundle:Task:deleteTask } 
+    methods: POST
+    
+ridwan_task_completePage:
+    pattern:  /feedbackTask/{taskID}
+    defaults: { _controller: RidwanTaskBundle:Task:completePage }
+    
+ridwan_task_complete:
+    pattern:  /completeTask/{taskID}
+    defaults: { _controller: RidwanTaskBundle:Task:completeTask } 
+    methods: POST
+    

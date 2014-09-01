@@ -1,0 +1,111 @@
+<?php
+
+namespace Ridwan\EntityBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * VolunteerContactNumbers
+ */
+class VolunteerContactNumbers
+{
+    /**
+     * @var integer
+     */
+    private $number;
+
+    /**
+     * @var integer
+     */
+    private $type;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \Ridwan\EntityBundle\Entity\VolunteerContactDetails
+     */
+    private $user;
+
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     * @return VolunteerContactNumbers
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return integer 
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Set type
+     *
+     * @param integer $type
+     * @return VolunteerContactNumbers
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return integer 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Ridwan\EntityBundle\Entity\VolunteerContactDetails $user
+     * @return VolunteerContactNumbers
+     */
+    public function setUser(\Ridwan\EntityBundle\Entity\VolunteerContactDetails $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Ridwan\EntityBundle\Entity\VolunteerContactDetails 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+}

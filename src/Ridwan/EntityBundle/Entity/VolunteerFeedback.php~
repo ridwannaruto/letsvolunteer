@@ -1,0 +1,251 @@
+<?php
+
+namespace Ridwan\EntityBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * VolunteerFeedback
+ */
+class VolunteerFeedback
+{
+    /**
+     * @var \DateTime
+     */
+    private $date;
+
+    /**
+     * @var string
+     */
+    private $rating;
+
+    /**
+     * @var string
+     */
+    private $comment;
+
+    /**
+     * @var boolean
+     */
+    private $recommend;
+
+    /**
+     * @var boolean
+     */
+    private $joinAgain;
+
+    /**
+     * @var string
+     */
+    private $description;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \Ridwan\EntityBundle\Entity\VolunteerPersonal
+     */
+    private $volunteer;
+
+    /**
+     * @var \Ridwan\EntityBundle\Entity\Organization
+     */
+    private $organization;
+
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return VolunteerFeedback
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set rating
+     *
+     * @param string $rating
+     * @return VolunteerFeedback
+     */
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
+
+        return $this;
+    }
+
+    /**
+     * Get rating
+     *
+     * @return string 
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     * @return VolunteerFeedback
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string 
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set recommend
+     *
+     * @param boolean $recommend
+     * @return VolunteerFeedback
+     */
+    public function setRecommend($recommend)
+    {
+        $this->recommend = $recommend;
+
+        return $this;
+    }
+
+    /**
+     * Get recommend
+     *
+     * @return boolean 
+     */
+    public function getRecommend()
+    {
+        return $this->recommend;
+    }
+
+    /**
+     * Set joinAgain
+     *
+     * @param boolean $joinAgain
+     * @return VolunteerFeedback
+     */
+    public function setJoinAgain($joinAgain)
+    {
+        $this->joinAgain = $joinAgain;
+
+        return $this;
+    }
+
+    /**
+     * Get joinAgain
+     *
+     * @return boolean 
+     */
+    public function getJoinAgain()
+    {
+        return $this->joinAgain;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return VolunteerFeedback
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set volunteer
+     *
+     * @param \Ridwan\EntityBundle\Entity\VolunteerPersonal $volunteer
+     * @return VolunteerFeedback
+     */
+    public function setVolunteer(\Ridwan\EntityBundle\Entity\VolunteerPersonal $volunteer = null)
+    {
+        $this->volunteer = $volunteer;
+
+        return $this;
+    }
+
+    /**
+     * Get volunteer
+     *
+     * @return \Ridwan\EntityBundle\Entity\VolunteerPersonal 
+     */
+    public function getVolunteer()
+    {
+        return $this->volunteer;
+    }
+
+    /**
+     * Set organization
+     *
+     * @param \Ridwan\EntityBundle\Entity\Organization $organization
+     * @return VolunteerFeedback
+     */
+    public function setOrganization(\Ridwan\EntityBundle\Entity\Organization $organization = null)
+    {
+        $this->organization = $organization;
+
+        return $this;
+    }
+
+    /**
+     * Get organization
+     *
+     * @return \Ridwan\EntityBundle\Entity\Organization 
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
+}

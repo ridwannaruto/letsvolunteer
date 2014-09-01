@@ -1,0 +1,281 @@
+<?php
+
+namespace Ridwan\EntityBundle\Entity;
+
+use FOS\UserBundle\Entity\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * VolunteerPersonal
+ */
+class VolunteerPersonal extends BaseUser
+{
+    /**
+     * @var string
+     */
+    private $preferredName;
+
+    /**
+     * @var string
+     */
+    private $fullName;
+
+    /**
+     * @var string
+     */
+    private $nicORpassport;
+
+    /**
+     * @var boolean
+     */
+    private $gender;
+
+    /**
+     * @var \DateTime
+     */
+    private $dateofbirth;
+
+    /**
+     * @var string
+     */
+    private $nationality;
+
+    /**
+     * @var string
+     */
+    private $category;
+
+    /**
+     * @var boolean
+     */
+    private $civilStatus;
+
+    /**
+     * @var integer
+     */
+    protected $id;
+
+
+    /**
+     * Set preferredName
+     *
+     * @param string $preferredName
+     * @return VolunteerPersonal
+     */
+    public function setPreferredName($preferredName)
+    {
+        $this->preferredName = $preferredName;
+
+        return $this;
+    }
+
+    /**
+     * Get preferredName
+     *
+     * @return string 
+     */
+    public function getPreferredName()
+    {
+        return $this->preferredName;
+    }
+
+    /**
+     * Set fullName
+     *
+     * @param string $fullName
+     * @return VolunteerPersonal
+     */
+    public function setFullName($fullName)
+    {
+        $this->fullName = $fullName;
+
+        return $this;
+    }
+
+    /**
+     * Get fullName
+     *
+     * @return string 
+     */
+    public function getFullName()
+    {
+        return $this->fullName;
+    }
+
+    /**
+     * Set nic/passport
+     *
+     * @param string $nic/passport
+     * @return VolunteerPersonal
+     */
+    public function setNicORpassport($nicORpassport)
+    {
+        $this->nicORpassport = $nicORpassport;
+
+        return $this;
+    }
+
+    /**
+     * Get nic/passport
+     *
+     * @return string 
+     */
+    public function getNicORpassport()
+    {
+        return $this->nicORpassport;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param boolean $gender
+     * @return VolunteerPersonal
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return boolean 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set dateofbirth
+     *
+     * @param \DateTime $dateofbirth
+     * @return VolunteerPersonal
+     */
+    public function setDateofbirth($dateofbirth)
+    {
+        $this->dateofbirth = $dateofbirth;
+
+        return $this;
+    }
+
+    /**
+     * Get dateofbirth
+     *
+     * @return \DateTime 
+     */
+    public function getDateofbirth()
+    {
+        return $this->dateofbirth;
+    }
+
+    /**
+     * Set nationality
+     *
+     * @param string $nationality
+     * @return VolunteerPersonal
+     */
+    public function setNationality($nationality)
+    {
+        $this->nationality = $nationality;
+
+        return $this;
+    }
+
+    /**
+     * Get nationality
+     *
+     * @return string 
+     */
+    public function getNationality()
+    {
+        return $this->nationality;
+    }
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     * @return VolunteerPersonal
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set civilStatus
+     *
+     * @param boolean $civilStatus
+     * @return VolunteerPersonal
+     */
+    public function setCivilStatus($civilStatus)
+    {
+        $this->civilStatus = $civilStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get civilStatus
+     *
+     * @return boolean 
+     */
+    public function getCivilStatus()
+    {
+        return $this->civilStatus;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    /**
+     * @var string
+     */
+    private $nicPassport;
+
+
+    /**
+     * Set nicPassport
+     *
+     * @param string $nicPassport
+     * @return VolunteerPersonal
+     */
+    public function setNicPassport($nicPassport)
+    {
+        $this->nicPassport = $nicPassport;
+
+        return $this;
+    }
+
+    /**
+     * Get nicPassport
+     *
+     * @return string 
+     */
+    public function getNicPassport()
+    {
+        return $this->nicPassport;
+    }
+}
