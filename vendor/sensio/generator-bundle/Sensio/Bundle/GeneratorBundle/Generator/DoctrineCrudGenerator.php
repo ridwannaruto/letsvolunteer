@@ -213,7 +213,7 @@ class DoctrineCrudGenerator extends Generator
      */
     protected function generateIndexView($dir)
     {
-        $this->renderFile('crud/views/message.html.twig.twig', $dir.'/message.html.twig', array(
+        $this->renderFile('crud/views/index.html.twig.twig', $dir.'/message.html.twig', array(
             'bundle'            => $this->bundle->getName(),
             'entity'            => $this->entity,
             'fields'            => $this->metadata->fieldMappings,

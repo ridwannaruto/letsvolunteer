@@ -25,8 +25,7 @@ use Symfony\Component\HttpFoundation\Request;
 class VolunteerController extends Controller
 {
 
-    public function welcomeAction(Request $request)
-    {
+    public function welcomeAction(Request $request){
 
         if ($this->check('RidwanEntityBundle:Volunteerpersonal') == null){
             return $this->PersonalAction(new Request());
