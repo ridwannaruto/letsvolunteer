@@ -1,1 +1,38 @@
+ridwan_education_index:
+    pattern:  /education
+    defaults: { _controller: RidwanEntityBundle:Education:index }
+ridwan_education_new:
+    pattern:  /education/new
+    defaults: { _controller: RidwanEntityBundle:Education:new }
+ridwan_education_create:
+    pattern:  /education/create
+    defaults: { _controller: RidwanEntityBundle:Education:create }
+ridwan_education_show:
+    pattern:  /education/show
+    defaults: { _controller: RidwanEntityBundle:Education:show }
+ridwan_education_edit:
+    pattern:  /education/edit
+    defaults: { _controller: RidwanEntityBundle:Education:edit }
+ridwan_education_delete:
+    pattern:  /education/delete
+    defaults: { _controller: RidwanEntityBundle:Education:delete }
+
+ridwan_employment_index:
+    pattern:  /employment
+    defaults: { _controller: RidwanEntityBundle:Employment:index }
+ridwan_employment_new:
+    pattern:  /employment/new
+    defaults: { _controller: RidwanEntityBundle:Employment:new }
+ridwan_employment_create:
+    pattern:  /employment/create
+    defaults: { _controller: RidwanEntityBundle:Employment:create }
+ridwan_employment_show:
+    pattern:  /employment/show
+    defaults: { _controller: RidwanEntityBundle:Employment:show }
+ridwan_employment_edit:
+    pattern:  /employment/edit
+    defaults: { _controller: RidwanEntityBundle:Employment:edit }
+ridwan_employment_delete:
+    pattern:  /employment/delete
+    defaults: { _controller: RidwanEntityBundle:Employment:delete }
 

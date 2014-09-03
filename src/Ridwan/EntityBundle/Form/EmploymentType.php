@@ -18,7 +18,7 @@ class EmploymentType extends AbstractType
             ->add('occupation')
             ->add('organizationtype')
             ->add('organization')
-            ->add('user')
+
         ;
     }
     

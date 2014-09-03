@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+
 
 {% block body -%}
     <h1>Education list</h1>
@@ -17,7 +17,7 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('education_show', { 'id': entity.id }) }}">{{ entity.institution }}</a></td>
+                <td><a href="{{ path('ridwan_education_show', { 'id': entity.id }) }}">{{ entity.institution }}</a></td>
                 <td>{{ entity.field }}</td>
                 <td>{{ entity.degree }}</td>
                 <td>{{ entity.duration }}</td>
@@ -25,10 +25,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('education_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('ridwan_education_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('education_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('ridwan_education_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -39,7 +39,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('education_new') }}">
+            <a href="{{ path('ridwan_education_new') }}">
                 Create a new entry
             </a>
         </li>

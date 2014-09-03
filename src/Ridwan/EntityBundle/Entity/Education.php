@@ -35,7 +35,7 @@ class Education
     private $id;
 
     /**
-     * @var \Ridwan\EntityBundle\Entity\Volunteerpersonal
+     * @var \Ridwan\EntityBundle\Entity\Authentication
      */
     private $user;
 
@@ -145,10 +145,10 @@ class Education
     /**
      * Set user
      *
-     * @param \Ridwan\EntityBundle\Entity\Volunteerpersonal $user
+     * @param \Ridwan\EntityBundle\Entity\Authentication $user
      * @return Education
      */
-    public function setUser(\Ridwan\EntityBundle\Entity\Volunteerpersonal $user = null)
+    public function setUser(\Ridwan\EntityBundle\Entity\Authentication $user = null)
     {
         $this->user = $user;
 
@@ -158,7 +158,7 @@ class Education
     /**
      * Get user
      *
-     * @return \Ridwan\EntityBundle\Entity\Volunteerpersonal 
+     * @return \Ridwan\EntityBundle\Entity\Authentication
      */
     public function getUser()
     {

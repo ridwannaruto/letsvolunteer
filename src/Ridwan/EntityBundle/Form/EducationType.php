@@ -16,10 +16,20 @@ class EducationType extends AbstractType
     {
         $builder
             ->add('institution')
+            ->add('degree', 'choice', array(
+                    'choices' => array(
+                        'Advance Level' => 'Advance Level',
+                        'BSc' => 'BSc',
+                        'PhD' => 'PhD',
+                        'NDT' => 'NDT',
+                        'Diploma' => 'Diploma',
+                        'Masters' => 'Masters'
+                    )
+
+                ))
             ->add('field')
-            ->add('degree')
             ->add('duration')
-            ->add('user')
+
         ;
     }
     

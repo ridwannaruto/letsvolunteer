@@ -18,7 +18,7 @@ class RefereesType extends AbstractType
             ->add('name')
             ->add('address')
             ->add('contactnumber')
-            ->add('email')
+            ->add('email','email')
             ->add('mobilenumber')
         ;
     }

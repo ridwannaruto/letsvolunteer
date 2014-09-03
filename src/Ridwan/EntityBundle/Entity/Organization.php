@@ -164,4 +164,33 @@ class Organization
     {
         return $this->id;
     }
+
+    /**
+     * @var integer
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \Ridwan\EntityBundle\Entity\Authentication $user
+     * @return Volunteercontactdetails
+     */
+    public function setUser(\Ridwan\EntityBundle\Entity\Authentication $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Ridwan\EntityBundle\Entity\Authentication
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

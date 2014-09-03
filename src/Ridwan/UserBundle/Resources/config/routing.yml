@@ -19,16 +19,44 @@ ridwan_user_volunteer_welcome:
     defaults: {_controller: RidwanUserBundle:Volunteer:welcome}
 
 ridwan_user_volunteer_education:
-    pattern: /volunteer/education
+    pattern: /welcome/education
     defaults: {_controller: RidwanUserBundle:Volunteer:education}
 
+ridwan_user_volunteer_employment:
+    pattern: /welcome/employment
+    defaults: {_controller: RidwanUserBundle:Volunteer:employment}
+
 ridwan_user_volunteer_personal:
-    pattern: /volunteer/personal
+    pattern: /welcome/personal
     defaults: {_controller: RidwanUserBundle:Volunteer:personal}
 
+ridwan_user_volunteer_skills:
+    pattern: /welcome/skills
+    defaults: {_controller: RidwanUserBundle:Volunteer:skills}
+
 ridwan_user_volunteer_contacts:
-    pattern: /volunteer/contacts
+    pattern: /welcome/contacts
     defaults: {_controller: RidwanUserBundle:Volunteer:contact}
 
+ridwan_user_volunteer_referees:
+    pattern: /welcome/referees
+    defaults: {_controller: RidwanUserBundle:Volunteer:referees}
+
+ridwan_user_volunteer_referee_add:
+    pattern: /welcome/referee/add
+    defaults: {_controller: RidwanUserBundle:Volunteer:Addreferee}
+    methods: POST
+
+ridwan_organization_welcome:
+    pattern: /organization/welcome
+    defaults: {_controller: RidwanUserBundle:Organization:welcome}
+
+ridwan_organization_details:
+    pattern: /organization/details
+    defaults: {_controller: RidwanUserBundle:Organization:details}
+
+ridwan_organization_contact:
+    pattern: /organization/contact
+    defaults: {_controller: RidwanUserBundle:Organization:contact}
 
 

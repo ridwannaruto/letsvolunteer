@@ -285,6 +285,30 @@ function docReady(){
                  $('#del-id').attr('value',jQuery(this).attr('id'));
 		$('#delete').modal('show');
 	});
+
+    $('.btn-new').click(function(e){
+
+        e.preventDefault();
+        // alert(jQuery(this).attr('url'));
+       // $('#add-form').attr('action',jQuery(this).attr('url'));
+        $('#new').modal('show');
+    });
+
+    $('.btn-edit').click(function(e){
+
+        e.preventDefault();
+        // alert(jQuery(this).attr('url'));
+        $('#continue-form').attr('action',jQuery(this).attr('url'));
+        $('#del-id').attr('value',jQuery(this).attr('id'));
+        $('#edit').modal('show');
+    });
+
+    $('.btn-continue').click(function(e){
+
+        e.preventDefault();
+        // alert(jQuery(this).attr('url'));
+        $('#continue').modal('show');
+    });
         
          $('.btn-complete').click(function(e){
                 

@@ -13,7 +13,7 @@ use Ridwan\EntityBundle\Form\EducationType;
 /**
  * Education controller.
  *
- * @Route("/education")
+ * @Route("/ridwan_education")
  */
 class EducationController extends Controller
 {
@@ -21,7 +21,7 @@ class EducationController extends Controller
     /**
      * Lists all Education entities.
      *
-     * @Route("/", name="education")
+     * @Route("/", name="ridwan_education")
      * @Method("GET")
      * @Template()
      */
@@ -38,7 +38,7 @@ class EducationController extends Controller
     /**
      * Creates a new Education entity.
      *
-     * @Route("/", name="education_create")
+     * @Route("/", name="ridwan_education_create")
      * @Method("POST")
      * @Template("RidwanEntityBundle:Education:new.html.twig")
      */
@@ -53,7 +53,7 @@ class EducationController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('education_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('ridwan_education_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -72,7 +72,7 @@ class EducationController extends Controller
     private function createCreateForm(Education $entity)
     {
         $form = $this->createForm(new EducationType(), $entity, array(
-            'action' => $this->generateUrl('education_create'),
+            'action' => $this->generateUrl('ridwan_education_create'),
             'method' => 'POST',
         ));
 
@@ -84,25 +84,28 @@ class EducationController extends Controller
     /**
      * Displays a form to create a new Education entity.
      *
-     * @Route("/new", name="education_new")
+     * @Route("/new", name="ridwan_education_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
+
         $entity = new Education();
         $form   = $this->createCreateForm($entity);
 
-        return array(
+        return $this->render('RidwanEntityBundle:Education:new.html.twig',array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
+        ));
+
+
     }
 
     /**
      * Finds and displays a Education entity.
      *
-     * @Route("/{id}", name="education_show")
+     * @Route("/{id}", name="ridwan_education_show")
      * @Method("GET")
      * @Template()
      */
@@ -127,7 +130,7 @@ class EducationController extends Controller
     /**
      * Displays a form to edit an existing Education entity.
      *
-     * @Route("/{id}/edit", name="education_edit")
+     * @Route("/{id}/edit", name="ridwan_education_edit")
      * @Method("GET")
      * @Template()
      */
@@ -161,7 +164,7 @@ class EducationController extends Controller
     private function createEditForm(Education $entity)
     {
         $form = $this->createForm(new EducationType(), $entity, array(
-            'action' => $this->generateUrl('education_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('ridwan_education_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -172,7 +175,7 @@ class EducationController extends Controller
     /**
      * Edits an existing Education entity.
      *
-     * @Route("/{id}", name="education_update")
+     * @Route("/{id}", name="ridwan_education_update")
      * @Method("PUT")
      * @Template("RidwanEntityBundle:Education:edit.html.twig")
      */
@@ -193,7 +196,7 @@ class EducationController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('education_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ridwan_education_edit', array('id' => $id)));
         }
 
         return array(
@@ -205,7 +208,7 @@ class EducationController extends Controller
     /**
      * Deletes a Education entity.
      *
-     * @Route("/{id}", name="education_delete")
+     * @Route("/{id}", name="ridwan_education_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -225,7 +228,7 @@ class EducationController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('education'));
+        return $this->redirect($this->generateUrl('ridwan_education'));
     }
 
     /**
@@ -238,7 +241,7 @@ class EducationController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('education_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('ridwan_education_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

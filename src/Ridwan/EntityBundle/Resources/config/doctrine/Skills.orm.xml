@@ -7,11 +7,11 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="skills" type="text" column="skills" nullable="true"/>
-    <field name="causes" type="text" column="causes" nullable="true"/>
+    <field name="skills" type="array" column="skills" nullable="true"/>
+    <field name="causes" type="array" column="causes" nullable="true"/>
     <field name="other" type="text" column="other" nullable="true"/>
-    <field name="languages" type="text" column="languages" nullable="true"/>
-    <many-to-one field="user" target-entity="Volunteerpersonal">
+    <field name="languages" type="array" column="languages" nullable="true"/>
+    <many-to-one field="user" target-entity="Authentication">
       <join-columns>
         <join-column name="user" referenced-column-name="id"/>
       </join-columns>

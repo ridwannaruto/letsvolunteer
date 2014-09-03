@@ -155,25 +155,75 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\ProfileController::pictureAction',  '_route' => 'ridwan_profile_picture',);
         }
 
-        if (0 === strpos($pathinfo, '/volunteer')) {
-            // ridwan_user_volunteer_welcome
-            if ($pathinfo === '/volunteer/welcome') {
-                return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::welcomeAction',  '_route' => 'ridwan_user_volunteer_welcome',);
-            }
+        // ridwan_user_volunteer_welcome
+        if ($pathinfo === '/volunteer/welcome') {
+            return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::welcomeAction',  '_route' => 'ridwan_user_volunteer_welcome',);
+        }
 
-            // ridwan_user_volunteer_education
-            if ($pathinfo === '/volunteer/education') {
-                return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::educationAction',  '_route' => 'ridwan_user_volunteer_education',);
+        if (0 === strpos($pathinfo, '/welcome')) {
+            if (0 === strpos($pathinfo, '/welcome/e')) {
+                // ridwan_user_volunteer_education
+                if ($pathinfo === '/welcome/education') {
+                    return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::educationAction',  '_route' => 'ridwan_user_volunteer_education',);
+                }
+
+                // ridwan_user_volunteer_employment
+                if ($pathinfo === '/welcome/employment') {
+                    return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::employmentAction',  '_route' => 'ridwan_user_volunteer_employment',);
+                }
+
             }
 
             // ridwan_user_volunteer_personal
-            if ($pathinfo === '/volunteer/personal') {
+            if ($pathinfo === '/welcome/personal') {
                 return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::personalAction',  '_route' => 'ridwan_user_volunteer_personal',);
             }
 
+            // ridwan_user_volunteer_skills
+            if ($pathinfo === '/welcome/skills') {
+                return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::skillsAction',  '_route' => 'ridwan_user_volunteer_skills',);
+            }
+
             // ridwan_user_volunteer_contacts
-            if ($pathinfo === '/volunteer/contacts') {
+            if ($pathinfo === '/welcome/contacts') {
                 return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::contactAction',  '_route' => 'ridwan_user_volunteer_contacts',);
+            }
+
+            if (0 === strpos($pathinfo, '/welcome/referee')) {
+                // ridwan_user_volunteer_referees
+                if ($pathinfo === '/welcome/referees') {
+                    return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::refereesAction',  '_route' => 'ridwan_user_volunteer_referees',);
+                }
+
+                // ridwan_user_volunteer_referee_add
+                if ($pathinfo === '/welcome/referee/add') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_ridwan_user_volunteer_referee_add;
+                    }
+
+                    return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::AddrefereeAction',  '_route' => 'ridwan_user_volunteer_referee_add',);
+                }
+                not_ridwan_user_volunteer_referee_add:
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/organization')) {
+            // ridwan_organization_welcome
+            if ($pathinfo === '/organization/welcome') {
+                return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\OrganizationController::welcomeAction',  '_route' => 'ridwan_organization_welcome',);
+            }
+
+            // ridwan_organization_details
+            if ($pathinfo === '/organization/details') {
+                return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\OrganizationController::detailsAction',  '_route' => 'ridwan_organization_details',);
+            }
+
+            // ridwan_organization_contact
+            if ($pathinfo === '/organization/contact') {
+                return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\OrganizationController::contactAction',  '_route' => 'ridwan_organization_contact',);
             }
 
         }
@@ -293,6 +343,75 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // ridwan_allnotification
         if ($pathinfo === '/allnotifications') {
             return array (  '_controller' => 'Ridwan\\NotificationBundle\\Controller\\NotificationController::showAllAction',  '_route' => 'ridwan_allnotification',);
+        }
+
+        if (0 === strpos($pathinfo, '/e')) {
+            if (0 === strpos($pathinfo, '/education')) {
+                // ridwan_education_index
+                if ($pathinfo === '/education') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EducationController::indexAction',  '_route' => 'ridwan_education_index',);
+                }
+
+                // ridwan_education_new
+                if ($pathinfo === '/education/new') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EducationController::newAction',  '_route' => 'ridwan_education_new',);
+                }
+
+                // ridwan_education_create
+                if ($pathinfo === '/education/create') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EducationController::createAction',  '_route' => 'ridwan_education_create',);
+                }
+
+                // ridwan_education_show
+                if ($pathinfo === '/education/show') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EducationController::showAction',  '_route' => 'ridwan_education_show',);
+                }
+
+                // ridwan_education_edit
+                if ($pathinfo === '/education/edit') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EducationController::editAction',  '_route' => 'ridwan_education_edit',);
+                }
+
+                // ridwan_education_delete
+                if ($pathinfo === '/education/delete') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EducationController::deleteAction',  '_route' => 'ridwan_education_delete',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/employment')) {
+                // ridwan_employment_index
+                if ($pathinfo === '/employment') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EmploymentController::indexAction',  '_route' => 'ridwan_employment_index',);
+                }
+
+                // ridwan_employment_new
+                if ($pathinfo === '/employment/new') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EmploymentController::newAction',  '_route' => 'ridwan_employment_new',);
+                }
+
+                // ridwan_employment_create
+                if ($pathinfo === '/employment/create') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EmploymentController::createAction',  '_route' => 'ridwan_employment_create',);
+                }
+
+                // ridwan_employment_show
+                if ($pathinfo === '/employment/show') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EmploymentController::showAction',  '_route' => 'ridwan_employment_show',);
+                }
+
+                // ridwan_employment_edit
+                if ($pathinfo === '/employment/edit') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EmploymentController::editAction',  '_route' => 'ridwan_employment_edit',);
+                }
+
+                // ridwan_employment_delete
+                if ($pathinfo === '/employment/delete') {
+                    return array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\EmploymentController::deleteAction',  '_route' => 'ridwan_employment_delete',);
+                }
+
+            }
+
         }
 
         // ridwan_site_home

@@ -10,9 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
 class RefereeAndUser
 {
     /**
-     * @var string
+     * @var \Ridwan\EntityBundle\Entity\Referees
      */
-    private $relationship;
+    private $referee2;
 
     /**
      * @var integer
@@ -22,36 +22,14 @@ class RefereeAndUser
     /**
      * @var \Ridwan\EntityBundle\Entity\Referees
      */
-    private $referee;
+    private $referee1;
 
     /**
-     * @var \Ridwan\EntityBundle\Entity\VolunteerPersonal
+     * @var \Ridwan\EntityBundle\Entity\Authentication
      */
     private $user;
 
 
-    /**
-     * Set relationship
-     *
-     * @param string $relationship
-     * @return RefereeAndUser
-     */
-    public function setRelationship($relationship)
-    {
-        $this->relationship = $relationship;
-
-        return $this;
-    }
-
-    /**
-     * Get relationship
-     *
-     * @return string 
-     */
-    public function getRelationship()
-    {
-        return $this->relationship;
-    }
 
     /**
      * Get id
@@ -64,35 +42,59 @@ class RefereeAndUser
     }
 
     /**
-     * Set referee
+     * Set referee1
      *
-     * @param \Ridwan\EntityBundle\Entity\Referees $referee
+     * @param \Ridwan\EntityBundle\Entity\Referees $referee1
      * @return RefereeAndUser
      */
-    public function setReferee(\Ridwan\EntityBundle\Entity\Referees $referee = null)
+    public function setReferee1(\Ridwan\EntityBundle\Entity\Referees $referee1 = null)
     {
-        $this->referee = $referee;
+        $this->referee1 = $referee1;
 
         return $this;
     }
 
     /**
-     * Get referee
+     * Get referee1
      *
      * @return \Ridwan\EntityBundle\Entity\Referees 
      */
-    public function getReferee()
+    public function getReferee1()
     {
-        return $this->referee;
+        return $this->referee1;
     }
+
+    /**
+     * Set referee2
+     *
+     * @param \Ridwan\EntityBundle\Entity\Referees $referee2
+     * @return RefereeAndUser
+     */
+    public function setReferee2(\Ridwan\EntityBundle\Entity\Referees $referee2 = null)
+    {
+        $this->referee2 = $referee2;
+
+        return $this;
+    }
+
+    /**
+     * Get referee2
+     *
+     * @return \Ridwan\EntityBundle\Entity\Referees
+     */
+    public function getReferee2()
+    {
+        return $this->referee2;
+    }
+
 
     /**
      * Set user
      *
-     * @param \Ridwan\EntityBundle\Entity\VolunteerPersonal $user
+     * @param \Ridwan\EntityBundle\Entity\Authentication $user
      * @return RefereeAndUser
      */
-    public function setUser(\Ridwan\EntityBundle\Entity\VolunteerPersonal $user = null)
+    public function setUser(\Ridwan\EntityBundle\Entity\Authentication $user = null)
     {
         $this->user = $user;
 
@@ -102,7 +104,7 @@ class RefereeAndUser
     /**
      * Get user
      *
-     * @return \Ridwan\EntityBundle\Entity\VolunteerPersonal 
+     * @return \Ridwan\EntityBundle\Entity\Authentication
      */
     public function getUser()
     {

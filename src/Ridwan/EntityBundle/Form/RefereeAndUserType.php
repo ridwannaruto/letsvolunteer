@@ -15,9 +15,32 @@ class RefereeAndUserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('relationship')
-            ->add('referee')
-            ->add('user')
+
+            ->add('referee1', 'entity', array(
+                    'label' => 'Referee 1',
+                    'class' => 'RidwanEntityBundle:Referees',
+                    'property' => 'name',
+                    'label_attr' => array('class' => 'control-label'),
+                    'attr' => array(
+                        'class' => 'controls',
+                        'data-rel' => 'chosen'
+                    )
+
+                ))
+
+            ->add('referee2', 'entity', array(
+                    'label' => 'Referee 1',
+                    'class' => 'RidwanEntityBundle:Referees',
+                    'property' => 'name',
+                    'label_attr' => array('class' => 'control-label'),
+                    'attr' => array(
+                        'class' => 'controls',
+                        'data-rel' => 'chosen'
+                    )
+
+                ))
+
+
         ;
     }
     

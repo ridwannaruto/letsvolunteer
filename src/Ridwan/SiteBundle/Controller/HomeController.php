@@ -49,25 +49,24 @@ class HomeController extends Controller
         return $repository->findOneBy(array("user" => $this->getUser()->getId()));
     }
 
-
+    private function getOrganization()
+    {
+        $repository = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Organization');
+        return $repository->findOneBy(array("user" => $this->getUser()->getId()));
+    }
 
     private function organizationHome()
     {
-        $repository = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Organization');
-        $organization = $repository->findOneBy(array("id" => $user->getUserId()));
+        $organization = $this->getOrganization();
         if ($organization) {
             $status = $organization->getStatus();
-            switch ($status) {
-            case 0:
-            case 1:
-            case 2:
-            default:
-
+            if ($status == 1) {
+                return $this->render('RidwanSiteBundle:Home:organization.html.twig');
             }
-            return $this->render('RidwanSiteBundle:Home:organization.html.twig');
+
         }
 
-        return $this->forward('RidwanSiteBundle:Welcome:organization');
+        return $this->render('RidwanUserBundle:Welcome:organization.html.twig');
     }
 
     private function NVSHome()
