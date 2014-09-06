@@ -3,12 +3,14 @@
   <entity name="Ridwan\EntityBundle\Entity\Organizationcontactdetails" table="OrganizationContactDetails">
     <unique-constraints>
       <unique-constraint name="organization_UNIQUE" columns="organization"/>
+      <unique-constraint name="user_UNIQUE" columns="user"/>
     </unique-constraints>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
     <field name="email" type="string" column="email" length="90" nullable="false"/>
     <field name="fax" type="integer" column="fax" nullable="true"/>
+    <field name="phone" type="integer" column="Phone" nullable="true"/>
     <field name="streetnumber" type="string" column="StreetNumber" length="20" nullable="false"/>
     <field name="street" type="string" column="Street" length="90" nullable="false"/>
     <field name="city" type="string" column="City" length="45" nullable="false"/>
@@ -22,5 +24,10 @@
         <join-column name="organization" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
+      <many-to-one field="user" target-entity="Authentication">
+          <join-columns>
+              <join-column name="user" referenced-column-name="id"/>
+          </join-columns>
+      </many-to-one>
   </entity>
 </doctrine-mapping>

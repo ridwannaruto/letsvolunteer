@@ -175,7 +175,7 @@ class Organization
      * Set user
      *
      * @param \Ridwan\EntityBundle\Entity\Authentication $user
-     * @return Volunteercontactdetails
+     * @return Organization
      */
     public function setUser(\Ridwan\EntityBundle\Entity\Authentication $user = null)
     {

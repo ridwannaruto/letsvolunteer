@@ -222,7 +222,7 @@ class __TwigTemplate_e881a4c1882dbd6abab2a9a8e83899f3518e3d79c4953b1cdcd71f3b67c
         echo "
 <hr>
 <footer>
-    <p class=\"center\"><strong>Computer Science & Engineering Department, University of Moratuwa </strong>&copy; 2014
+    <p class=\"center\"><strong>National Volunteering Secretariat, Sri Lanka</strong>&copy; 2014
 </footer>
 
 </div>

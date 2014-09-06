@@ -51,22 +51,22 @@ class __TwigTemplate_5fe5663f6c7639c76edfc5347ddabd97dd2e319d4eec54672440d105b12
     <header class=\"codrops-header\">
         <img class=\"center\" src=\"";
         // line 19
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/logo3.png"), "html", null, true);
-        echo " \" width=\"400px\"/><br><br>
-        <h3 style=\"color: #000000\">Greetings ";
-        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/Logo.jpg"), "html", null, true);
+        echo " \" width=\"250px\"/>
+
+    </header>
+    <h3 align=\"center\" style=\"color: #000000\">Greetings ";
+        // line 22
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "username"), "html", null, true);
         echo "!</h3>
-    </header>
-
     <h4 align=\"center\"><a href=\"";
         // line 23
         echo $this->env->getExtension('routing')->getPath("ridwan_user_volunteer_welcome");
         echo "\" >please complete your profile</a></h4>
-    <br><br>
+
 
     <p align=\"center\">Note: Until you complete your profile your name wont be listed in the system</p>
-    <br>
+
 </div>
 <script src=\"";
         // line 29
@@ -101,7 +101,7 @@ class __TwigTemplate_5fe5663f6c7639c76edfc5347ddabd97dd2e319d4eec54672440d105b12
 <br>
 <hr>
 <footer>
-    <p align=\"center\"><strong>Computer Science & Engineering Department, University of Moratuwa </strong>&copy; 2014
+    <p align=\"center\"><strong>National Volunteering Secretariat, Sri Lanka </strong>&copy; 2014
 </footer>
 </body>
 </html>
@@ -126,6 +126,6 @@ class __TwigTemplate_5fe5663f6c7639c76edfc5347ddabd97dd2e319d4eec54672440d105b12
 
     public function getDebugInfo()
     {
-        return array (  77 => 30,  73 => 29,  64 => 23,  58 => 20,  54 => 19,  45 => 13,  41 => 12,  37 => 11,  33 => 10,  29 => 9,  19 => 1,);
+        return array (  77 => 30,  73 => 29,  64 => 23,  60 => 22,  54 => 19,  45 => 13,  41 => 12,  37 => 11,  33 => 10,  29 => 9,  19 => 1,);
     }
 }

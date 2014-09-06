@@ -48,9 +48,7 @@ class VolunteerController extends Controller
         if ($this->check('RidwanEntityBundle:RefereeAndUser') == null) {
             return $this->RefereesAction(new Request());
         }
-        if ($this->check('RidwanEntityBundle:RefereeAndUser') == null) {
-            return $this->RefereesAction(new Request());
-        }
+
 
         return $this->render('RidwanUserBundle:Welcome:completed.html.twig');
 
@@ -81,7 +79,7 @@ class VolunteerController extends Controller
         if ($form->isValid()) {
             $volunteer = $form->getData();
             $volunteer->setStatus(0);
-            $volunteer->setUserId($this->getUser()->getId());
+            $volunteer->setUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
 
             try {
@@ -120,7 +118,7 @@ class VolunteerController extends Controller
         }
 
         $em = $this->getDoctrine()->getManager();
-        $qualifications = $em->getRepository('RidwanEntityBundle:Education')->findAll();
+        $qualifications = $em->getRepository('RidwanEntityBundle:Education')->findBy(array('user'=>$this->getUser()->getId()));
         $education = new Education();
         $form = $this->createForm(
             new EducationType(), $education, array(
@@ -149,7 +147,7 @@ class VolunteerController extends Controller
                     )
                 );
             }
-            $qualifications = $em->getRepository('RidwanEntityBundle:Education')->findAll();
+            $qualifications = $em->getRepository('RidwanEntityBundle:Education')->findBy(array('user'=>$this->getUser()->getId()));
 
             return $this->render(
                 'RidwanUserBundle:Welcome:education.html.twig', array(
@@ -177,7 +175,7 @@ class VolunteerController extends Controller
         }
 
         $em = $this->getDoctrine()->getManager();
-        $history = $em->getRepository('RidwanEntityBundle:Employment')->findAll();
+        $history = $em->getRepository('RidwanEntityBundle:Employment')->findBy(array('user'=>$this->getUser()->getId()));
         $employment = new Employment();
         $form = $this->createForm(
             new EmploymentType(), $employment, array(
@@ -206,7 +204,7 @@ class VolunteerController extends Controller
                     )
                 );
             }
-            $history = $em->getRepository('RidwanEntityBundle:Employment')->findAll();
+            $history = $em->getRepository('RidwanEntityBundle:Employment')->findBy(array('user'=>$this->getUser()->getId()));
 
             return $this->render(
                 'RidwanUserBundle:Welcome:employment.html.twig', array(
@@ -327,9 +325,7 @@ class VolunteerController extends Controller
 
     public function RefereesAction(Request $request)
     {
-        if ($this->check('RidwanEntityBundle:RefereesAndUser') != null) {
-            return $this->redirect($this->generateUrl('ridwan_site_home'));
-        }
+
         $user_referee = new RefereeAndUser();
         $referee = new Referees();
         $form = $this->createForm(
@@ -372,7 +368,7 @@ class VolunteerController extends Controller
                 );
             }
 
-            return $this->render('RidwanuserBundle:Welcome:completed.html.twig');
+            return $this->render('RidwanUserBundle:Welcome:completed.html.twig');
         }
 
         return $this->render(

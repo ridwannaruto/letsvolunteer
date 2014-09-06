@@ -15,10 +15,41 @@ class AvailabilityType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('days')
+            ->add('days', 'choice', array(
+                    'expanded' => true,
+                    'multiple' => true,
+                    'choices'  => array(
+                        'Sunday' => 'Sunday',
+                        'Monday'  => 'Monday',
+                        'Tuesday'   => 'Tuesday',
+                        'Wednesday'   => 'Wednesday',
+                        'Thursday'   => 'Thursday',
+                        'Friday'    => 'Friday',
+                        'Saturday'  => 'Saturday'
+                    ),
+                ))
+            ->add('preferredtime', 'choice', array(
+                    'expanded' => true,
+                    'multiple' => true,
+                    'choices'  => array(
+                        '07:00 - 08:00'  => '07:00 - 08:00',
+                        '08:00 - 09:00' => '08:00 - 09:00',
+                        '09:00 - 10:00'  => '09:00 - 10:00',
+                        '10:00 - 11:00' => '10:00 - 11:00',
+                        '11:00 - 12:00'  => '11:00 - 12:00',
+                        '12:00 - 13:00' => '12:00 - 13:00',
+                        '13:00 - 14:00'  => '13:00 - 14:00',
+                        '14:00 - 15:00' => '14:00 - 15:00',
+                        '15:00 - 16:00'  => '15:00 - 16:00',
+                        '16:00 - 17:00' => '16:00 - 17:00',
+                        '17:00 - 18:00'  => '17:00 - 18:00',
+                        '18:00 - 19:00' => '18:00 - 19:00',
+                        '19:00 - 20:00'  => '19:00 - 20:00',
+                        '20:00 - 21:00' => '20:00 - 21:00',
+
+                    ),
+                ))
             ->add('duration')
-            ->add('preferredtime')
-            ->add('user')
         ;
     }
     

@@ -17,6 +17,7 @@ class OrganizationcontactdetailsType extends AbstractType
         $builder
             ->add('email')
             ->add('fax')
+            ->add('phone')
             ->add('streetnumber')
             ->add('street')
             ->add('city')
@@ -25,7 +26,7 @@ class OrganizationcontactdetailsType extends AbstractType
             ->add('country')
             ->add('province')
             ->add('website')
-            ->add('organization')
+
         ;
     }
     

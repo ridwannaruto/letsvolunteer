@@ -178,10 +178,10 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
         ";
         // line 74
         $this->displayBlock('header', $context, $blocks);
-        // line 234
+        // line 233
         echo "        ";
         $this->displayBlock('dashboard', $context, $blocks);
-        // line 266
+        // line 236
         echo "        <!-- left menu ends -->
 
         <div class=\"container-fluid\">
@@ -197,9 +197,9 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
 
 
                 ";
-        // line 280
+        // line 250
         $this->displayBlock('content', $context, $blocks);
-        // line 282
+        // line 252
         echo "
                 <div class=\"modal hide fade\" id=\"comment\">
                     <div class=\"modal-header\">
@@ -227,13 +227,13 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
         </div>
 
         ";
-        // line 308
+        // line 278
         $this->displayBlock('delete', $context, $blocks);
-        // line 310
+        // line 280
         echo "
         <hr>
         <footer>
-            <p class=\"center\"><strong>Computer Science & Engineering Department, University of Moratuwa </strong>&copy; 2014
+            <p class=\"center\"><strong>National Volunteering Secretariat, Sri Lanka </strong>&copy; 2014
         </footer>
 
         </div>
@@ -241,184 +241,184 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
         <!------------------------JavaScripts --------------------------------!>
            <!-- jQuery -->
         <script src=";
-        // line 320
+        // line 290
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery-1.7.2.min.js"), "html", null, true);
         echo "></script>
         <!-- jQuery UI -->
         <script src=";
-        // line 322
+        // line 292
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery-ui-1.8.21.custom.min.js"), "html", null, true);
         echo "></script>
         <!-- transition / effect library -->
         <script src=";
-        // line 324
+        // line 294
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-transition.js"), "html", null, true);
         echo "></script>
         <!-- alert enhancer library -->
         <script src=";
-        // line 326
+        // line 296
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-alert.js"), "html", null, true);
         echo "></script>
         <!-- modal / dialog library -->
         <script src=";
-        // line 328
+        // line 298
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-modal.js"), "html", null, true);
         echo "></script>
         <!-- custom dropdown library -->
         <script src=";
-        // line 330
+        // line 300
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-dropdown.js"), "html", null, true);
         echo "></script>
         <!-- scrolspy library -->
         <script src=";
-        // line 332
+        // line 302
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-scrollspy.js"), "html", null, true);
         echo "></script>
         <!-- library for creating tabs -->
         <script src=";
-        // line 334
+        // line 304
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-tab.js"), "html", null, true);
         echo "></script>
         <!-- library for advanced tooltip -->
         <script src=";
-        // line 336
+        // line 306
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-tooltip.js"), "html", null, true);
         echo "></script>
         <!-- popover effect library -->
         <script src=";
-        // line 338
+        // line 308
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-popover.js"), "html", null, true);
         echo "></script>
         <!-- button enhancer library -->
         <script src=";
-        // line 340
+        // line 310
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-button.js"), "html", null, true);
         echo "></script>
         <!-- accordion library (optional, not used in demo) -->
         <script src=";
-        // line 342
+        // line 312
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-collapse.js"), "html", null, true);
         echo "></script>
         <!-- carousel slideshow library (optional, not used in demo) -->
         <script src=";
-        // line 344
+        // line 314
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-carousel.js"), "html", null, true);
         echo "></script>
         <!-- autocomplete library -->
         <script src=";
-        // line 346
+        // line 316
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-typeahead.js"), "html", null, true);
         echo "></script>
         <!-- tour library -->
         <script src=";
-        // line 348
+        // line 318
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/bootstrap-tour.js"), "html", null, true);
         echo "></script>
         <!-- library for cookie management -->
         <script src=";
-        // line 350
+        // line 320
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.cookie.js"), "html", null, true);
         echo "></script>
         <!-- calander plugin -->
         <script src=";
-        // line 352
+        // line 322
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/fullcalendar.min.js"), "html", null, true);
         echo "></script>
         <!-- data table plugin -->
         <script src=";
-        // line 354
+        // line 324
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.dataTables.min.js"), "html", null, true);
         echo "></script>
 
         <!-- chart libraries start -->
         <script src=";
-        // line 357
+        // line 327
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/excanvas.js"), "html", null, true);
         echo "></script>
         <script src=";
-        // line 358
+        // line 328
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.flot.min.js"), "html", null, true);
         echo "></script>
         <script src=";
-        // line 359
+        // line 329
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.flot.pie.min.js"), "html", null, true);
         echo "></script>
         <script src=";
-        // line 360
+        // line 330
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.flot.stack.js"), "html", null, true);
         echo "></script>
         <script src=";
-        // line 361
+        // line 331
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.flot.resize.min.js"), "html", null, true);
         echo "></script>
         <!-- chart libraries end -->
 
         <!-- select or dropdown enhancer -->
         <script src=";
-        // line 365
+        // line 335
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.chosen.min.js"), "html", null, true);
         echo "></script>
         <!-- checkbox, radio, and file input styler -->
         <script src=";
-        // line 367
+        // line 337
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.uniform.min.js"), "html", null, true);
         echo "></script>
         <!-- plugin for gallery image view -->
         <script src=";
-        // line 369
+        // line 339
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.colorbox.min.js"), "html", null, true);
         echo "></script>
         <!-- rich text editor library -->
         <script src=";
-        // line 371
+        // line 341
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.cleditor.min.js"), "html", null, true);
         echo "></script>
         <!-- notification plugin -->
         <script src=";
-        // line 373
+        // line 343
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.noty.js"), "html", null, true);
         echo "></script>
         <!-- file manager library -->
         <script src=";
-        // line 375
+        // line 345
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.elfinder.min.js"), "html", null, true);
         echo "></script>
         <!-- star rating plugin -->
         <script src=";
-        // line 377
+        // line 347
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.raty.min.js"), "html", null, true);
         echo "></script>
         <!-- for iOS style toggle switch -->
         <script src=";
-        // line 379
+        // line 349
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.iphone.toggle.js"), "html", null, true);
         echo "></script>
         <!-- autogrowing textarea plugin -->
         <script src=";
-        // line 381
+        // line 351
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.autogrow-textarea.js"), "html", null, true);
         echo "></script>
         <!-- multiple file upload plugin -->
         <script src=";
-        // line 383
+        // line 353
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.uploadify-3.1.min.js"), "html", null, true);
         echo "></script>
         <!-- history.js for cross-browser state change on ajax -->
         <script src=";
-        // line 385
+        // line 355
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/jquery.history.js"), "html", null, true);
         echo "></script>
         <!-- application script for Charisma demo -->
         <script src=";
-        // line 387
+        // line 357
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/charisma.js"), "html", null, true);
         echo "></script>
 
         <!--Additional Java Scripts for extending pages-->
         ";
-        // line 390
+        // line 360
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 393
+        // line 363
         echo "    </body>
 </html>
 ";
@@ -502,113 +502,109 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
             echo "\">Logout</a></li>
                                                 <li><a href=\"";
             // line 114
-            echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
-            echo "\">Profile</a></li>
-                                                <li><a href=\"";
-            // line 115
             echo $this->env->getExtension('routing')->getPath("fos_user_change_password");
-            echo "\">Settings</a></li>
+            echo "\">Account</a></li>
                                             </ul>
 
                                         </div>
 
                                         ";
-            // line 120
+            // line 119
             if (array_key_exists("Notifications", $context)) {
-                // line 121
+                // line 120
                 echo "                                        <div class=\"btn-group pull-right\" >
                                             <a data-toggle=\"dropdown\" href=\"#\">
                                                 <button class=\"btn btn-mini btn-round btn-info\"><i class=\"icon-bell\"></i> Notifications<span class=\"hidden-phone\"> </span>\t</button>
 
                                                 ";
-                // line 125
+                // line 124
                 $context["noOfNotification"] = 0;
-                // line 126
+                // line 125
                 echo "                                                ";
                 $context['_parent'] = (array) $context;
                 $context['_seq'] = twig_ensure_traversable((isset($context["Notifications"]) ? $context["Notifications"] : $this->getContext($context, "Notifications")));
                 foreach ($context['_seq'] as $context["_key"] => $context["notification"]) {
-                    // line 127
+                    // line 126
                     echo "                                                    ";
                     $context["noOfNotification"] = ((isset($context["noOfNotification"]) ? $context["noOfNotification"] : $this->getContext($context, "noOfNotification")) + 1);
-                    // line 128
+                    // line 127
                     echo "                                                ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notification'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 129
+                // line 128
                 echo "                                                ";
                 if (((isset($context["noOfNotification"]) ? $context["noOfNotification"] : $this->getContext($context, "noOfNotification")) > 0)) {
-                    // line 130
+                    // line 129
                     echo "                                                    <span class=\"notification red\">";
                     echo twig_escape_filter($this->env, (isset($context["noOfNotification"]) ? $context["noOfNotification"] : $this->getContext($context, "noOfNotification")), "html", null, true);
                     echo "</span>
                                                 ";
                 }
-                // line 132
+                // line 131
                 echo "                                            </a>
                                             <ul class=\"dropdown-menu span6 center\">
                                                 <div class=\"row-fluid\">
                                                     ";
-                // line 135
+                // line 134
                 if (((isset($context["Notifications"]) ? $context["Notifications"] : $this->getContext($context, "Notifications")) != null)) {
-                    // line 136
+                    // line 135
                     echo "                                                        <div class=\"box-content alerts\">
                                                             ";
-                    // line 137
+                    // line 136
                     $context['_parent'] = (array) $context;
                     $context['_seq'] = twig_ensure_traversable((isset($context["Notifications"]) ? $context["Notifications"] : $this->getContext($context, "Notifications")));
                     foreach ($context['_seq'] as $context["_key"] => $context["notification"]) {
-                        // line 138
+                        // line 137
                         echo "                                                            ";
                         if (($this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "task") == 0)) {
-                            // line 139
+                            // line 138
                             echo "
                                                             <a href=\"";
-                            // line 140
+                            // line 139
                             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("moraspirit_project_details_notification", array("projectID" => $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "project"), "notificationID" => $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"))), "html", null, true);
                             echo "\"><li>
 
                                                                     ";
                         } else {
-                            // line 143
+                            // line 142
                             echo "
                                                                     <a href=\"";
-                            // line 144
+                            // line 143
                             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("moraspirit_task_details_notification", array("taskID" => $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "task"), "notificationID" => $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"))), "html", null, true);
                             echo "\"> <li>
 
                                                                             ";
                         }
-                        // line 147
+                        // line 146
                         echo "
 
                                                                             ";
-                        // line 149
+                        // line 148
                         if (($this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "type") == 4)) {
-                            // line 150
+                            // line 149
                             echo "                                                                                <div class=\"alert alert-error\">
                                                                                     <button url=\"";
-                            // line 151
+                            // line 150
                             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("moraspirit_notification_see", array("notificationID" => $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"))), "html", null, true);
                             echo "\" id=\"";
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"), "html", null, true);
                             echo "\"type=\"button\" class=\" close btn-comment\">×</button>
                                                                                     <div class = \"pull-right\">
                                                                                         ";
-                            // line 153
+                            // line 152
                             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "timestamp"), "Y-m-d H:i:s"), "html", null, true);
                             echo "
                                                                                     </div>
 
                                                                                     <strong><h5>";
-                            // line 156
+                            // line 155
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "heading"), "html", null, true);
                             echo "</h5></strong>
 
                                                                                     ";
-                            // line 158
+                            // line 157
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "details"), "html", null, true);
                             echo "
                                                                                     <br>
@@ -616,32 +612,32 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
 
                                                                             ";
                         }
-                        // line 163
+                        // line 162
                         echo "
                                                                             ";
-                        // line 164
+                        // line 163
                         if (($this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "type") == 3)) {
-                            // line 165
+                            // line 164
                             echo "                                                                                <div class=\"alert alert-success\">
                                                                                     <button url=\"";
-                            // line 166
+                            // line 165
                             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("moraspirit_notification_see", array("notificationID" => $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"))), "html", null, true);
                             echo "\" id=\"";
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"), "html", null, true);
                             echo "\"type=\"button\" class=\" close btn-comment\">×</button>
                                                                                     <div class = \"pull-right\">
                                                                                         ";
-                            // line 168
+                            // line 167
                             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "timestamp"), "Y-m-d H:i:s"), "html", null, true);
                             echo "
                                                                                     </div>
                                                                                     <strong><h5>";
-                            // line 170
+                            // line 169
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "heading"), "html", null, true);
                             echo "</h5></strong>
 
                                                                                     ";
-                            // line 172
+                            // line 171
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "details"), "html", null, true);
                             echo "<br>
 
@@ -651,62 +647,62 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
 
                                                                             ";
                         }
-                        // line 179
+                        // line 178
                         echo "
                                                                             ";
-                        // line 180
+                        // line 179
                         if (($this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "type") == 2)) {
-                            // line 181
+                            // line 180
                             echo "                                                                                <div class=\"alert alert-heading\">
                                                                                     <button url=\"";
-                            // line 182
+                            // line 181
                             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("moraspirit_notification_see", array("notificationID" => $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"))), "html", null, true);
                             echo "\" id=\"";
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"), "html", null, true);
                             echo "\"type=\"button\" class=\" close btn-comment\">×</button>
                                                                                     <div class = \"pull-right\">
                                                                                         ";
-                            // line 184
+                            // line 183
                             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "timestamp"), "Y-m-d H:i:s"), "html", null, true);
                             echo "
                                                                                     </div>
                                                                                     <strong><h5>";
-                            // line 186
+                            // line 185
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "heading"), "html", null, true);
                             echo "</h5></strong>
 
                                                                                     ";
-                            // line 188
+                            // line 187
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "details"), "html", null, true);
                             echo "<br>
                                                                                 </div>
 
                                                                             ";
                         }
-                        // line 192
+                        // line 191
                         echo "                                                                            ";
                         if (($this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "type") == 1)) {
-                            // line 193
+                            // line 192
                             echo "                                                                                <div class=\"alert alert-info\">
                                                                                     <button url=\"";
-                            // line 194
+                            // line 193
                             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("moraspirit_notification_see", array("notificationID" => $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"))), "html", null, true);
                             echo "\" id=\"";
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "id"), "html", null, true);
                             echo "\"type=\"button\" class=\" close btn-comment\">×</button>
                                                                                     <div class = \"pull-right\">
                                                                                         ";
-                            // line 196
+                            // line 195
                             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "timestamp"), "Y-m-d H:i:s"), "html", null, true);
                             echo "
                                                                                     </div>
                                                                                     <strong><h5>";
-                            // line 198
+                            // line 197
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "heading"), "html", null, true);
                             echo "</h5></strong>
 
                                                                                     ";
-                            // line 200
+                            // line 199
                             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["notification"]) ? $context["notification"] : $this->getContext($context, "notification")), "details"), "html", null, true);
                             echo "<br>
 
@@ -714,30 +710,30 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
 
                                                                             ";
                         }
-                        // line 205
+                        // line 204
                         echo "                                                                        </li>
                                                                         ";
                     }
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notification'], $context['_parent'], $context['loop']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 207
+                    // line 206
                     echo "                                                        </div>
                                                     ";
                 } else {
-                    // line 209
+                    // line 208
                     echo "                                                        <li align =\"center\">
                                                             no new notifications
                                                         </li></a>
                                                     ";
                 }
-                // line 213
+                // line 212
                 echo "
 
                                                 </div><!--/span-->
                                                 <li class=\"divider\"></li>
                                                 <li align=\"center\"><a href=\"";
-                // line 217
+                // line 216
                 echo $this->env->getExtension('routing')->getPath("moraspirit_allnotification");
                 echo "\">see all</a></li>
 
@@ -745,11 +741,11 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
                                         </div>
                                             ";
             }
-            // line 222
+            // line 221
             echo "
                                     ";
         }
-        // line 224
+        // line 223
         echo "                                </div>
 
                             </td>
@@ -762,71 +758,29 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
         ";
     }
 
-    // line 234
+    // line 233
     public function block_dashboard($context, array $blocks = array())
     {
-        // line 235
+        // line 234
         echo "
-            <div class=\"span2 main-menu-span\">
-
-
-
-
-                <div class=\"well nav-collapse sidebar-nav\">
-                    <p align=\"center\">
-                        ";
-        // line 243
-        if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "path")) {
-            // line 244
-            echo "                        <img src=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "path"), "html", null, true);
-            echo "\" width=\"150px\" height=\"150px\" style=\"border: 2px\">
-                        ";
-        } else {
-            // line 246
-            echo "                        <img src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/default.jpg"), "html", null, true);
-            echo "\" width=\"150px\" height=\"150px\" style=\"border: 2px\">
-                        ";
-        }
-        // line 248
-        echo "                        <br><br><strong>";
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session"), "get", array(0 => "name"), "method"), "html", null, true);
-        echo "</strong>
-                    </p>
-                    <ul class=\"nav nav-tabs nav-stacked main-menu\">
-
-                        <li class=\"nav-header hidden-tablet\">Dashboard</li>
-                        <li><a class=\"ajax-link\" href=\"\"><i class=\"icon-home\"></i><span class=\"hidden-tablet\"> Home</span></a></li>
-
-                        <li><a class=\"ajax-link\" href=\"\"><i class=\"icon-eye-open\"></i><span class=\"hidden-tablet\"> Opportunities</span></a></li>
-
-                        <li><a class=\"ajax-link\" href=\"\"><i class=\"icon-edit\"></i><span class=\"hidden-tablet\"> Projects</span></a></li>
-                        <li><a class=\"ajax-link\" href=\"\"><i class=\"icon-list-alt\"></i><span class=\"hidden-tablet\"> Tasks</span></a></li>
-                        <li><a class=\"ajax-link\" href=\"\"><i class=\"icon-user\"></i><span class=\"hidden-tablet\"> Spiriters</span></a></li>
-
-
-                    </ul>
-                </div><!--/.well -->
-            </div><!--/span-->
         ";
     }
 
-    // line 280
+    // line 250
     public function block_content($context, array $blocks = array())
     {
-        // line 281
+        // line 251
         echo "                ";
     }
 
-    // line 308
+    // line 278
     public function block_delete($context, array $blocks = array())
     {
-        // line 309
+        // line 279
         echo "        ";
     }
 
-    // line 390
+    // line 360
     public function block_javascripts($context, array $blocks = array())
     {
         echo "        
@@ -846,6 +800,6 @@ class __TwigTemplate_067139bf5ea7be1de19881d9a9f5c18c2cb1c047edf970db95d8202fcfc
 
     public function getDebugInfo()
     {
-        return array (  830 => 390,  826 => 309,  823 => 308,  819 => 281,  816 => 280,  793 => 248,  787 => 246,  781 => 244,  779 => 243,  769 => 235,  766 => 234,  753 => 224,  749 => 222,  741 => 217,  735 => 213,  729 => 209,  725 => 207,  718 => 205,  710 => 200,  705 => 198,  700 => 196,  693 => 194,  690 => 193,  687 => 192,  680 => 188,  675 => 186,  670 => 184,  663 => 182,  660 => 181,  658 => 180,  655 => 179,  645 => 172,  640 => 170,  635 => 168,  628 => 166,  625 => 165,  623 => 164,  620 => 163,  612 => 158,  607 => 156,  601 => 153,  594 => 151,  591 => 150,  589 => 149,  585 => 147,  579 => 144,  576 => 143,  570 => 140,  567 => 139,  564 => 138,  560 => 137,  557 => 136,  555 => 135,  550 => 132,  544 => 130,  541 => 129,  535 => 128,  532 => 127,  527 => 126,  525 => 125,  519 => 121,  517 => 120,  509 => 115,  505 => 114,  501 => 113,  494 => 109,  489 => 106,  487 => 105,  467 => 88,  452 => 75,  449 => 74,  445 => 45,  442 => 44,  436 => 13,  431 => 2,  428 => 1,  422 => 393,  420 => 390,  414 => 387,  409 => 385,  404 => 383,  399 => 381,  394 => 379,  389 => 377,  384 => 375,  379 => 373,  374 => 371,  369 => 369,  364 => 367,  359 => 365,  352 => 361,  348 => 360,  344 => 359,  340 => 358,  336 => 357,  330 => 354,  325 => 352,  320 => 350,  315 => 348,  310 => 346,  305 => 344,  300 => 342,  295 => 340,  290 => 338,  285 => 336,  280 => 334,  275 => 332,  270 => 330,  265 => 328,  260 => 326,  255 => 324,  250 => 322,  245 => 320,  233 => 310,  231 => 308,  203 => 282,  201 => 280,  185 => 266,  182 => 234,  180 => 74,  176 => 72,  173 => 71,  165 => 66,  161 => 64,  159 => 63,  156 => 62,  148 => 57,  144 => 55,  141 => 54,  139 => 53,  130 => 46,  128 => 44,  122 => 41,  118 => 40,  114 => 39,  110 => 38,  106 => 37,  102 => 36,  98 => 35,  94 => 34,  90 => 33,  86 => 32,  82 => 31,  78 => 30,  74 => 29,  70 => 28,  66 => 27,  62 => 26,  50 => 17,  44 => 14,  40 => 13,  29 => 4,  27 => 1,  31 => 3,  28 => 2,);
+        return array (  784 => 360,  780 => 279,  777 => 278,  773 => 251,  770 => 250,  765 => 234,  762 => 233,  749 => 223,  745 => 221,  737 => 216,  731 => 212,  725 => 208,  721 => 206,  714 => 204,  706 => 199,  701 => 197,  696 => 195,  689 => 193,  686 => 192,  683 => 191,  676 => 187,  671 => 185,  666 => 183,  659 => 181,  656 => 180,  654 => 179,  651 => 178,  641 => 171,  636 => 169,  631 => 167,  624 => 165,  621 => 164,  619 => 163,  616 => 162,  608 => 157,  603 => 155,  597 => 152,  590 => 150,  587 => 149,  585 => 148,  581 => 146,  575 => 143,  572 => 142,  566 => 139,  563 => 138,  560 => 137,  556 => 136,  553 => 135,  551 => 134,  546 => 131,  540 => 129,  537 => 128,  531 => 127,  528 => 126,  523 => 125,  521 => 124,  515 => 120,  513 => 119,  505 => 114,  501 => 113,  494 => 109,  489 => 106,  487 => 105,  467 => 88,  452 => 75,  449 => 74,  445 => 45,  442 => 44,  436 => 13,  431 => 2,  428 => 1,  422 => 363,  420 => 360,  414 => 357,  409 => 355,  404 => 353,  399 => 351,  394 => 349,  389 => 347,  384 => 345,  379 => 343,  374 => 341,  369 => 339,  364 => 337,  359 => 335,  352 => 331,  348 => 330,  344 => 329,  340 => 328,  336 => 327,  330 => 324,  325 => 322,  320 => 320,  315 => 318,  310 => 316,  305 => 314,  300 => 312,  295 => 310,  290 => 308,  285 => 306,  280 => 304,  275 => 302,  270 => 300,  265 => 298,  260 => 296,  255 => 294,  250 => 292,  245 => 290,  233 => 280,  231 => 278,  203 => 252,  201 => 250,  185 => 236,  182 => 233,  180 => 74,  176 => 72,  173 => 71,  165 => 66,  161 => 64,  159 => 63,  156 => 62,  148 => 57,  144 => 55,  141 => 54,  139 => 53,  130 => 46,  128 => 44,  122 => 41,  118 => 40,  114 => 39,  110 => 38,  106 => 37,  102 => 36,  98 => 35,  94 => 34,  90 => 33,  86 => 32,  82 => 31,  78 => 30,  74 => 29,  70 => 28,  66 => 27,  62 => 26,  50 => 17,  44 => 14,  40 => 13,  29 => 4,  27 => 1,);
     }
 }

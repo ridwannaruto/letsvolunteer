@@ -219,13 +219,13 @@ class __TwigTemplate_97b93ab8eac2fdbb8e7b0b827149349df1673f25df6847cee5112ab12bc
     <div class=\"container-fluid\">
         <div class=\"row-fluid\">
 
-            <br><br>
-            <img class=\"center\" src=\"";
-        // line 136
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/logo3.png"), "html", null, true);
-        echo " \" width=\"400px\"/><br><br>
-
             <div class=\"wrapper span12\">
+                <br>
+                <img class=\"center\" src=\"";
+        // line 137
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/Logo.jpg"), "html", null, true);
+        echo " \" width=\"250px\"/>
+
                 <div class=\"well span3 login-box center \">
                     <div class=\"content\">
                         <div id=\"form_wrapper\" class=\"form_wrapper span12\">
@@ -258,7 +258,7 @@ class __TwigTemplate_97b93ab8eac2fdbb8e7b0b827149349df1673f25df6847cee5112ab12bc
         // line 155
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
         echo "\" method=\"post\">
-                                <h3>Login</h3><br>
+
                                 <fieldset>
                                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
         // line 158
@@ -382,6 +382,6 @@ class __TwigTemplate_97b93ab8eac2fdbb8e7b0b827149349df1673f25df6847cee5112ab12bc
 
     public function getDebugInfo()
     {
-        return array (  343 => 217,  321 => 197,  315 => 195,  313 => 194,  305 => 189,  295 => 182,  271 => 161,  265 => 158,  259 => 155,  256 => 154,  253 => 153,  244 => 147,  240 => 145,  237 => 144,  235 => 143,  225 => 136,  218 => 131,  215 => 130,  210 => 128,  207 => 127,  202 => 125,  199 => 124,  109 => 38,  105 => 37,  101 => 36,  96 => 35,  93 => 34,  85 => 28,  78 => 24,  71 => 20,  63 => 15,  53 => 8,  49 => 7,  44 => 6,  41 => 5,  36 => 3,  33 => 2,);
+        return array (  343 => 217,  321 => 197,  315 => 195,  313 => 194,  305 => 189,  295 => 182,  271 => 161,  265 => 158,  259 => 155,  256 => 154,  253 => 153,  244 => 147,  240 => 145,  237 => 144,  235 => 143,  226 => 137,  218 => 131,  215 => 130,  210 => 128,  207 => 127,  202 => 125,  199 => 124,  109 => 38,  105 => 37,  101 => 36,  96 => 35,  93 => 34,  85 => 28,  78 => 24,  71 => 20,  63 => 15,  53 => 8,  49 => 7,  44 => 6,  41 => 5,  36 => 3,  33 => 2,);
     }
 }

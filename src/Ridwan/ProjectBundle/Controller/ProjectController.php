@@ -8,19 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ProjectController extends Controller {
 
-    public function authenticateAction() {
-        $session = $this->getRequest()->getSession();
-        $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('RidwanEntityBundle:User');
-        $id = $session->get('user');
-        $user = $repository->findOneBy(array('id' => $id));
-        if ($user) {
-            return $user;
-        } else {
-            return false;
-        }
-    }
-
     public function indexAction(Request $request) {
         $user = $this->authenticateAction();
         

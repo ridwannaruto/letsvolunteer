@@ -51,26 +51,27 @@ class __TwigTemplate_f9011799668675305128c02149dd28346e3bcfcdb1902f4e00e02666fa0
     <header class=\"codrops-header\">
         <img class=\"center\" src=\"";
         // line 19
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/logo3.png"), "html", null, true);
-        echo " \" width=\"400px\"/><br><br>
-        <h3 style=\"color: #000000\">Greetings ";
-        // line 20
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "username"), "html", null, true);
-        echo "!</h3>
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/Logo.jpg"), "html", null, true);
+        echo " \" width=\"250px\"/>
+
     </header>
 
-    <h4 align=\"center\">Your profile is complete</h4>
-    <br><br>
+    <h3 align=\"center\" style=\"color: #000000\">Greetings ";
+        // line 23
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "username"), "html", null, true);
+        echo "!</h3>
+    <h4 align=\"center\" >Your profile is complete</h4>
+
 
     <p align=\"center\">Note: Your account will be ready to use once the NVS validates your information</p>
     <br>
 </div>
 <script src=\"";
-        // line 29
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/classie.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 30
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/stepsForm.js"), "html", null, true);
         echo "\"></script>
 <script>
@@ -98,7 +99,7 @@ class __TwigTemplate_f9011799668675305128c02149dd28346e3bcfcdb1902f4e00e02666fa0
 <br>
 <hr>
 <footer>
-    <p align=\"center\"><strong>Computer Science & Engineering Department, University of Moratuwa </strong>&copy; 2014
+    <p align=\"center\"><strong>National Volunteering Secretariat, Sri Lanka </strong>&copy; 2014
 </footer>
 </body>
 </html>
@@ -123,6 +124,6 @@ class __TwigTemplate_f9011799668675305128c02149dd28346e3bcfcdb1902f4e00e02666fa0
 
     public function getDebugInfo()
     {
-        return array (  74 => 30,  70 => 29,  58 => 20,  54 => 19,  45 => 13,  41 => 12,  37 => 11,  33 => 10,  29 => 9,  19 => 1,);
+        return array (  75 => 31,  71 => 30,  61 => 23,  54 => 19,  45 => 13,  41 => 12,  37 => 11,  33 => 10,  29 => 9,  19 => 1,);
     }
 }

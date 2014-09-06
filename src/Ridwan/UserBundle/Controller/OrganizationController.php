@@ -48,14 +48,14 @@ class OrganizationController extends Controller
         if ($form->isValid()) {
             $organization = $form->getData();
             $organization->setStatus(0);
-            $organization->setUserId($this->getUser()->getId());
+            $organization->setUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
             try {
                 $em->persist($organization);
                 $em->flush();
             } catch (\Exception $e) {
                 echo $e;
-                return $this->render('RidwanUserBundle:Welcome:personal.html.twig', array(
+                return $this->render('RidwanUserBundle:Welcome:organizationdetails.html.twig', array(
                         'form' =>$form->createView(),
                         'type' => 'E',
                         'message' => 'opz! something is wrong!',
@@ -65,7 +65,7 @@ class OrganizationController extends Controller
             }
             return $this->contactAction(new Request());
         }
-        return $this->render('RidwanUserBundle:Welcome:personal.html.twig', array(
+        return $this->render('RidwanUserBundle:Welcome:organizationdetails.html.twig', array(
                 'form' =>$form->createView()
             ));
     }
@@ -78,7 +78,7 @@ class OrganizationController extends Controller
         $contacts = new Organizationcontactdetails();
 
         $form = $this->createForm(new OrganizationcontactdetailsType(), $contacts, array(
-                'action' => $this->generateUrl('ridwan_user_volunteer_contacts'),
+                'action' => $this->generateUrl('ridwan_organization_contact'),
                 'attr' => array(
                     'class' => 'form-horizontal center'
                 )
@@ -90,31 +90,29 @@ class OrganizationController extends Controller
             $contacts = $form->getData();
             $contacts->setUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
+
+            $organization = $em->getRepository('RidwanEntityBundle:Organization')->findOneBy(array('user'=>$this->getUser()->getId()));
             try {
+
+                $contacts -> setUser($this->getUser());
+                $contacts -> setOrganization($organization);
                 $em->persist($contacts);
                 $em->flush();
             } catch (\Exception $e) {
-                return $this->render('RidwanUserBundle:Welcome:contact.html.twig', array(
+                echo $e;
+                return $this->render('RidwanUserBundle:Welcome:Organizationcontact.html.twig', array(
                         'form' =>$form->createView(),
                         'type' => 'E',
                         'message' => 'opz! something is wrong!',
                         'details' => $e->getMessage()
-
                     ));
-
             }
-
-            return $this->educationAction($request);
-
+            return $this->render('RidwanuserBundle:Welcome:completed.html.twig');
         }
 
-
-        return $this->render('RidwanUserBundle:Welcome:contact.html.twig', array(
+        return $this->render('RidwanUserBundle:Welcome:Organizationcontact.html.twig', array(
                 "form" => $form->createView()
             ));
-
-
-
     }
 
 }

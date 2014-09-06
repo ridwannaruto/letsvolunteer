@@ -10,17 +10,17 @@ use Doctrine\ORM\Mapping as ORM;
 class Availability
 {
     /**
-     * @var string
+     * @var text
      */
     private $days;
 
     /**
-     * @var string
+     * @var text
      */
     private $duration;
 
     /**
-     * @var string
+     * @var text
      */
     private $preferredtime;
 
@@ -38,7 +38,7 @@ class Availability
     /**
      * Set days
      *
-     * @param string $days
+     * @param text $days
      * @return Availability
      */
     public function setDays($days)
@@ -51,7 +51,7 @@ class Availability
     /**
      * Get days
      *
-     * @return string 
+     * @return text
      */
     public function getDays()
     {
@@ -61,7 +61,7 @@ class Availability
     /**
      * Set duration
      *
-     * @param string $duration
+     * @param text $duration
      * @return Availability
      */
     public function setDuration($duration)
@@ -74,7 +74,7 @@ class Availability
     /**
      * Get duration
      *
-     * @return string 
+     * @return text
      */
     public function getDuration()
     {
@@ -84,7 +84,7 @@ class Availability
     /**
      * Set preferredtime
      *
-     * @param string $preferredtime
+     * @param text $preferredtime
      * @return Availability
      */
     public function setPreferredtime($preferredtime)
@@ -97,7 +97,7 @@ class Availability
     /**
      * Get preferredtime
      *
-     * @return string 
+     * @return text
      */
     public function getPreferredtime()
     {

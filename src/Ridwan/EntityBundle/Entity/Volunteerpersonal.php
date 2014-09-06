@@ -12,12 +12,12 @@ class Volunteerpersonal
     /**
      * @var string
      */
-    private $preferredname;
+    private $firstname;
 
     /**
      * @var string
      */
-    private $fullname;
+    private $lastname;
 
     /**
      * @var string
@@ -61,49 +61,49 @@ class Volunteerpersonal
 
 
     /**
-     * Set preferredname
+     * Set firstname
      *
-     * @param string $preferredname
+     * @param string $firstname
      * @return Volunteerpersonal
      */
-    public function setPreferredname($preferredname)
+    public function setFirstname($firstname)
     {
-        $this->preferredname = $preferredname;
+        $this->firstname = $firstname;
 
         return $this;
     }
 
     /**
-     * Get preferredname
+     * Get firstname
      *
      * @return string 
      */
-    public function getPreferredname()
+    public function getFirstname()
     {
-        return $this->preferredname;
+        return $this->firstname;
     }
 
     /**
-     * Set fullname
+     * Set lastname
      *
-     * @param string $fullname
+     * @param string $lastname
      * @return Volunteerpersonal
      */
-    public function setFullname($fullname)
+    public function setLastname($lastname)
     {
-        $this->fullname = $fullname;
+        $this->lastname = $lastname;
 
         return $this;
     }
 
     /**
-     * Get fullname
+     * Get lastname
      *
      * @return string 
      */
-    public function getFullname()
+    public function getLastname()
     {
-        return $this->fullname;
+        return $this->lastname;
     }
 
     /**

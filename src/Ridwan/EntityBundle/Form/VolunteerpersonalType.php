@@ -15,8 +15,8 @@ class VolunteerpersonalType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('preferredname')
-            ->add('fullname')
+            ->add('firstname')
+            ->add('lastname')
             ->add('nicorpassport')
             ->add('gender', 'choice', array(
                     'choices' => array(

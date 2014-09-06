@@ -7,9 +7,9 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="days" type="string" column="days" length="7" nullable="false"/>
-    <field name="duration" type="string" column="duration" length="45" nullable="true"/>
-    <field name="preferredtime" type="string" column="preferredtime" length="45" nullable="true"/>
+    <field name="days" type="text" column="days"  nullable="false"/>
+    <field name="duration" type="text" column="duration"  nullable="true"/>
+    <field name="preferredtime" type="text" column="preferredtime"  nullable="true"/>
     <many-to-one field="user" target-entity="Volunteerpersonal">
       <join-columns>
         <join-column name="user" referenced-column-name="id"/>

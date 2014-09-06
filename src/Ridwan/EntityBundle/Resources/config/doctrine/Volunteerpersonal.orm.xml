@@ -8,8 +8,8 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="preferredname" type="string" column="preferredname" length="45" nullable="false"/>
-    <field name="fullname" type="string" column="fullname" length="90" nullable="false"/>
+    <field name="firstname" type="string" column="firstname" length="45" nullable="false"/>
+    <field name="lastname" type="string" column="lastname" length="90" nullable="false"/>
     <field name="nicorpassport" type="string" column="nicORpassport" length="45" nullable="false"/>
     <field name="gender" type="string" column="Gender" nullable="false"/>
     <field name="dateofbirth" type="datetime" column="dateofbirth" nullable="false"/>

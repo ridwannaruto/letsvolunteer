@@ -111,8 +111,7 @@
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="{{path('fos_user_security_logout')}}">Logout</a></li>
-                                                <li><a href="{{path('fos_user_profile_show')}}">Profile</a></li>
-                                                <li><a href="{{path('fos_user_change_password')}}">Settings</a></li>
+                                                <li><a href="{{path('fos_user_change_password')}}">Account</a></li>
                                             </ul>
 
                                         </div>
@@ -233,35 +232,6 @@
         {% endblock %}
         {% block dashboard %}
 
-            <div class="span2 main-menu-span">
-
-
-
-
-                <div class="well nav-collapse sidebar-nav">
-                    <p align="center">
-                        {%  if app.user.path %}
-                        <img src="{{app.user.path}}" width="150px" height="150px" style="border: 2px">
-                        {%  else  %}
-                        <img src="{{ asset('bundles/ridwansite/images/default.jpg') }}" width="150px" height="150px" style="border: 2px">
-                        {%  endif %}
-                        <br><br><strong>{{app.session.get('name')}}</strong>
-                    </p>
-                    <ul class="nav nav-tabs nav-stacked main-menu">
-
-                        <li class="nav-header hidden-tablet">Dashboard</li>
-                        <li><a class="ajax-link" href=""><i class="icon-home"></i><span class="hidden-tablet"> Home</span></a></li>
-
-                        <li><a class="ajax-link" href=""><i class="icon-eye-open"></i><span class="hidden-tablet"> Opportunities</span></a></li>
-
-                        <li><a class="ajax-link" href=""><i class="icon-edit"></i><span class="hidden-tablet"> Projects</span></a></li>
-                        <li><a class="ajax-link" href=""><i class="icon-list-alt"></i><span class="hidden-tablet"> Tasks</span></a></li>
-                        <li><a class="ajax-link" href=""><i class="icon-user"></i><span class="hidden-tablet"> Spiriters</span></a></li>
-
-
-                    </ul>
-                </div><!--/.well -->
-            </div><!--/span-->
         {% endblock %}
         <!-- left menu ends -->
 
@@ -310,7 +280,7 @@
 
         <hr>
         <footer>
-            <p class="center"><strong>Computer Science & Engineering Department, University of Moratuwa </strong>&copy; 2014
+            <p class="center"><strong>National Volunteering Secretariat, Sri Lanka </strong>&copy; 2014
         </footer>
 
         </div>

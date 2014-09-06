@@ -19,22 +19,22 @@ class SkillsType extends AbstractType
                     'expanded' => true,
                     'multiple' => true,
                     'choices'  => array(
-                        's1' => 'Photography',
-                        's2'  => 'Video and Graphic Design',
-                        's3'   => 'Teaching',
-                        's4'   => 'Consulting',
-                        's5'   => 'Team Management'
+                        'Photography' => 'Photography',
+                        'Video and Graphic Design'  => 'Video and Graphic Design',
+                        'Teaching'   => 'Teaching',
+                        'Consulting'   => 'Consulting',
+                        'Team Management'   => 'Team Management'
                     ),
                 ))
             ->add('causes', 'choice', array(
                     'expanded' => true,
                     'multiple' => true,
                     'choices'  => array(
-                        'c1' => 'Poverty Eradication',
-                        'c2'  => 'Education',
-                        'c3'   => 'Wild Life',
-                        'c4'   => 'Peace and Reconciliation',
-                        'c5'   => 'International Understanding '
+                        'Poverty Eradication' => 'Poverty Eradication',
+                        'Education'  => 'Education',
+                        'Wild Life'   => 'Wild Life',
+                        'Peace and Reconciliation'   => 'Peace and Reconciliation',
+                        'International Understanding '   => 'International Understanding '
                     ),
                 ))
             ->add('other','textarea',array(
@@ -47,11 +47,11 @@ class SkillsType extends AbstractType
                     'expanded' => true,
                     'multiple' => true,
                     'choices'  => array(
-                        'l1' => 'English',
-                        'l2'  => 'Sinhala',
-                        'l3'   => 'Tamil',
-                        'l4'   => 'Hindi',
-                        'l5'   => 'Spanish'
+                        'English' => 'English',
+                        'Sinhala'  => 'Sinhala',
+                        'Tamil'   => 'Tamil',
+                        'Hindi'   => 'Hindi',
+                        'Spanish'   => 'Spanish'
                     ),
                 ))
 

@@ -332,4 +332,62 @@ class Organizationcontactdetails
     {
         return $this->organization;
     }
+
+    /**
+     * @var integer
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \Ridwan\EntityBundle\Entity\Authentication $user
+     * @return Organizationcontactdetails
+     */
+    public function setUser(\Ridwan\EntityBundle\Entity\Authentication $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Ridwan\EntityBundle\Entity\Authentication
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @var integer
+     */
+    private $phone;
+
+    /**
+     * Set phone
+     *
+     * @param integer $phone
+     * @return Volunteercontactdetails
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get fax
+     *
+     * @return integer
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
 }

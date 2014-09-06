@@ -25,7 +25,10 @@ class __TwigTemplate_2bf632e133188a320d1fdb45a71272f4917635362f1aa0d67256c4b33bb
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     <title>Let's Volunteer Register</title>
 
-    <link rel=\"shortcut icon\" href=\"../favicon.ico\">
+    <link rel=\"icon\" type=\"image/x-icon\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
+        echo "\" />
     <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/css/normalize.css"), "html", null, true);
@@ -85,11 +88,11 @@ class __TwigTemplate_2bf632e133188a320d1fdb45a71272f4917635362f1aa0d67256c4b33bb
         }
         // line 43
         echo "<div class=\"container\">
-    <header class=\"codrops-header\">
+    <header class=\"codrops-header\" style=\"margin-bottom: -100px\">
         <img class=\"center\" src=\"";
         // line 45
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/logo3.png"), "html", null, true);
-        echo " \" width=\"400px\"/><br><br>
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/Logo.jpg"), "html", null, true);
+        echo " \" width=\"250px\"/><br><br>
 
     </header>
     <section>
@@ -135,7 +138,7 @@ class __TwigTemplate_2bf632e133188a320d1fdb45a71272f4917635362f1aa0d67256c4b33bb
         echo "\"></script>
 <hr>
 <footer>
-    <p align=\"center\"><strong>Computer Science & Engineering Department, University of Moratuwa </strong>&copy; 2014
+    <p align=\"center\"><strong>National Volunteering Secretariat, Sri Lanka </strong>&copy; 2014
 </footer>
 </body>
 </html>
@@ -156,6 +159,6 @@ class __TwigTemplate_2bf632e133188a320d1fdb45a71272f4917635362f1aa0d67256c4b33bb
 
     public function getDebugInfo()
     {
-        return array (  134 => 76,  108 => 53,  104 => 52,  100 => 50,  98 => 49,  91 => 45,  87 => 43,  69 => 28,  62 => 23,  60 => 22,  52 => 17,  47 => 15,  43 => 14,  39 => 13,  35 => 12,  31 => 11,  19 => 1,);
+        return array (  137 => 76,  111 => 53,  107 => 52,  103 => 50,  101 => 49,  94 => 45,  90 => 43,  72 => 28,  65 => 23,  63 => 22,  55 => 17,  50 => 15,  46 => 14,  42 => 13,  38 => 12,  34 => 11,  30 => 10,  19 => 1,);
     }
 }

@@ -18,8 +18,6 @@ class OrganizationType extends AbstractType
             ->add('name')
             ->add('branch')
             ->add('type')
-            ->add('registrationNumber')
-            ->add('previousProjects')
         ;
     }
     
