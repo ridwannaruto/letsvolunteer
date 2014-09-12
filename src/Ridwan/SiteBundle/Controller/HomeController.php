@@ -4,13 +4,13 @@ namespace Ridwan\SiteBundle\Controller;
 
 use Ridwan\SiteBundlle\Controller\AuthenticationController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Symfony\Component\HttpFoundation\Request;
 use Ridwan\EntityBundle\Entity\Organization;
 use Ridwan\EntityBundle\Entity\Availability;
 use Ridwan\EntityBundle\Form\AvailabilityType;
 class HomeController extends Controller
 {
-    public function homeAction()
+    public function homeAction(Request $request)
     {
         $user = $this->getUser();
         if ($user == null) {
@@ -19,40 +19,44 @@ class HomeController extends Controller
         $userRole = $user->getRoles()[0];
         switch ($userRole) {
         case 'VOLUNTEER':
-            return $this->volunteerHome();
+            return $this->volunteerHome($request);
         case 'ORGANIZATION':
-            return $this->organizationHome();
+            return $this->organizationHome($request);
         case 'NVS':
-            return $this->NVSHome();
-        case 'ADMIN':
-            return $this->adminHome();
+            return $this->NVSHome($request);
+        case 'ADMINISTRATOR':
+            return $this->adminHome($request);
         default:
-            return $this->errorHome();
+            return $this->specialHome($request);
         }
 
     }
 
-    private function volunteerHome()
+    private function volunteerHome(Request $request)
     {
         $volunteer = $this->getVolunteer();
         if ($volunteer) {
             $status = $volunteer->getStatus();
-            if ($status == 1) { //Email Verified
+            if ($status == 0) { //Email Verified
                 return $this->render('RidwanUserBundle:Welcome:volunteer.html.twig');
             }
 
-            if ($status == 2) { //Profile Completed
+            if ($status == 1) { //Profile Completed
                 return $this->render('RidwanUserBundle:Welcome:completed.html.twig');
             }
 
-            return $this->render('RidwanSiteBundle:Home:volunteer.html.twig', $this->generateVolunteerHome());
+            if ($status == 3) { //Profile Approved by NVS
+                return $this->render('RidwanSiteBundle:Home:volunteer.html.twig', $this->generateVolunteerHome($request));
+
+            }
+
 
         }
         return $this->render('RidwanUserBundle:Welcome:volunteer.html.twig');
 
     }
 
-    private function generateVolunteerHome(){
+    private function generateVolunteerHome(Request $request){
 
         $user = $this->getUser();
         $em = $this->getDoctrine()->getManager();
@@ -61,7 +65,9 @@ class HomeController extends Controller
         $eudcation = $em->getRepository('RidwanEntityBundle:Education')->findBy(array('user'=>$user));
         $employment = $em->getRepository('RidwanEntityBundle:Employment')->findBy(array('user'=>$user));
         $skills = $em->getRepository('RidwanEntityBundle:Skills')->findOneBy(array('user'=>$user));
+        $profile = $em->getRepository('RidwanEntityBundle:Profile')->findOneBy(array('user'=>$user));
         $availability = $em->getRepository('RidwanEntityBundle:Availability')->findOneBy(array('user'=>$user));
+
         $form = $this->createForm(
             new AvailabilityType(), $availability, array(
                 'method' => 'POST',
@@ -70,8 +76,10 @@ class HomeController extends Controller
                 )
             )
         );
-        return array ('personal' => $personalDetails, 'education' => $eudcation, 'employment' => $employment, 'contact' => $contactDetails, 'skills'=> $skills, 'availability'=>$form->createView());
+        return array ('personal' => $personalDetails, 'education' => $eudcation, 'employment' => $employment, 'contact' => $contactDetails, 'skills'=> $skills, 'profile' => $profile,'availability'=>$form->createView(),'message' => $request->get('message'), 'type' => $request->get('type'));
     }
+
+
 
     private function getVolunteer()
     {
@@ -85,33 +93,53 @@ class HomeController extends Controller
         return $repository->findOneBy(array("user" => $this->getUser()->getId()));
     }
 
-    private function organizationHome()
+    private function organizationHome(Request $request)
     {
         $organization = $this->getOrganization();
         if ($organization) {
             $status = $organization->getStatus();
-            if ($status == 1) { //Email Verified
+            if ($status == 0) { //Email Verified
                 return $this->render('RidwanUserBundle:Welcome:organization.html.twig');
             }
 
-            if ($status == 2) { //Profile Completed
+            if ($status == 1) { //Profile Completed
                 return $this->render('RidwanUserBundle:Welcome:completed.html.twig');
             }
 
-            return $this->render('RidwanSiteBundle:Home:organization.html.twig');
+            if ($status == 3) { //Profile Completed
+
+            return $this->render('RidwanSiteBundle:Home:organization.html.twig', array(
+                    'details' => $organization,
+                    'contact' => $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Organizationcontactdetails')->findOneBy(array('user'=>$this->getUser()->getId())),
+                    'message' => $request->get('message'), 'type' => $request->get('type')
+                ));
+            }
         }
+        return $this->render('RidwanUserBundle:Welcome:organization.html.twig');
 
 
     }
 
-    private function NVSHome()
+    private function NVSHome(Request $request)
     {
-        return $this->render('RidwanSiteBundle:Home:NVS.html.twig');
+        $volunteers = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>1));
+        $organizations = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>1));
+
+
+        return $this->render('RidwanSiteBundle:Home:NVS.html.twig', array('volunteers' => $volunteers,'message' => $request->get('message'), 'type' => $request->get('type')));
     }
 
-    private function adminHome()
+    private function adminHome(Request $request)
     {
-        return $this->render('RidwanSiteBundle:Home:admin.html.twig');
+        $volunteers = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>1));
+        $organizations = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>1));
+
+        return $this->render('RidwanSiteBundle:Home:admin.html.twig', array('volunteers' => $volunteers,'message' => $request->get('message'), 'type' => $request->get('type')));
+    }
+
+    private function SpecialHome(Request $request)
+    {
+        return $this->render('RidwanSiteBundle:Home:special.html.twig',array('message' => $request->get('message'), 'type' => $request->get('type')));
     }
 
 

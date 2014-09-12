@@ -7,7 +7,7 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="name" type="string" column="name" length="45" nullable="false"/>
+    <field name="name" type="string" column="name" nullable="false"/>
     <field name="branch" type="string" column="branch" length="45" nullable="false"/>
     <field name="type" type="string" column="type" length="45" nullable="true"/>
     <field name="previousprojects" type="text" column="previousprojects" nullable="true"/>

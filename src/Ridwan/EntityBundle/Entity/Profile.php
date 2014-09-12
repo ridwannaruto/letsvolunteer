@@ -52,6 +52,16 @@ class Profile
     /**
      * @var integer
      */
+    private $hours;
+
+    /**
+     * @var integer
+     */
+    private $value;
+
+    /**
+     * @var integer
+     */
     private $id;
 
     /**
@@ -245,6 +255,52 @@ class Profile
     }
 
     /**
+     * Set hours
+     *
+     * @param integer $hours
+     * @return Profile
+     */
+    public function setHours($hours)
+    {
+        $this->hours = $hours;
+
+        return $this;
+    }
+
+    /**
+     * Get hours
+     *
+     * @return integer
+     */
+    public function getHours()
+    {
+        return $this->hours;
+    }
+
+    /**
+     * Set value
+     *
+     * @param integer $value
+     * @return Profile
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get value
+     *
+     * @return integer
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
      * Get id
      *
      * @return integer 
@@ -257,10 +313,10 @@ class Profile
     /**
      * Set user
      *
-     * @param \Ridwan\EntityBundle\Entity\Volunteerpersonal $user
+     * @param \Ridwan\EntityBundle\Entity\Authentication $user
      * @return Profile
      */
-    public function setUser(\Ridwan\EntityBundle\Entity\Volunteerpersonal $user = null)
+    public function setUser(\Ridwan\EntityBundle\Entity\Authentication $user = null)
     {
         $this->user = $user;
 
@@ -270,7 +326,7 @@ class Profile
     /**
      * Get user
      *
-     * @return \Ridwan\EntityBundle\Entity\Volunteerpersonal 
+     * @return \Ridwan\EntityBundle\Entity\Authentication
      */
     public function getUser()
     {

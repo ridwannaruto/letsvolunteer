@@ -144,11 +144,10 @@ class OrganizationcontactdetailsController extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return  $this->render('RidwanEntityBundle:Organizationcontactdetails:edit.html.twig',array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
+            ));
     }
 
     /**
@@ -161,8 +160,9 @@ class OrganizationcontactdetailsController extends Controller
     private function createEditForm(Organizationcontactdetails $entity)
     {
         $form = $this->createForm(new OrganizationcontactdetailsType(), $entity, array(
-            'action' => $this->generateUrl('organizationcontactdetails_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('ridwan_organizationcontact_update', array('id' => $entity->getId())),
             'method' => 'PUT',
+                'attr' => array ('class' => 'form-horizontal center')
         ));
 
         $form->add('submit', 'submit', array('label' => 'Update'));
@@ -193,7 +193,7 @@ class OrganizationcontactdetailsController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('organizationcontactdetails_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ridwan_site_home', array('type' => 'S', 'message' => 'successfully updated your information')));
         }
 
         return array(
@@ -238,7 +238,7 @@ class OrganizationcontactdetailsController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('organizationcontactdetails_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('ridwan_organizationcontact_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

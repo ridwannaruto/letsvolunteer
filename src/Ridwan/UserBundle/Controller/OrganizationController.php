@@ -93,9 +93,10 @@ class OrganizationController extends Controller
 
             $organization = $em->getRepository('RidwanEntityBundle:Organization')->findOneBy(array('user'=>$this->getUser()->getId()));
             try {
-
+                $organization->setStatus(1);
                 $contacts -> setUser($this->getUser());
                 $contacts -> setOrganization($organization);
+                $em->persist($organization);
                 $em->persist($contacts);
                 $em->flush();
             } catch (\Exception $e) {

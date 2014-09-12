@@ -135,24 +135,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // ridwan_profile
-        if (0 === strpos($pathinfo, '/profile') && preg_match('#^/profile/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_profile')), array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\ProfileController::indexAction',));
-        }
+        if (0 === strpos($pathinfo, '/profile')) {
+            // ridwan_profile_photo
+            if ($pathinfo === '/profile/photo') {
+                return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\ProfileController::photoAction',  '_route' => 'ridwan_profile_photo',);
+            }
 
-        // ridwan_account
-        if ($pathinfo === '/account') {
-            return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\AccountController::indexAction',  '_route' => 'ridwan_account',);
-        }
+            // ridwan_profile_picture
+            if ($pathinfo === '/profilepicture') {
+                return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\ProfileController::pictureAction',  '_route' => 'ridwan_profile_picture',);
+            }
 
-        // ridwan_profile_edit
-        if ($pathinfo === '/editprofile') {
-            return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'ridwan_profile_edit',);
-        }
-
-        // ridwan_profile_picture
-        if ($pathinfo === '/profilepicture') {
-            return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\ProfileController::pictureAction',  '_route' => 'ridwan_profile_picture',);
         }
 
         // ridwan_user_volunteer_welcome
@@ -189,23 +182,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::contactAction',  '_route' => 'ridwan_user_volunteer_contacts',);
             }
 
-            if (0 === strpos($pathinfo, '/welcome/referee')) {
-                // ridwan_user_volunteer_referees
-                if ($pathinfo === '/welcome/referees') {
-                    return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::refereesAction',  '_route' => 'ridwan_user_volunteer_referees',);
-                }
-
-                // ridwan_user_volunteer_referee_add
-                if ($pathinfo === '/welcome/referee/add') {
-                    if ($this->context->getMethod() != 'POST') {
-                        $allow[] = 'POST';
-                        goto not_ridwan_user_volunteer_referee_add;
-                    }
-
-                    return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::AddrefereeAction',  '_route' => 'ridwan_user_volunteer_referee_add',);
-                }
-                not_ridwan_user_volunteer_referee_add:
-
+            // ridwan_user_volunteer_referees
+            if ($pathinfo === '/welcome/referees') {
+                return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\VolunteerController::refereesAction',  '_route' => 'ridwan_user_volunteer_referees',);
             }
 
         }
@@ -228,63 +207,70 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/task')) {
-            // ridwan_task_index
-            if ($pathinfo === '/tasks') {
-                return array (  '_controller' => 'RidwanTaskBundle:Task:index',  '_route' => 'ridwan_task_index',);
+        if (0 === strpos($pathinfo, '/profile')) {
+            // ridwan_profile_volunteer
+            if (0 === strpos($pathinfo, '/profile/volunteer') && preg_match('#^/profile/volunteer/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_profile_volunteer')), array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\ProfileController::volunteerAction',));
             }
 
-            if (0 === strpos($pathinfo, '/taskdetails')) {
-                // ridwan_task_details
-                if (preg_match('#^/taskdetails/(?P<taskID>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_task_details')), array (  '_controller' => 'RidwanTaskBundle:Task:detail',));
+            // ridwan_profile_organization
+            if (0 === strpos($pathinfo, '/profile/organization') && preg_match('#^/profile/organization/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_profile_organization')), array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\ProfileController::organizationAction',));
+            }
+
+            // ridwan_profile_referee
+            if (0 === strpos($pathinfo, '/profile/referee') && preg_match('#^/profile/referee/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_profile_referee')), array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\ProfileController::refereeAction',));
+            }
+
+        }
+
+        // ridwan_admin_users
+        if ($pathinfo === '/admin/users') {
+            return array (  '_controller' => 'Ridwan\\UserBundle\\Controller\\UserController::indexAction',  '_route' => 'ridwan_admin_users',);
+        }
+
+        if (0 === strpos($pathinfo, '/opportunit')) {
+            // ridwan_opportunity_index
+            if ($pathinfo === '/opportunities') {
+                return array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::indexAction',  '_route' => 'ridwan_opportunity_index',);
+            }
+
+            if (0 === strpos($pathinfo, '/opportunitydetails')) {
+                // ridwan_opportunity_details
+                if (preg_match('#^/opportunitydetails/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_details')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::detailAction',));
                 }
 
-                // ridwan_task_details_notification
-                if (preg_match('#^/taskdetails/(?P<taskID>[^/]++)/(?P<notificationID>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_task_details_notification')), array (  '_controller' => 'RidwanTaskBundle:Task:notification',));
+                // ridwan_opportunity_details_notification
+                if (preg_match('#^/opportunitydetails/(?P<opportunityID>[^/]++)/(?P<notificationID>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_details_notification')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::notificationAction',));
                 }
 
             }
 
         }
 
-        // ridwan_task_new
-        if ($pathinfo === '/newTask') {
-            return array (  '_controller' => 'RidwanTaskBundle:Task:newTask',  '_route' => 'ridwan_task_new',);
+        // ridwan_opportunity_new
+        if ($pathinfo === '/newopportunity') {
+            return array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::newopportunityAction',  '_route' => 'ridwan_opportunity_new',);
         }
 
-        // ridwan_task_edit
-        if (0 === strpos($pathinfo, '/editTask') && preg_match('#^/editTask/(?P<taskID>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_task_edit')), array (  '_controller' => 'RidwanTaskBundle:Task:editTask',));
+        // ridwan_opportunity_completePage
+        if (0 === strpos($pathinfo, '/feedbackopportunity') && preg_match('#^/feedbackopportunity/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_completePage')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::completePageAction',));
         }
 
-        // ridwan_task_delete
-        if (0 === strpos($pathinfo, '/deleteTask') && preg_match('#^/deleteTask/(?P<taskID>[^/]++)$#s', $pathinfo, $matches)) {
+        // ridwan_opportunity_complete
+        if (0 === strpos($pathinfo, '/completeopportunity') && preg_match('#^/completeopportunity/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
             if ($this->context->getMethod() != 'POST') {
                 $allow[] = 'POST';
-                goto not_ridwan_task_delete;
+                goto not_ridwan_opportunity_complete;
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_task_delete')), array (  '_controller' => 'RidwanTaskBundle:Task:deleteTask',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_complete')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::completeopportunityAction',));
         }
-        not_ridwan_task_delete:
-
-        // ridwan_task_completePage
-        if (0 === strpos($pathinfo, '/feedbackTask') && preg_match('#^/feedbackTask/(?P<taskID>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_task_completePage')), array (  '_controller' => 'RidwanTaskBundle:Task:completePage',));
-        }
-
-        // ridwan_task_complete
-        if (0 === strpos($pathinfo, '/completeTask') && preg_match('#^/completeTask/(?P<taskID>[^/]++)$#s', $pathinfo, $matches)) {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_ridwan_task_complete;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_task_complete')), array (  '_controller' => 'RidwanTaskBundle:Task:completeTask',));
-        }
-        not_ridwan_task_complete:
+        not_ridwan_opportunity_complete:
 
         if (0 === strpos($pathinfo, '/project')) {
             // ridwan_project_index
@@ -414,6 +400,81 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/o')) {
+            if (0 === strpos($pathinfo, '/organization')) {
+                // ridwan_organization_edit
+                if (preg_match('#^/organization/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_organization_edit')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\OrganizationController::editAction',));
+                }
+
+                // ridwan_organization_update
+                if (preg_match('#^/organization/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_organization_update')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\OrganizationController::updateAction',));
+                }
+
+                // ridwan_organization_delete
+                if (preg_match('#^/organization/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_organization_delete')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\OrganizationController::deleteAction',));
+                }
+
+                if (0 === strpos($pathinfo, '/organization/contact')) {
+                    // ridwan_organizationcontact_edit
+                    if (preg_match('#^/organization/contact/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_organizationcontact_edit')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\OrganizationcontactdetailsController::editAction',));
+                    }
+
+                    // ridwan_organizationcontact_update
+                    if (preg_match('#^/organization/contact/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_organizationcontact_update')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\OrganizationcontactdetailsController::updateAction',));
+                    }
+
+                    // ridwan_organizationcontact_delete
+                    if (preg_match('#^/organization/contact/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_organizationcontact_delete')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\OrganizationcontactdetailsController::deleteAction',));
+                    }
+
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/opportunity')) {
+                // ridwan_opportunity_edit
+                if (preg_match('#^/opportunity/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_edit')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\OpportunitiesController::editAction',));
+                }
+
+                // ridwan_opportunity_update
+                if (preg_match('#^/opportunity/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_update')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\OpportunitiesController::updateAction',));
+                }
+
+                // ridwan_opportunity_delete
+                if (preg_match('#^/opportunity/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_delete')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\OpportunitiesController::deleteAction',));
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/profile')) {
+            // ridwan_profile_edit
+            if (preg_match('#^/profile/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_profile_edit')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\ProfileController::editAction',));
+            }
+
+            // ridwan_profile_update
+            if (preg_match('#^/profile/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_profile_update')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\ProfileController::updateAction',));
+            }
+
+            // ridwan_profile_delete
+            if (preg_match('#^/profile/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_profile_delete')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\ProfileController::deleteAction',));
+            }
+
+        }
+
         // ridwan_site_home
         if ($pathinfo === '/home') {
             return array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\HomeController::homeAction',  '_route' => 'ridwan_site_home',);
@@ -472,6 +533,58 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_auth_checkEmail')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\AuthenticationController::checkEmailAction',));
             }
             not_ridwan_auth_checkEmail:
+
+        }
+
+        if (0 === strpos($pathinfo, '/approve')) {
+            // ridwan_site_approve_volunteer
+            if (0 === strpos($pathinfo, '/approve/volunteer') && preg_match('#^/approve/volunteer/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_approve_volunteer')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\ApprovalController::volunteerAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/approve/o')) {
+                // ridwan_site_approve_organization
+                if (0 === strpos($pathinfo, '/approve/organization') && preg_match('#^/approve/organization/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_approve_organization')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\ApprovalController::organizationAction',));
+                }
+
+                // ridwan_site_approve_opportunity
+                if (0 === strpos($pathinfo, '/approve/opportunity') && preg_match('#^/approve/opportunity/(?P<opID>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_approve_opportunity')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\ApprovalController::opportunityAction',));
+                }
+
+            }
+
+            // ridwan_site_approve_referee
+            if (0 === strpos($pathinfo, '/approve/referee') && preg_match('#^/approve/referee/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_approve_referee')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\ApprovalController::refereeAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/reject')) {
+            // ridwan_site_reject_volunteer
+            if (0 === strpos($pathinfo, '/reject/volunteer') && preg_match('#^/reject/volunteer/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_reject_volunteer')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\RejectionController::volunteerAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/reject/o')) {
+                // ridwan_site_reject_organization
+                if (0 === strpos($pathinfo, '/reject/organization') && preg_match('#^/reject/organization/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_reject_organization')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\RejectionController::organizationAction',));
+                }
+
+                // ridwan_site_reject_opportunity
+                if (0 === strpos($pathinfo, '/reject/opportunity') && preg_match('#^/reject/opportunity/(?P<opID>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_reject_opportunity')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\RejectionController::opportunityAction',));
+                }
+
+            }
+
+            // ridwan_site_reject_referee
+            if (0 === strpos($pathinfo, '/reject/referee') && preg_match('#^/reject/referee/(?P<userID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_reject_referee')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\RejectionController::refereeAction',));
+            }
 
         }
 

@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Opportunities
 {
+
     /**
      * @var string
      */
@@ -17,7 +18,17 @@ class Opportunities
     /**
      * @var string
      */
+    private $cause;
+
+    /**
+     * @var string
+     */
     private $description;
+
+    /**
+     * @var string
+     */
+    private $location;
 
     /**
      * @var string
@@ -38,6 +49,11 @@ class Opportunities
      * @var integer
      */
     private $numberofvolunteers;
+
+    /**
+     * @var integer
+     */
+    private $status;
 
     /**
      * @var string
@@ -80,9 +96,57 @@ class Opportunities
     private $id;
 
     /**
-     * @var \Ridwan\EntityBundle\Entity\Project
+     * @var integer
      */
-    private $project;
+
+    private $organization;
+
+
+    /**
+     * Set organization
+     *
+     * @param integer $organization
+     * @return Opportunities
+     */
+    public function setOrganization($organization)
+    {
+        $this->organization = $organization;
+        return $this;
+    }
+
+    /**
+     * Get organization
+     *
+     * @return integer
+     */
+
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return Project
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 
 
     /**
@@ -109,6 +173,29 @@ class Opportunities
     }
 
     /**
+     * Set location
+     *
+     * @param string $location
+     * @return Opportunities
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    /**
+     * Get location
+     *
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
      * Set description
      *
      * @param string $description
@@ -129,6 +216,30 @@ class Opportunities
     public function getDescription()
     {
         return $this->description;
+    }
+
+
+    /**
+     * Set cause
+     *
+     * @param string $cause
+     * @return Project
+     */
+    public function setCause($cause)
+    {
+        $this->cause = $cause;
+
+        return $this;
+    }
+
+    /**
+     * Get cause
+     *
+     * @return string
+     */
+    public function getCause()
+    {
+        return $this->cause;
     }
 
     /**
@@ -394,26 +505,5 @@ class Opportunities
         return $this->id;
     }
 
-    /**
-     * Set project
-     *
-     * @param \Ridwan\EntityBundle\Entity\Project $project
-     * @return Opportunities
-     */
-    public function setProject(\Ridwan\EntityBundle\Entity\Project $project = null)
-    {
-        $this->project = $project;
 
-        return $this;
-    }
-
-    /**
-     * Get project
-     *
-     * @return \Ridwan\EntityBundle\Entity\Project 
-     */
-    public function getProject()
-    {
-        return $this->project;
-    }
 }

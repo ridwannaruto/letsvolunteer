@@ -15,7 +15,9 @@
     <field name="arrested" type="text" column="arrested" nullable="true"/>
     <field name="aggregatedrating" type="smallint" column="aggregatedRating" nullable="true"/>
     <field name="totalweight" type="integer" column="totalWeight" nullable="true"/>
-    <many-to-one field="user" target-entity="Volunteerpersonal">
+      <field name="hours" type="integer" column="hours" nullable="true"/>
+      <field name="value" type="integer" column="value" nullable="true"/>
+    <many-to-one field="user" target-entity="Authentication">
       <join-columns>
         <join-column name="user" referenced-column-name="id"/>
       </join-columns>

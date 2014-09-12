@@ -3,23 +3,12 @@
   <entity name="Ridwan\EntityBundle\Entity\RefereeAndUser" table="Referee_User">
     <indexes>
         <index name="IDX_997F1D6D8D93D649" columns="user"/>
-        <index name="Referee_User_ibfk_2" columns="referee1"/>
-        <index name="Referee_User_ibfk_1" columns="referee2"/>
     </indexes>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
 
-    <many-to-one field="referee1" target-entity="Referees">
-      <join-columns>
-        <join-column name="referee1" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
-      <many-to-one field="referee2" target-entity="Referees">
-          <join-columns>
-              <join-column name="referee2" referenced-column-name="id"/>
-          </join-columns>
-      </many-to-one>
+      <field name="referees" type="text" column="referees" nullable="false"/>
     <many-to-one field="user" target-entity="Authentication">
       <join-columns>
         <join-column name="user" referenced-column-name="id"/>

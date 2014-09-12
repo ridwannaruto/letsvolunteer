@@ -12,5 +12,6 @@
     <field name="contactnumber" type="smallint" column="contactnumber" nullable="false"/>
     <field name="email" type="string" column="email" length="45" nullable="false"/>
     <field name="mobilenumber" type="smallint" column="mobilenumber" nullable="false"/>
+      <field name="user" type="integer" column="user" nullable="false"/>
   </entity>
 </doctrine-mapping>

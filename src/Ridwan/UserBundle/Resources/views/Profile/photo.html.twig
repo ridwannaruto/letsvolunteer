@@ -1,4 +1,4 @@
-{%  extends "MoraspiritStyleBundle:basic:basic.html.twig" %}
+{%  extends "::base.html.twig" %}
 
 
 {% trans_default_domain 'FOSUserBundle' %}
@@ -32,9 +32,13 @@
                                        
 					
                                                 <div class="propic" >
-                                            <img src="{{user.path}}" width="300" height="300"></h2>
+                                                    {%  if app.user.path %}
+                                                        <img src="{{app.user.path}}" width="300px" height="300px" style="border: 2px">
+                                                    {%  else  %}
+                                                        <img src="{{ asset('bundles/ridwansite/images/default.jpg') }}" width="300px" height="300px" style="border: 2px">
+                                                    {%  endif %}
                                                 </div> <br>
-                                                <form action="{{ path('moraspirit_profile_picture') }}" method="post" {{ form_enctype(form) }}>
+                                                <form action="{{ path('ridwan_profile_photo') }}" method="post" {{ form_enctype(form) }}>
                                                     please upload a high quality photo in the resolution of 400 x 400<br>
                                                     {{ form_widget(form) }}
                                                     <br>

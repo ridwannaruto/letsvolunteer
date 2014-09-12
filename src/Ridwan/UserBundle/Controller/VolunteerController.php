@@ -3,6 +3,8 @@
 namespace Ridwan\UserBundle\Controller;
 
 
+use Ridwan\EntityBundle\Entity\RefereeAndUser;
+use Ridwan\EntityBundle\Form\RefereeAndUserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ridwan\EntityBundle\Entity\Volunteerpersonal;
 use Ridwan\EntityBundle\Form\VolunteerpersonalType;
@@ -15,10 +17,8 @@ use Ridwan\EntityBundle\Form\EmploymentType;
 use Ridwan\EntityBundle\Entity\Skills;
 use Ridwan\EntityBundle\Form\SkillsType;
 use Ridwan\EntityBundle\Entity\Referees;
-use Ridwan\EntityBundle\Entity\RefereeAndUser;
 use Ridwan\EntityBundle\Form\RefereesType;
-use Ridwan\EntityBundle\Form\RefereeAndUserType;
-
+use Ridwan\EntityBundle\Entity\Profile;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -57,7 +57,7 @@ class VolunteerController extends Controller
     private function check($repositoryname)
     {
         $repository = $this->getDoctrine()->getManager()->getRepository($repositoryname);
-        return $repository->findOneBy(array("user" => $this->getUser()->getId()));
+        return $repository->findOneBy(array("user" => $this->getUser()));
     }
 
 
@@ -86,7 +86,7 @@ class VolunteerController extends Controller
                 $em->persist($volunteer);
                 $em->flush();
             } catch (\Exception $e) {
-                echo $e;
+               // echo $e;
                 return $this->render(
                     'RidwanUserBundle:Welcome:personal.html.twig', array(
                         'form' => $form->createView(),
@@ -325,90 +325,56 @@ class VolunteerController extends Controller
 
     public function RefereesAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $database = $em->getRepository('RidwanEntityBundle:Referees')->findBy(array('user'=>$this->getUser()->getId()));
 
-        $user_referee = new RefereeAndUser();
-        $referee = new Referees();
+        $referee1 = new Referees();
+        $referee1->setUser($this->getUser());
+        $referee2 = new Referees();
+        $referee2->setUser($this->getUser());
+
+        $entity = new RefereeAndUser();
+        $entity->getReferees()->add($referee1);
+        $entity->getReferees()->add($referee2);
+
         $form = $this->createForm(
-            new RefereeAndUserType(), $user_referee, array(
+            new RefereeAndUserType(), $entity, array(
                 'action' => $this->generateUrl('ridwan_user_volunteer_referees'),
+                'method' => 'POST',
                 'attr' => array(
                     'class' => 'form-horizontal center'
                 )
             )
         );
 
-        $form2 = $this->createForm(
-            new RefereesType(), $referee, array(
-                'action' => $this->generateUrl('ridwan_user_volunteer_referee_add'),
-                'method' => 'POST',
-                'attr' => array(
-                    'class' => 'ac-custom ac-checkbox ac-cross  ac-fill'
-                )
-            )
-        );
 
         $form->handleRequest($request);
         if ($form->isValid()) {
-            $user_referee = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            try {
-                $user_referee->setUser($this->getUser());
-                $em->persist($user_referee);
-                $em->flush();
-            } catch (\Exception $e) {
-                return $this->render(
-                    'RidwanUserBundle:Welcome:referees.html.twig', array(
-                        'form' => $form->createView(),
-                        'type' => 'E',
-                        'message' => $e->getMessage(),
-                        'details' => $e->getMessage(),
-                        'form2' => $form2->createView()
+            $entity = $form->getData();
+            $entity->setUser($this->getUser());
+            $volunteer = $em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findOneBy(array('user'=>$this->getUser()->getId()));
+            $volunteer->setStatus(1);
+            $em->persist($volunteer);
 
-                    )
-                );
-            }
+            $profile = new Profile();
+            $profile->setUser($this->getUser());
+            $em->persist($entity);
+            $em->persist($profile);
+            $em->flush();
+
 
             return $this->render('RidwanUserBundle:Welcome:completed.html.twig');
         }
 
         return $this->render(
             'RidwanUserBundle:Welcome:referees.html.twig', array(
-                'form' => $form->createView(),
-                'form2' => $form2->createView()
+                'database' => $database,
+                'form' => $form->createView()
             )
         );
 
     }
 
-    public function AddRefereeAction(Request $request)
-    {
 
-        $referee = new Referees();
-        $form = $this->createForm(
-            new RefereesType(), $referee, array(
-                'action' => $this->generateUrl('ridwan_user_volunteer_referee_add'),
-                'method' => 'POST',
-                'attr' => array(
-                    'class' => 'ac-custom ac-checkbox ac-cross  ac-fill'
-                )
-            )
-        );
-
-        $form->handleRequest($request);
-        if ($form->isValid()) {
-            $referee = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            try {
-                $em->persist($referee);
-                $em->flush();
-            } catch (\Exception $e) {
-
-            }
-
-
-        }
-
-        return $this->RefereesAction(new Request());
-    }
 
 }

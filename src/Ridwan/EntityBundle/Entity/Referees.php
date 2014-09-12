@@ -164,4 +164,33 @@ class Referees
     {
         return $this->id;
     }
+
+    /**
+     * @var integer
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param integer $user
+     * @return Volunteercontactdetails
+     */
+    public function setUser( $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return integer
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

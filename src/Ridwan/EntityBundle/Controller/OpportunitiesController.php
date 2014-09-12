@@ -144,11 +144,11 @@ class OpportunitiesController extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return  $this->render('RidwanEntityBundle:Opportunities:edit.html.twig',array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        );
+        ));
     }
 
     /**
@@ -161,8 +161,9 @@ class OpportunitiesController extends Controller
     private function createEditForm(Opportunities $entity)
     {
         $form = $this->createForm(new OpportunitiesType(), $entity, array(
-            'action' => $this->generateUrl('opportunities_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('ridwan_opportunity_update', array('id' => $entity->getId())),
             'method' => 'PUT',
+            'attr' => array ('class'  => 'form-horizontal center')
         ));
 
         $form->add('submit', 'submit', array('label' => 'Update'));
@@ -193,7 +194,7 @@ class OpportunitiesController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('opportunities_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ridwan_opportunity_details', array('opportunityID'=>$id,'type' => 'S', 'message' => 'successfully updated your information')));
         }
 
         return array(
@@ -220,12 +221,17 @@ class OpportunitiesController extends Controller
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Opportunities entity.');
             }
+            try{
+                $em->remove($entity);
+                $em->flush();
+            }
+            catch(\Exception $e){
+                echo $e;
+            }
+            return $this->redirect($this->generateUrl('ridwan_opportunity_index',array('type' => 'S', 'message' => 'successfully deleted your opportunity')));
 
-            $em->remove($entity);
-            $em->flush();
         }
-
-        return $this->redirect($this->generateUrl('opportunities'));
+        return $this->redirect($this->generateUrl('ridwan_opportunity_details',array('opportunityID'=>$id,'type' => 'E', 'message' => 'could not delete your opportunity')));
     }
 
     /**
@@ -238,7 +244,7 @@ class OpportunitiesController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('opportunities_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('ridwan_opportunity_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

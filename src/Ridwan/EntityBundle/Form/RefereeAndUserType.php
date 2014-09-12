@@ -5,7 +5,7 @@ namespace Ridwan\EntityBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-
+use Ridwan\EntityBundle\Form\RefereesType;
 class RefereeAndUserType extends AbstractType
 {
         /**
@@ -16,28 +16,9 @@ class RefereeAndUserType extends AbstractType
     {
         $builder
 
-            ->add('referee1', 'entity', array(
-                    'label' => 'Referee 1',
-                    'class' => 'RidwanEntityBundle:Referees',
-                    'property' => 'name',
-                    'label_attr' => array('class' => 'control-label'),
-                    'attr' => array(
-                        'class' => 'controls',
-                        'data-rel' => 'chosen'
-                    )
-
-                ))
-
-            ->add('referee2', 'entity', array(
-                    'label' => 'Referee 1',
-                    'class' => 'RidwanEntityBundle:Referees',
-                    'property' => 'name',
-                    'label_attr' => array('class' => 'control-label'),
-                    'attr' => array(
-                        'class' => 'controls',
-                        'data-rel' => 'chosen'
-                    )
-
+            ->add('referees', 'collection', array(
+                    'type' => new RefereesType(),
+                    'attr' => array ('class' => 'form-horizontal center')
                 ))
 
 

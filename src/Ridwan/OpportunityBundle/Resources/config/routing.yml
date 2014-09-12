@@ -1,34 +1,26 @@
-ridwan_task_index:
-    pattern:  /tasks
-    defaults: { _controller: RidwanTaskBundle:Task:index }  
+ridwan_opportunity_index:
+    pattern:  /opportunities
+    defaults: { _controller: RidwanOpportunityBundle:Opportunity:index }
     
-ridwan_task_details:
-    pattern:  /taskdetails/{taskID}
-    defaults: { _controller: RidwanTaskBundle:Task:detail } 
+ridwan_opportunity_details:
+    pattern:  /opportunitydetails/{opportunityID}
+    defaults: { _controller: RidwanOpportunityBundle:Opportunity:detail }
     
-ridwan_task_details_notification:
-    pattern:  /taskdetails/{taskID}/{notificationID}
-    defaults: { _controller: RidwanTaskBundle:Task:notification }
+ridwan_opportunity_details_notification:
+    pattern:  /opportunitydetails/{opportunityID}/{notificationID}
+    defaults: { _controller: RidwanOpportunityBundle:Opportunity:notification }
     
-ridwan_task_new:
-    pattern:  /newTask
-    defaults: { _controller: RidwanTaskBundle:Task:newTask } 
+ridwan_opportunity_new:
+    pattern:  /newopportunity
+    defaults: { _controller: RidwanOpportunityBundle:Opportunity:newopportunity }
+
     
-ridwan_task_edit:
-    pattern:  /editTask/{taskID}
-    defaults: { _controller: RidwanTaskBundle:Task:editTask } 
+ridwan_opportunity_completePage:
+    pattern:  /feedbackopportunity/{opportunityID}
+    defaults: { _controller: RidwanOpportunityBundle:Opportunity:completePage }
     
-ridwan_task_delete:
-    pattern:  /deleteTask/{taskID}
-    defaults: { _controller: RidwanTaskBundle:Task:deleteTask } 
-    methods: POST
-    
-ridwan_task_completePage:
-    pattern:  /feedbackTask/{taskID}
-    defaults: { _controller: RidwanTaskBundle:Task:completePage }
-    
-ridwan_task_complete:
-    pattern:  /completeTask/{taskID}
-    defaults: { _controller: RidwanTaskBundle:Task:completeTask } 
+ridwan_opportunity_complete:
+    pattern:  /completeopportunity/{opportunityID}
+    defaults: { _controller: RidwanOpportunityBundle:Opportunity:completeopportunity }
     methods: POST
     

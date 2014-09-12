@@ -1,19 +1,21 @@
-{% extends 'RidwanUserBundle:Welcome:index2.html.twig' %}
+{% extends '::base.html.twig' %}
+{% block dashboard %}
+{% endblock %}
 
 {% block content %}
-<div id="content" class="span10">
 
-    <div class="row-fluid">
-    <br><br>
-    <div>
-            <h1 style="color: white">Employment Details</h1>
-    </div>
-    <br><br>
-    <div class="pull-right">
-        <a><button class="btn-new btn btn-round btn-success"><i class="icon-plus"></i> Add work details </button></a>
-        <a><button class="btn-continue btn btn-round btn-warning"> Continue <i class="icon-arrow-right"></i> </button></a>
-    </div>
-    <div class="box span12">
+    <div id="content" class="span10">
+
+        <div class="row-fluid">
+            <br>
+            <h1>Employment Details</h1>
+
+    <hr><div class="pull-right">
+                <a><button class="btn-new btn btn-round btn-primary"><i class="icon-plus"></i> Add Qualification </button></a>
+                <a><button class="btn-continue btn btn-round btn-success"><i class="icon-arrow-right"></i> Continue  </button></a>
+            </div>
+            <br><br>
+
 
     <div class="box-content">
 
@@ -49,7 +51,7 @@
         </tbody>
     </table>
         </div>
-    </div>
+
     </div>
 
 </div>

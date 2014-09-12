@@ -12,7 +12,7 @@
     <field name="lastname" type="string" column="lastname" length="90" nullable="false"/>
     <field name="nicorpassport" type="string" column="nicORpassport" length="45" nullable="false"/>
     <field name="gender" type="string" column="Gender" nullable="false"/>
-    <field name="dateofbirth" type="datetime" column="dateofbirth" nullable="false"/>
+    <field name="dateofbirth" type="text" column="dateofbirth" nullable="false"/>
     <field name="nationality" type="string" column="Nationality" length="45" nullable="false"/>
     <field name="category" type="string" column="Category" length="45" nullable="false"/>
     <field name="civilstatus" type="boolean" column="CivilStatus" nullable="false"/>

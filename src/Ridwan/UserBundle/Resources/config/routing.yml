@@ -1,11 +1,7 @@
-ridwan_profile:
-    pattern:  /profile/{userID}
-    defaults: { _controller: RidwanUserBundle:Profile:index }  
-    
-ridwan_account:
-    pattern:  /account
-    defaults: { _controller: RidwanUserBundle:Account:index }  
-    
+ridwan_profile_photo:
+    pattern:  /profile/photo
+    defaults: { _controller: RidwanUserBundle:Profile:photo }
+
 ridwan_profile_edit:
     pattern:  /editprofile
     defaults: { _controller: RidwanUserBundle:Profile:edit }  
@@ -42,11 +38,6 @@ ridwan_user_volunteer_referees:
     pattern: /welcome/referees
     defaults: {_controller: RidwanUserBundle:Volunteer:referees}
 
-ridwan_user_volunteer_referee_add:
-    pattern: /welcome/referee/add
-    defaults: {_controller: RidwanUserBundle:Volunteer:Addreferee}
-    methods: POST
-
 ridwan_organization_welcome:
     pattern: /organization/welcome
     defaults: {_controller: RidwanUserBundle:Organization:welcome}
@@ -58,5 +49,21 @@ ridwan_organization_details:
 ridwan_organization_contact:
     pattern: /organization/contact
     defaults: {_controller: RidwanUserBundle:Organization:contact}
+
+ridwan_profile_volunteer:
+    pattern: /profile/volunteer/{userID}
+    defaults: {_controller: RidwanUserBundle:Profile:volunteer}
+
+ridwan_profile_organization:
+    pattern: /profile/organization/{userID}
+    defaults: {_controller: RidwanUserBundle:Profile:organization}
+
+ridwan_profile_referee:
+    pattern: /profile/referee/{userID}
+    defaults: {_controller: RidwanUserBundle:Profile:referee}
+
+ridwan_admin_users:
+    pattern: /admin/users
+    defaults: {_controller: RidwanUserBundle:User:index}
 
 

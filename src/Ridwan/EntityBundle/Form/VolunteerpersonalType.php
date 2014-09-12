@@ -25,7 +25,15 @@ class VolunteerpersonalType extends AbstractType
                     )
 
                 ))
-            ->add('dateofbirth')
+            ->add('dateofbirth', 'text', array(
+                    'label_attr' => array('class' => 'control-label'),
+                    'label' => 'Date',
+                    'attr' => array(
+                        'placeholder' => 'date',
+                        'class' => 'input-large datepicker',
+                        'data' => \Date('today'),
+                    )
+                ))
             ->add('nationality')
             ->add('category', 'choice', array(
                     'choices' => array(

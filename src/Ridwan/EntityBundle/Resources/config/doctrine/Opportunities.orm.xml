@@ -8,10 +8,12 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="title" type="string" column="title" length="45" nullable="false"/>
+    <field name="cause" type="string" column="cause" length="45" nullable="false"/>
     <field name="description" type="text" column="description" nullable="false"/>
+    <field name="location" type="text" column="location" nullable="false"/>
     <field name="shortdescription" type="text" column="shortdescription" nullable="true"/>
-    <field name="startdate" type="datetime" column="startdate" nullable="true"/>
-    <field name="enddate" type="datetime" column="enddate" nullable="true"/>
+    <field name="startdate" type="text" column="startdate" nullable="true"/>
+    <field name="enddate" type="text" column="enddate" nullable="true"/>
     <field name="numberofvolunteers" type="integer" column="numberofvolunteers" nullable="false"/>
     <field name="agegroup" type="string" column="agegroup" length="2" nullable="true"/>
     <field name="training" type="text" column="training" nullable="true"/>
@@ -19,11 +21,9 @@
     <field name="difficulty" type="string" column="difficulty" length="2" nullable="false"/>
     <field name="systemmatch" type="text" column="systemMatch" nullable="true"/>
     <field name="interested" type="text" column="interested" nullable="true"/>
+    <field name="organization" type="integer" column="organization"/>
+    <field name="status" type="integer" column="status"/>
     <field name="enrolled" type="text" column="enrolled" nullable="true"/>
-    <many-to-one field="project" target-entity="Project">
-      <join-columns>
-        <join-column name="project" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
+
   </entity>
 </doctrine-mapping>

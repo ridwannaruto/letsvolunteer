@@ -1,13 +1,13 @@
-{%  extends "MoraspiritStyleBundle:basic:basic.html.twig" %}
+{%  extends "::base.html.twig" %}
 
 
 {% block content %}
 <div id="content" class="span10">
 
-        {% if app.session.get('access') == 'Admin'%}
+    {% if app.user.roles[0] == 'ORGANIZATION' %}
     <div class="row-fluid">
         <div class="pull-right">
-            <a href="{{path('moraspirit_project_new')}}"><button class="btn btn-round btn-success"><i class="icon-plus"></i> New Project </button></a>
+            <a href="{{path('ridwan_project_new')}}"><button class="btn btn-round btn-success"><i class="icon-plus"></i> New Project </button></a>
            
         </div>
     </div><br>
@@ -45,17 +45,17 @@
 							   {% for project in IProjects %}
                         <tr>
                             <td>
-                                <a href="{{path('moraspirit_project_details',{'projectID':project.id})}}" >{{project.name}} </a>
+                                <a href="{{path('ridwan_project_details',{'projectID':project.id})}}" >{{project.name}} </a>
                             </td>
                             <td class="center">
-                                {{project.objectives}}
+                                {{project.cause}}
                             </td>
                             <td class="center"> 
                                 {{project.description}}
                             </td>
                             
                             <td class="center"> 
-                                {{project.due}}
+                                {{project.proposedenddate}}
                             </td>
                                                                  
                         </tr>

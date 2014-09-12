@@ -1,12 +1,12 @@
-{%  extends "MoraspiritStyleBundle:basic:basic.html.twig" %}
+{%  extends "::base.html.twig" %}
 {% block dashboard %}
 {% endblock %}
 {% block content %}
 <br><br><br><br><br><br>
 <div class="alert alert-error center span8">
-    
-    <strong>Error</strong> <br>Ops! Something went wrong. Please contact admin if problem persists. <br><br>
-    <strong>Message:</strong>{{message}}
+
+    <h3 style="color: darkred"> <strong>Error</strong></h3> <br><h6>Ops! Something went wrong. Please contact admin if problem persists.</h6> <br><br>
+    <h6>Message</h6>{{message}}
 </div>
 <br>
 <br><br><br><br><br><br>

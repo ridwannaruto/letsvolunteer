@@ -17,6 +17,12 @@ class Project
     /**
      * @var string
      */
+    private $name;
+
+
+    /**
+     * @var string
+     */
     private $description;
 
     /**
@@ -76,6 +82,29 @@ class Project
     public function getCause()
     {
         return $this->cause;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Project
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**

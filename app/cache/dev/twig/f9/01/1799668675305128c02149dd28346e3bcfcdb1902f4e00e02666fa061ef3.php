@@ -7,108 +7,57 @@ class __TwigTemplate_f9011799668675305128c02149dd28346e3bcfcdb1902f4e00e02666fa0
     {
         parent::__construct($env);
 
-        $this->parent = false;
+        $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
+            'dashboard' => array($this, 'block_dashboard'),
+            'content' => array($this, 'block_content'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "::base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "
-<!DOCTYPE html>
-<html lang=\"en\" class=\"no-js\">
-<head>
-    <meta charset=\"UTF-8\" />
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <title>Let's Volunteer Register</title>
-    <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 10
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/css/normalize.css"), "html", null, true);
-        echo "\"/>
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/css/demo.css"), "html", null, true);
-        echo "\"/>
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 12
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/css/component.css"), "html", null, true);
-        echo "\"/>
-    <script src=\"";
-        // line 13
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/modernizr.custom.js"), "html", null, true);
-        echo "\"></script>
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
 
-</head>
-<body>
-<div class=\"container\">
+    // line 3
+    public function block_dashboard($context, array $blocks = array())
+    {
+    }
+
+    // line 6
+    public function block_content($context, array $blocks = array())
+    {
+        // line 7
+        echo "<div class=\"container\">
     <header class=\"codrops-header\">
         <img class=\"center\" src=\"";
-        // line 19
+        // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/images/Logo.jpg"), "html", null, true);
         echo " \" width=\"250px\"/>
 
     </header>
 
+    <br>
     <h3 align=\"center\" style=\"color: #000000\">Greetings ";
-        // line 23
+        // line 14
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "username"), "html", null, true);
         echo "!</h3>
+    <br>
+    <br>
+
     <h4 align=\"center\" >Your profile is complete</h4>
+    <br>
 
 
     <p align=\"center\">Note: Your account will be ready to use once the NVS validates your information</p>
     <br>
 </div>
-<script src=\"";
-        // line 30
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/classie.js"), "html", null, true);
-        echo "\"></script>
-<script src=\"";
-        // line 31
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/js/stepsForm.js"), "html", null, true);
-        echo "\"></script>
-<script>
-    var theForm = document.getElementById( 'theForm' );
-
-    new stepsForm( theForm, {
-        onSubmit : function( form ) {
-            // hide form
-            classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
-
-            /*
-
-             or
-             AJAX request (maybe show loading indicator while we don't have an answer..)
-             */
-
-            // let's just simulate something...
-            var messageEl = theForm.querySelector( '.final-message' );
-            messageEl.innerHTML = 'Thank you! Check email for instructions.';
-            classie.addClass( messageEl, 'show' );
-            form.submit();
-        }
-    } );
-</script>
-<br>
-<hr>
-<footer>
-    <p align=\"center\"><strong>National Volunteering Secretariat, Sri Lanka </strong>&copy; 2014
-</footer>
-</body>
-</html>
-
-
-
-
-
-
 ";
     }
 
@@ -124,6 +73,6 @@ class __TwigTemplate_f9011799668675305128c02149dd28346e3bcfcdb1902f4e00e02666fa0
 
     public function getDebugInfo()
     {
-        return array (  75 => 31,  71 => 30,  61 => 23,  54 => 19,  45 => 13,  41 => 12,  37 => 11,  33 => 10,  29 => 9,  19 => 1,);
+        return array (  49 => 14,  41 => 9,  37 => 7,  34 => 6,  29 => 3,);
     }
 }

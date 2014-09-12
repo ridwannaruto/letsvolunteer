@@ -8,11 +8,12 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="cause" type="string" column="cause" length="45" nullable="false"/>
+      <field name="name" type="string" column="name" length="45" nullable="false"/>
     <field name="description" type="text" column="description" nullable="false"/>
-    <field name="startdate" type="datetime" column="startdate" nullable="true"/>
-    <field name="proposedenddate" type="datetime" column="proposedenddate" nullable="true"/>
-    <field name="location" type="text" column="location" nullable="false"/>
-    <field name="actualenddate" type="datetime" column="actualenddate" nullable="true"/>
+    <field name="startdate" type="text" column="startdate" nullable="true"/>
+    <field name="proposedenddate" type="text" column="proposedenddate" nullable="true"/>
+    <field name="location" type="string" column="location" nullable="false"/>
+    <field name="actualenddate" type="text" column="actualenddate" nullable="true"/>
     <field name="status" type="string" column="Status" length="2" nullable="true"/>
     <many-to-one field="organization" target-entity="Organization">
       <join-columns>
