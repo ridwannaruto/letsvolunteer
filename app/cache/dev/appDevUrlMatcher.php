@@ -512,6 +512,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/volunteer/availability')) {
+                // ridwan_availability_edit
+                if (preg_match('#^/volunteer/availability/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_availability_edit')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\AvailabilityController::editAction',));
+                }
+
+                // ridwan_availability_update
+                if (preg_match('#^/volunteer/availability/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_availability_update')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\AvailabilityController::updateAction',));
+                }
+
+                // ridwan_availability_delete
+                if (preg_match('#^/volunteer/availability/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_availability_delete')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\AvailabilityController::deleteAction',));
+                }
+
+            }
+
         }
 
         // ridwan_site_home

@@ -135,7 +135,7 @@ class AvailabilityController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('RidwanEntityBundle:Availability')->find($id);
+        $entity = $em->getRepository('RidwanEntityBundle:Availability')->findOneBy(array('user'=>$id));
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Availability entity.');
@@ -161,7 +161,7 @@ class AvailabilityController extends Controller
     private function createEditForm(Availability $entity)
     {
         $form = $this->createForm(new AvailabilityType(), $entity, array(
-            'action' => $this->generateUrl('availability_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('ridwan_availability_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -193,7 +193,7 @@ class AvailabilityController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('availability_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ridwan_site_home', array('type' => 'S', 'message' => 'successfully updated your information')));
         }
 
         return array(
@@ -215,7 +215,7 @@ class AvailabilityController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('RidwanEntityBundle:Availability')->find($id);
+            $entity = $em->getRepository('RidwanEntityBundle:Availability')->findOneBy(array('user'=>$id));
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Availability entity.');
@@ -238,7 +238,7 @@ class AvailabilityController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('availability_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('ridwan_availability_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

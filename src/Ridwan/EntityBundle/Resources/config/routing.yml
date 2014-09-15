@@ -107,3 +107,15 @@ ridwan_volunteercontact_update:
 ridwan_volunteercontact_delete:
     pattern:  /volunteer/contact/{id}/delete
     defaults: { _controller: RidwanEntityBundle:Volunteercontactdetails:delete }
+
+ridwan_availability_edit:
+    pattern:  /volunteer/availability/{id}/edit
+    defaults: { _controller: RidwanEntityBundle:Availability:edit }
+
+ridwan_availability_update:
+    pattern:  /volunteer/availability/{id}/update
+    defaults: { _controller: RidwanEntityBundle:Availability:update }
+
+ridwan_availability_delete:
+    pattern:  /volunteer/availability/{id}/delete
+    defaults: { _controller: RidwanEntityBundle:Availability:delete }

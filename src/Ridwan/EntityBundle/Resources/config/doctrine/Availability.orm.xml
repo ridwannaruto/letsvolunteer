@@ -7,8 +7,8 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="days" type="text" column="days"  nullable="false"/>
-    <field name="time" type="text" column="time"  nullable="true"/>
+    <field name="days" type="array" column="days"  nullable="false"/>
+    <field name="time" type="array" column="time"  nullable="true"/>
     <many-to-one field="user" target-entity="Authentication">
       <join-columns>
         <join-column name="user" referenced-column-name="id"/>

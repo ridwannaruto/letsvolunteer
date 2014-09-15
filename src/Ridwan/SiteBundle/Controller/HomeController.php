@@ -70,7 +70,6 @@ class HomeController extends Controller
         $skills = $em->getRepository('RidwanEntityBundle:Skills')->findOneBy(array('user'=>$user));
         $profile = $em->getRepository('RidwanEntityBundle:Profile')->findOneBy(array('user'=>$user));
         $availability = $em->getRepository('RidwanEntityBundle:Availability')->findOneBy(array('user'=>$user));
-
         $form = $this->createForm(
             new AvailabilityType(), $availability, array(
                 'method' => 'POST',

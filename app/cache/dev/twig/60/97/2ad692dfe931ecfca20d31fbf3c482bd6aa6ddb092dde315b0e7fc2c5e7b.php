@@ -828,70 +828,30 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
                 <strong>Volunteering Hours</strong><br>
                 <table width=\"100%\">
                     <tr>
-
+                        <br>
                         ";
         // line 579
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 0, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 07:00 - 08:00<br>
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"));
+        foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
+            // line 580
+            echo "                            <label>
+                                ";
+            // line 581
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), 'widget', array("attr" => array("disabled" => "true", "class" => (($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class"), "")) : ("")))));
+            echo "
+                                ";
+            // line 582
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), "vars"), "label"), array()), "html", null, true);
+            echo "
+                            </label>
                         ";
-        // line 580
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 1, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 08:00 - 09:00<br>
-                        ";
-        // line 581
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 2, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 09:00 - 10:00<br>
-                        ";
-        // line 582
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 3, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 10:00 - 11:00<br>
-                        ";
-        // line 583
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 4, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 11:00 - 12:00<br>
-                        ";
-        // line 584
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 5, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 12:00 - 13:00<br>
-                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 585
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 6, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 13:00 - 14:00<br>
-
-
-                        ";
-        // line 588
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 7, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 14:00 - 15:00<br>
-                        ";
-        // line 589
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 8, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 15:00 - 16:00<br>
-                        ";
-        // line 590
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 9, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 16:00 - 17:00<br>
-                        ";
-        // line 591
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 10, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 17:00 -
-                        18:00<br>
-                        ";
-        // line 593
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 11, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 18:00 -
-                        19:00<br>
-                        ";
-        // line 595
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 12, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 19:00 -
-                        20:00<br>
-                        ";
-        // line 597
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"), 13, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " 20:00 -
-                        21:00<br>
-
+        echo "
 
                     </tr>
                 </table>
@@ -905,37 +865,30 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
 
                 <table>
                     <tr>
-
+                        <br>
                         ";
-        // line 614
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "days"), 0, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " Sunday<br>
+        // line 600
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "days"));
+        foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
+            // line 601
+            echo "                            <label>
+                                ";
+            // line 602
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), 'widget', array("attr" => array("disabled" => "true", "class" => (($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class"), "")) : ("")))));
+            echo "
+                                ";
+            // line 603
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), "vars"), "label"), array()), "html", null, true);
+            echo "
+                            </label>
                         ";
-        // line 615
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "days"), 1, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " Monday<br>
-                        ";
-        // line 616
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "days"), 2, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " Tuesday<br>
-                        ";
-        // line 617
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "days"), 3, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " Wednesday<br>
-
-                        ";
-        // line 619
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "days"), 4, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " Thursday<br>
-                        ";
-        // line 620
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "days"), 5, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " Friday<br>
-                        ";
-        // line 621
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "days"), 6, array(), "array"), 'widget', array("attr" => array("disabled" => "true")));
-        echo " Saturday<br>
-
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 606
+        echo "                    </tr>
 
                     </tr>
                 </table>
@@ -945,7 +898,12 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
 
             </form>
             <div class=\"center\">
-                <button class=\"btn btn-group btn-small\">update</button>
+                <a href=\"";
+        // line 616
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_availability_edit", array("id" => $this->getAttribute($this->getAttribute((isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "user"), "id"))), "html", null, true);
+        echo "\">
+                    <button class=\"btn btn-group btn-small\">update</button>
+                </a>
             </div>
 
 
@@ -968,6 +926,6 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
 
     public function getDebugInfo()
     {
-        return array (  936 => 621,  932 => 620,  928 => 619,  923 => 617,  919 => 616,  915 => 615,  911 => 614,  891 => 597,  886 => 595,  881 => 593,  876 => 591,  872 => 590,  868 => 589,  864 => 588,  858 => 585,  854 => 584,  850 => 583,  846 => 582,  842 => 581,  838 => 580,  834 => 579,  821 => 569,  803 => 553,  794 => 551,  790 => 550,  783 => 545,  774 => 543,  770 => 542,  762 => 536,  753 => 534,  749 => 533,  732 => 518,  720 => 512,  715 => 510,  710 => 508,  707 => 507,  703 => 506,  680 => 485,  669 => 480,  665 => 479,  660 => 477,  655 => 475,  652 => 474,  648 => 473,  626 => 454,  614 => 445,  602 => 436,  590 => 427,  574 => 414,  553 => 396,  532 => 378,  511 => 360,  493 => 345,  476 => 331,  455 => 313,  441 => 302,  425 => 289,  406 => 273,  384 => 254,  364 => 236,  360 => 234,  356 => 232,  354 => 231,  335 => 214,  331 => 212,  327 => 210,  325 => 209,  306 => 195,  285 => 177,  269 => 163,  263 => 161,  259 => 159,  257 => 158,  248 => 151,  242 => 149,  238 => 147,  236 => 146,  222 => 134,  216 => 132,  212 => 130,  210 => 129,  202 => 123,  196 => 121,  192 => 119,  190 => 118,  174 => 105,  166 => 99,  160 => 97,  156 => 95,  154 => 94,  136 => 79,  127 => 72,  121 => 70,  117 => 68,  115 => 67,  100 => 55,  93 => 50,  86 => 47,  80 => 45,  78 => 44,  61 => 30,  55 => 27,  31 => 5,  28 => 4,);
+        return array (  903 => 616,  891 => 606,  882 => 603,  878 => 602,  875 => 601,  871 => 600,  854 => 585,  845 => 582,  841 => 581,  838 => 580,  834 => 579,  821 => 569,  803 => 553,  794 => 551,  790 => 550,  783 => 545,  774 => 543,  770 => 542,  762 => 536,  753 => 534,  749 => 533,  732 => 518,  720 => 512,  715 => 510,  710 => 508,  707 => 507,  703 => 506,  680 => 485,  669 => 480,  665 => 479,  660 => 477,  655 => 475,  652 => 474,  648 => 473,  626 => 454,  614 => 445,  602 => 436,  590 => 427,  574 => 414,  553 => 396,  532 => 378,  511 => 360,  493 => 345,  476 => 331,  455 => 313,  441 => 302,  425 => 289,  406 => 273,  384 => 254,  364 => 236,  360 => 234,  356 => 232,  354 => 231,  335 => 214,  331 => 212,  327 => 210,  325 => 209,  306 => 195,  285 => 177,  269 => 163,  263 => 161,  259 => 159,  257 => 158,  248 => 151,  242 => 149,  238 => 147,  236 => 146,  222 => 134,  216 => 132,  212 => 130,  210 => 129,  202 => 123,  196 => 121,  192 => 119,  190 => 118,  174 => 105,  166 => 99,  160 => 97,  156 => 95,  154 => 94,  136 => 79,  127 => 72,  121 => 70,  117 => 68,  115 => 67,  100 => 55,  93 => 50,  86 => 47,  80 => 45,  78 => 44,  61 => 30,  55 => 27,  31 => 5,  28 => 4,);
     }
 }

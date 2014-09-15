@@ -575,27 +575,13 @@
                 <strong>Volunteering Hours</strong><br>
                 <table width="100%">
                     <tr>
-
-                        {{ form_widget(availability.time[0],{'attr':{'disabled':'true' }}) }} 07:00 - 08:00<br>
-                        {{ form_widget(availability.time[1],{'attr':{'disabled':'true' }}) }} 08:00 - 09:00<br>
-                        {{ form_widget(availability.time[2],{'attr':{'disabled':'true' }}) }} 09:00 - 10:00<br>
-                        {{ form_widget(availability.time[3],{'attr':{'disabled':'true' }}) }} 10:00 - 11:00<br>
-                        {{ form_widget(availability.time[4],{'attr':{'disabled':'true' }}) }} 11:00 - 12:00<br>
-                        {{ form_widget(availability.time[5],{'attr':{'disabled':'true' }}) }} 12:00 - 13:00<br>
-                        {{ form_widget(availability.time[6],{'attr':{'disabled':'true' }}) }} 13:00 - 14:00<br>
-
-
-                        {{ form_widget(availability.time[7],{'attr':{'disabled':'true' }}) }} 14:00 - 15:00<br>
-                        {{ form_widget(availability.time[8],{'attr':{'disabled':'true' }}) }} 15:00 - 16:00<br>
-                        {{ form_widget(availability.time[9],{'attr':{'disabled':'true' }}) }} 16:00 - 17:00<br>
-                        {{ form_widget(availability.time[10],{'attr':{'disabled':'true' }}) }} 17:00 -
-                        18:00<br>
-                        {{ form_widget(availability.time[11],{'attr':{'disabled':'true' }}) }} 18:00 -
-                        19:00<br>
-                        {{ form_widget(availability.time[12],{'attr':{'disabled':'true' }}) }} 19:00 -
-                        20:00<br>
-                        {{ form_widget(availability.time[13],{'attr':{'disabled':'true' }}) }} 20:00 -
-                        21:00<br>
+                        <br>
+                        {% for child in availability.time %}
+                            <label>
+                                {{ form_widget(child, {'attr': {'disabled':'true','class': attr.widget_class|default('')}}) }}
+                                {{ child.vars.label|trans({}) }}
+                            </label>
+                        {% endfor %}
 
 
                     </tr>
@@ -610,16 +596,14 @@
 
                 <table>
                     <tr>
-
-                        {{ form_widget(availability.days[0],{'attr':{'disabled':'true' }}) }} Sunday<br>
-                        {{ form_widget(availability.days[1],{'attr':{'disabled':'true' }}) }} Monday<br>
-                        {{ form_widget(availability.days[2],{'attr':{'disabled':'true' }}) }} Tuesday<br>
-                        {{ form_widget(availability.days[3],{'attr':{'disabled':'true' }}) }} Wednesday<br>
-
-                        {{ form_widget(availability.days[4],{'attr':{'disabled':'true' }}) }} Thursday<br>
-                        {{ form_widget(availability.days[5],{'attr':{'disabled':'true' }}) }} Friday<br>
-                        {{ form_widget(availability.days[6],{'attr':{'disabled':'true' }}) }} Saturday<br>
-
+                        <br>
+                        {% for child in availability.days %}
+                            <label>
+                                {{ form_widget(child, {'attr': {'disabled':'true','class': attr.widget_class|default('')}}) }}
+                                {{ child.vars.label|trans({}) }}
+                            </label>
+                        {% endfor %}
+                    </tr>
 
                     </tr>
                 </table>
@@ -629,7 +613,9 @@
 
             </form>
             <div class="center">
-                <button class="btn btn-group btn-small">update</button>
+                <a href="{{ path('ridwan_availability_edit',{'id':profile.user.id}) }}">
+                    <button class="btn btn-group btn-small">update</button>
+                </a>
             </div>
 
 
