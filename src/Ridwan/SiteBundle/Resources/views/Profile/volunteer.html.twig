@@ -1,0 +1,615 @@
+{% extends '::base.html.twig' %}
+
+
+{% block content %}
+    <div class="box span8">
+    <div class="box-header well">
+        <h2><i class="icon-user"></i> {{ personal.firstname }} {{ personal.lastname }}</h2>
+    </div>
+
+
+    <div class="box-content ">
+
+    <ul class="nav nav-tabs" id="myTab" style="border: none">
+        <li><a href="#profile" style="background-color: white; border: none"><h6>Profile</h6></a></li>
+        <li><a href="#personal" style="background-color: white; border: none"><h6>Personal Details</h6></a></li>
+        <li><a href="#contact" style="background-color: white; border: none"><h6>Contact Details</h6></a></li>
+        <li><a href="#education" style="background-color: white; border: none"><h6>Education</h6></a></li>
+        <li><a href="#employment" style="background-color: white; border: none"><h6>Employment</h6></a></li>
+        <li><a href="#skills" style="background-color: white; border: none"><h6>Skills</h6></a></li>
+    </ul>
+
+    <hr>
+
+    <div id="myTabContent" class="tab-content">
+    <div class="tab-pane active" id="profile">
+        <br><br>
+        <h3 align="center">Volunteer Profile</h3>
+        <br>
+        <table width="100%">
+            <tr>
+                <td width="10%"></td>
+
+                <td width="40%">
+                    <h6>Profile Picture</h6>
+                    {% if authProfile.path %}
+                        <img src="{{ authProfile.path  }}" width="150px" height="150px" style="border: 2px">
+                    {% else %}
+                        <img src="{{ asset('bundles/ridwansite/images/default.jpg') }}" width="150px" height="150px"
+                             style="border: 2px">
+                    {% endif %}
+                    <br><br>
+                </td>
+                <td width="10%"></td>
+                <td width="30%">
+                    <h6>Volunteered Hours</h6>
+                    <h1>{{ profile.hours }} Hrs</h1> <br>
+                </td>
+                <td width="10%"></td>
+
+
+            </tr>
+
+
+            <tr>
+                <td width="10%"></td>
+                <td width="40%">
+                    <h6>Self Introduction</h6>
+                    {% if profile.intro == null %}
+                        information not provided by the volunteer
+                    {% else %}
+                        <p align="justify">{{ profile.intro }}</p><br>
+                    {% endif %}
+
+
+                </td>
+                <td width="10%"></td>
+                <td width="30%">
+                    <h6>Volunteer Value </h6>
+
+                    <h1>Rs. {{ profile.value }}.00</h1><br>
+
+
+                </td>
+                <td width="10%"></td>
+
+
+            </tr>
+
+            <br>
+            <tr>
+                <td width="10%"></td>
+
+                <td width="40%">
+                    <h6>Reason to Volunteer</h6>
+                    {% if profile.reason == null %}
+                        information not provided by the volunteer
+                    {% else %}
+                        <p align="justify">{{ profile.reason }}</p><br>
+                    {% endif %}
+
+                </td>
+                <td width="10%"></td>
+                <td width="30%">
+                    <h6>Volunteer Rating </h6>
+
+                    <h3>{{ profile.aggregatedRating }}</h3><br>
+
+                </td>
+                <td width="10%"></td>
+
+            </tr>
+
+            <tr>
+                <td width="10%"></td>
+
+                <td width="40%">
+
+                    <h6>Previous Experience</h6>
+                    {% if profile.experience == null %}
+                        information not provided by the volunteer
+                    {% else %}
+                        <p align="justify">{{ profile.experience }}</p><br>
+                    {% endif %}
+
+
+                </td>
+                <td width="10%"></td>
+                <td width="30%">
+                    <h6>Driving License</h6>
+                    {% if profile.drivinglicense == null %}
+                        information not provided by the volunteer
+                    {% else %}
+                        <h3>{{ profile.drivinglicense }}</h3><br>
+                    {% endif %}
+                </td>
+                <td width="10%"></td>
+            </tr>
+
+
+            <br>
+            <tr>
+                <td width="10%"></td>
+
+                <td width="40%">
+
+                    <h6>Health</h6>
+                    {% if profile.health == null %}
+                        information not provided by the volunteer
+                    {% else %}
+                        <p align="justify">{{ profile.health }}</p><br>
+                    {% endif %}
+
+                </td>
+                <td width="10%"></td>
+                <td width="30%">
+
+
+                    <h6>Arrested</h6>
+                    {% if profile.arrested == null %}
+                        information not provided by the volunteer
+                    {% else %}
+                        <h3>{{ profile.arrested }}</h3><br>
+                    {% endif %}
+
+                </td>
+                <td width="10%"></td>
+
+
+            </tr>
+
+
+        </table>
+
+
+    </div>
+    <div class="tab-pane active" id="personal">
+        <br><br>
+
+        <h3 align="center">Personal Information</h3>
+        <br>
+        <table width="'100%">
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Full Name</strong>
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ personal.firstname }} {{ personal.lastname }}
+                    </p>
+                </td>
+
+            </tr>
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Gender</strong>
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {% if personal.Gender == 'M' %}
+                            Male
+                        {% else %}
+                            Female
+                        {% endif %}
+                    </p>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+
+                    <strong>Civil Status</strong>
+
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+
+                        {% if personal.CivilStatus == 1 %}
+                            Married
+                        {% else %}
+                            Single
+                        {% endif %}
+
+                    </p>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+
+                    <strong>Identification</strong>
+
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ personal.nicORpassport }}
+                    </p>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+
+                    <strong>Date of Birth</strong>
+
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+
+                        {{ personal.dateofbirth|date('Y-m-d') }}
+                    </p>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Nationality</strong>
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ personal.nationality }}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Account Type</strong>
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ personal.category }}
+                    </p>
+                </td>
+
+
+            </tr>
+        </table>
+
+    </div>
+    <div class="tab-pane" id="contact">
+        <br><br>
+
+        <h3 align="center">Contact Information</h3>
+        <br>
+        <table width="'100%">
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Street Number</strong>
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ contact.Streetnumber }}
+                    </p>
+                </td>
+
+            </tr>
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Street Name</strong>
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ contact.Street }}
+                    </p>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>City</strong>
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ contact.City }}
+
+                    </p>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Divisional Secretary</strong>
+
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ contact.DivisionalSecretary }}
+                    </p>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+
+                    <strong>District</strong>
+
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ contact.District }}
+                    </p>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+
+                    <strong>Province</strong>
+
+                </td>
+                <td width="4%">
+                </td>
+                <td width="40%">
+                    <p align="left">
+                        {{ contact.Province }}
+                    </p>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Country</strong>
+                </td>
+                <td width="4%"></td>
+                <td width="40%"><p align="left">{{ contact.Country }}</p></td>
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Mobile Number</strong>
+                </td>
+                <td width="4%"></td>
+                <td width="40%"><p align="left">{{ contact.mobile }}</p></td>
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Phone Number</strong>
+                </td>
+                <td width="4%"></td>
+                <td width="40%"><p align="left">{{ contact.phone }}</p></td>
+            </tr>
+
+            <tr>
+                <td width="16%"></td>
+                <td width="40%">
+                    <strong>Fax Number</strong>
+                </td>
+                <td width="4%"></td>
+                <td width="40%"><p align="left">{{ contact.fax }}</p></td>
+            </tr>
+        </table>
+    </div>
+    <div class="tab-pane" id="education">
+        <br><br>
+        <h3 align="center">Educational Qualifications</h3>
+        <br>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Institute Name</th>
+                <th>Degree</th>
+                <th>Field</th>
+                <th>Duration</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in education %}
+                <tr>
+                    <td>{{ entity.institution }}</td>
+                    <td class="center">
+                        <span class="label label-success">{{ entity.degree }}</span>
+                    </td>
+                    <td class="center">{{ entity.field }}</td>
+                    <td class="center">{{ entity.duration }}</td>
+
+                </tr>
+
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+
+    </div>
+    <div class="tab-pane" id="employment">
+        <br><br>
+        <h3 align="center">Employment History</h3>
+        <br>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Organization Name</th>
+                <th>Organization Type</th>
+                <th>Occupation</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in employment %}
+                <tr>
+                    <td>{{ entity.organization }}</td>
+                    <td class="center">
+                        <span class="label label-success">{{ entity.organizationtype }}</span>
+                    </td>
+                    <td class="center">{{ entity.occupation }}</td>
+
+
+                </tr>
+
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+
+    </div>
+    <div class="tab-pane center" id="skills">
+        <br><br>
+        <h3 align="center">Skills </h3>
+        <br>
+        <strong>Languages</strong>
+
+        <p align="center">
+            {% for language in skills.languages %}
+                {{ language }}<br>
+            {% endfor %}
+        </p>
+        <br><br>
+
+        <strong>Capabilities</strong>
+
+        <p align="center">
+            {% for skill in skills.skills %}
+                {{ skill }}<br>
+            {% endfor %}
+        </p>
+        <br><br>
+        <strong>Interested Causes</strong>
+
+        <p align="center">
+            {% for cause in skills.causes %}
+                {{ cause }}<br>
+            {% endfor %}
+
+        </p>
+
+    </div>
+
+
+    </div>
+
+    </div>
+    </div>
+
+    <div class="box span2">
+        <div class="box-header well"><h2><i class="icon-calendar"></i>Availability</h2></div>
+
+        <div class="box-content">
+            {{ form_start(availability) }}
+
+
+            <div class="control-group primary">
+
+
+                <strong>Volunteering Hours</strong><br>
+                <table width="100%">
+                    <tr>
+
+                        {{ form_widget(availability.time[0],{'attr':{'disabled':'true' }}) }} 07:00 - 08:00<br>
+                        {{ form_widget(availability.time[1],{'attr':{'disabled':'true' }}) }} 08:00 - 09:00<br>
+                        {{ form_widget(availability.time[2],{'attr':{'disabled':'true' }}) }} 09:00 - 10:00<br>
+                        {{ form_widget(availability.time[3],{'attr':{'disabled':'true' }}) }} 10:00 - 11:00<br>
+                        {{ form_widget(availability.time[4],{'attr':{'disabled':'true' }}) }} 11:00 - 12:00<br>
+                        {{ form_widget(availability.time[5],{'attr':{'disabled':'true' }}) }} 12:00 - 13:00<br>
+                        {{ form_widget(availability.time[6],{'attr':{'disabled':'true' }}) }} 13:00 - 14:00<br>
+
+
+                        {{ form_widget(availability.time[7],{'attr':{'disabled':'true' }}) }} 14:00 - 15:00<br>
+                        {{ form_widget(availability.time[8],{'attr':{'disabled':'true' }}) }} 15:00 - 16:00<br>
+                        {{ form_widget(availability.time[9],{'attr':{'disabled':'true' }}) }} 16:00 - 17:00<br>
+                        {{ form_widget(availability.time[10],{'attr':{'disabled':'true' }}) }} 17:00 -
+                        18:00<br>
+                        {{ form_widget(availability.time[11],{'attr':{'disabled':'true' }}) }} 18:00 -
+                        19:00<br>
+                        {{ form_widget(availability.time[12],{'attr':{'disabled':'true' }}) }} 19:00 -
+                        20:00<br>
+                        {{ form_widget(availability.time[13],{'attr':{'disabled':'true' }}) }} 20:00 -
+                        21:00<br>
+
+
+                    </tr>
+                </table>
+
+
+            </div>
+
+            <div class="control-group">
+
+                <strong>Volunteering Days</strong><br>
+
+                <table>
+                    <tr>
+
+                        {{ form_widget(availability.days[0],{'attr':{'disabled':'true' }}) }} Sunday<br>
+                        {{ form_widget(availability.days[1],{'attr':{'disabled':'true' }}) }} Monday<br>
+                        {{ form_widget(availability.days[2],{'attr':{'disabled':'true' }}) }} Tuesday<br>
+                        {{ form_widget(availability.days[3],{'attr':{'disabled':'true' }}) }} Wednesday<br>
+
+                        {{ form_widget(availability.days[4],{'attr':{'disabled':'true' }}) }} Thursday<br>
+                        {{ form_widget(availability.days[5],{'attr':{'disabled':'true' }}) }} Friday<br>
+                        {{ form_widget(availability.days[6],{'attr':{'disabled':'true' }}) }} Saturday<br>
+
+
+                    </tr>
+                </table>
+
+
+            </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

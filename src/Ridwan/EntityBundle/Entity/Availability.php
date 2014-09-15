@@ -17,12 +17,9 @@ class Availability
     /**
      * @var text
      */
-    private $duration;
+    private $time;
 
-    /**
-     * @var text
-     */
-    private $preferredtime;
+
 
     /**
      * @var integer
@@ -30,7 +27,7 @@ class Availability
     private $id;
 
     /**
-     * @var \Ridwan\EntityBundle\Entity\Volunteerpersonal
+     * @var \Ridwan\EntityBundle\Entity\Authentication
      */
     private $user;
 
@@ -59,50 +56,28 @@ class Availability
     }
 
     /**
-     * Set duration
+     * Set time
      *
-     * @param text $duration
+     * @param text $time
      * @return Availability
      */
-    public function setDuration($duration)
+    public function setTime($time)
     {
-        $this->duration = $duration;
+        $this->time = $time;
 
         return $this;
     }
 
     /**
-     * Get duration
+     * Get time
      *
      * @return text
      */
-    public function getDuration()
+    public function getTime()
     {
-        return $this->duration;
+        return $this->time;
     }
 
-    /**
-     * Set preferredtime
-     *
-     * @param text $preferredtime
-     * @return Availability
-     */
-    public function setPreferredtime($preferredtime)
-    {
-        $this->preferredtime = $preferredtime;
-
-        return $this;
-    }
-
-    /**
-     * Get preferredtime
-     *
-     * @return text
-     */
-    public function getPreferredtime()
-    {
-        return $this->preferredtime;
-    }
 
     /**
      * Get id
@@ -117,10 +92,10 @@ class Availability
     /**
      * Set user
      *
-     * @param \Ridwan\EntityBundle\Entity\Volunteerpersonal $user
+     * @param \Ridwan\EntityBundle\Entity\Authentication $user
      * @return Availability
      */
-    public function setUser(\Ridwan\EntityBundle\Entity\Volunteerpersonal $user = null)
+    public function setUser(\Ridwan\EntityBundle\Entity\Authentication $user = null)
     {
         $this->user = $user;
 
@@ -130,7 +105,7 @@ class Availability
     /**
      * Get user
      *
-     * @return \Ridwan\EntityBundle\Entity\Volunteerpersonal 
+     * @return \Ridwan\EntityBundle\Entity\Authentication
      */
     public function getUser()
     {

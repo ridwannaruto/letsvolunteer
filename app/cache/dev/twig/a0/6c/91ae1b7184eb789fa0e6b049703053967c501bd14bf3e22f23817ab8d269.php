@@ -79,7 +79,10 @@ class __TwigTemplate_a06c91ae1b7184eb789fa0e6b049703053967c501bd14bf3e22f23817ab
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "lastlogin"), "Y-m-d H:i:s"), "html", null, true);
                 echo "</td>
                                     <td class=\"center \">
-                                        <a class=\"btn btn-primary\" href=\"#\">
+                                        <a class=\"btn btn-primary\" href=\"";
+                // line 39
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_site_profile", array("ID" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+                echo "\">
                                             <i class=\"icon-zoom-in icon-white\"></i>
                                             View
                                         </a>
@@ -159,7 +162,10 @@ class __TwigTemplate_a06c91ae1b7184eb789fa0e6b049703053967c501bd14bf3e22f23817ab
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "category"), "html", null, true);
             echo "</td>
                                 <td class=\"center \">
-                                    <a class=\"btn btn-primary\" href=\"#\">
+                                    <a class=\"btn btn-primary\" href=\"";
+            // line 96
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_site_profile", array("ID" => $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "user"), "id"))), "html", null, true);
+            echo "\">
                                         <i class=\"icon-zoom-in icon-white\"></i>
                                         View
                                     </a>
@@ -234,7 +240,10 @@ class __TwigTemplate_a06c91ae1b7184eb789fa0e6b049703053967c501bd14bf3e22f23817ab
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "type"), "html", null, true);
             echo "</td>
                                 <td class=\"center \">
-                                    <a class=\"btn btn-primary\" href=\"#\">
+                                    <a class=\"btn btn-primary\" href=\"";
+            // line 152
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_site_profile", array("ID" => $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "user"), "id"))), "html", null, true);
+            echo "\">
                                         <i class=\"icon-zoom-in icon-white\"></i>
                                         View
                                     </a>
@@ -361,6 +370,6 @@ class __TwigTemplate_a06c91ae1b7184eb789fa0e6b049703053967c501bd14bf3e22f23817ab
 
     public function getDebugInfo()
     {
-        return array (  339 => 227,  316 => 210,  312 => 209,  308 => 208,  304 => 207,  301 => 206,  297 => 205,  257 => 167,  234 => 150,  230 => 149,  226 => 148,  223 => 147,  219 => 146,  182 => 111,  159 => 94,  155 => 93,  149 => 92,  146 => 91,  142 => 90,  105 => 55,  98 => 53,  79 => 37,  75 => 36,  71 => 35,  68 => 34,  65 => 33,  61 => 32,  31 => 4,  28 => 3,);
+        return array (  348 => 227,  325 => 210,  321 => 209,  317 => 208,  313 => 207,  310 => 206,  306 => 205,  266 => 167,  245 => 152,  240 => 150,  236 => 149,  232 => 148,  229 => 147,  225 => 146,  188 => 111,  167 => 96,  162 => 94,  158 => 93,  152 => 92,  149 => 91,  145 => 90,  108 => 55,  101 => 53,  84 => 39,  79 => 37,  75 => 36,  71 => 35,  68 => 34,  65 => 33,  61 => 32,  31 => 4,  28 => 3,);
     }
 }

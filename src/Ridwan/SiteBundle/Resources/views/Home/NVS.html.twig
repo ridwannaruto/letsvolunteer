@@ -52,35 +52,35 @@
                     <td width="30%">
                         <ul class="dashboard-list">
                             <h6>Opportunities</h6>
-                            <li> <span class="green">92</span> Completed</li>
-                            <li> <span class="red">15</span> Rejected </li>
-                            <li> <span class="yellow">45</span> On going</li><br>
-                             <span class="blue">36</span>  <strong>Total</strong>
+                            <li> <span class="green">{{ CompletedOP }}</span> Completed</li>
+                            <li> <span class="red">{{ RejectedOP }}</span> Rejected </li>
+                            <li> <span class="yellow">{{ CurrentOP + PendingOP }}</span> On going</li><br>
+                             <span class="blue">{{ CurrentOP + PendingOP + RejectedOP + CompletedOP  }} </span><strong>Total</strong>
                         </ul>
                     </td>
                     <td width="3%"></td>
-                    <td width="30%">
-
-                        <ul class="dashboard-list">
-                            <h6>Volunteers</h6>
-                            <li> <span class="green">92</span> Active</li>
-                            <li> <span class="red">15</span> Rejected</li>
-                            <li> <span class="yellow">45</span> Pending</li><br>
-                            <span class="blue">36</span>  <strong>Total</strong>
-
-                        </ul>
-
-                    </td>
-                    <td width="3%"></td>
-
                     <td width="30%">
 
                         <ul class="dashboard-list">
                             <h6>Organizations</h6>
-                            <li> <span class="green">92</span> Active</li>
-                            <li> <span class="red">15</span> Rejected</li>
-                            <li> <span class="yellow">45</span> Pending</li><br>
-                            <span class="blue">36</span>  <strong>Total</strong>
+                            <li> <span class="green">{{ ActiveOrg }}</span> Active</li>
+                            <li> <span class="red">{{ RejectedOrg }}</span> Rejected</li>
+                            <li> <span class="yellow">{{ PendingOrg }}</span> Pending</li><br>
+                            <span class="blue">{{ ActiveOrg + RejectedOrg + PendingOrg}}</span>  <strong>Total</strong>
+
+                        </ul>
+
+                    </td>
+                    <td width="3%"></td>
+
+                    <td width="30%">
+
+                        <ul class="dashboard-list">
+                            <h6>Volunteers</h6>
+                            <li> <span class="green">{{ ActiveVol }}</span> Active</li>
+                            <li> <span class="red">{{ RejectedVol }}</span> Rejected</li>
+                            <li> <span class="yellow">{{ PendingVol }}</span> Pending</li><br>
+                            <span class="blue">{{ ActiveVol + RejectedVol + PendingVol }}</span>  <strong>Total</strong>
 
                         </ul>
 
@@ -119,7 +119,7 @@
                                         <span class="label label-success">Activated</span>   <br><br>
                                     {% endif %}
                                 </div>
-                                <a href="{{path('ridwan_profile_volunteer',{'userID' :member.id})}}">
+                                <a href="{{path('ridwan_site_profile',{'ID' :member.user.id})}}">
 
                                     <img class="dashboard-avatar" alt="Not Found" src="{{ asset('bundles/ridwansite/images/default.jpg') }}">
 
@@ -147,26 +147,26 @@
             <div class="box-content">
                 <div class="box-content">
                     <ul class="dashboard-list">
-                        {% for member in volunteers %}
+                        {% for member in organizations %}
                             <li>
 
                                 <div class ="pull-right">
                                     {% if member.status == 1 %}
                                         <span class="label label-warning">Pending Approval</span>   <br><br>
-                                        <button url="{{ path('ridwan_site_approve_volunteer', { 'userID': member.id }) }}" id="{{member.id}}" class="btn btn-mini btn-round btn-complete"><i class="icon-ok"></i></button>
-                                        <button url="{{ path('ridwan_site_reject_volunteer', { 'userID': member.id }) }}" id="{{member.id}}" class="btn btn-mini btn-round btn-delete"><i class="icon-remove"></i></button>
+                                        <button url="{{ path('ridwan_site_approve_organization', { 'userID': member.id }) }}" id="{{member.id}}" class="btn btn-mini btn-round btn-complete"><i class="icon-ok"></i></button>
+                                        <button url="{{ path('ridwan_site_reject_organization', { 'userID': member.id }) }}" id="{{member.id}}" class="btn btn-mini btn-round btn-delete"><i class="icon-remove"></i></button>
                                     {% else %}
                                         <span class="label label-success">Activated</span>   <br><br>
                                     {% endif %}
                                 </div>
-                                <a href="{{path('ridwan_profile_volunteer',{'userID' :member.id})}}">
+                                <a href="{{path('ridwan_site_profile',{'ID' :member.user.id})}}">
 
                                     <img class="dashboard-avatar" alt="Not Found" src="{{ asset('bundles/ridwansite/images/default.jpg') }}">
 
-                                    <strong>Name:</strong> {{member.firstname}} {{member.lastname}}</a>
+                                    <strong>Name:</strong> {{member.name}}</a>
                                 </a><br>
-                                <strong>Nationality:</strong> {{member.nationality}}<br>
-                                <strong>Category:</strong> {{member.category}}
+                                <strong>Location:</strong> {{member.branch}}<br>
+                                <strong>Category:</strong> {{member.type}}
                                 <br><br>
                             </li>
                         {% endfor %}
@@ -177,6 +177,52 @@
             </div>
         </div><!--/span-->
     </div>
+    </div>
+
+
+
+    <div class="modal hide fade" id="delete">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h3>Confirmation</h3>
+        </div>
+        <div class="modal-body">
+            <p align="center">Are you sure you want to reject this request?<br>
+            </p>
+
+
+        </div>
+        <div class="modal-footer">
+
+            <form action="empty" id = "continue-form" method="POST">
+                <input name="id" id="del-id" type="hidden" value="empty" />
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+                <input type="submit" class="btn btn-primary" value="continue">
+            </form>
+
+        </div>
+    </div>
+
+    <div class="modal hide fade" id="complete">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h3>Confirmation</h3>
+        </div>
+        <div class="modal-body">
+            <p align="center">Are you sure this is a authorize this process?
+            </p>
+
+
+        </div>
+        <div class="modal-footer">
+
+            <form action="empty" id = "continue-form" method="POST">
+                <input name="id" id="del-id" type="hidden" value="empty" />
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+                <input type="submit" class="btn btn-primary" value="continue">
+            </form>
+
+        </div>
     </div>
 
 {% endblock %}

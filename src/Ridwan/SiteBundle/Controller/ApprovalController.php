@@ -10,7 +10,7 @@ use Ridwan\EntityBundle\Entity\Account;
 
 class ApprovalController extends Controller {
 
-    public function volunteerAction(Request $request){
+    public function volunteerAction(Request $request, $userID){
         $user = $this->getUser();
         if ($user == null) {
             return $this->redirect($this->generateUrl('ridwan_site_loginpage'));
@@ -18,6 +18,12 @@ class ApprovalController extends Controller {
         $userRole = $user->getRoles()[0];
         if ($userRole == 'ADMINISTRATOR' || $userRole = 'NVS'){
 
+            $em = $this->getDoctrine()->getManager();
+            $volunteer = $em->getRepository('RidwanEntityBundle:Volunteerpersonal')->find($userID);
+            $volunteer->setStatus(3);
+            $em->persist($volunteer);
+            $em->flush();
+            return $this->redirect($this->generateUrl('ridwan_site_home', array('type' => 'S', 'message' => 'successfully approved the volunteer')));
         }
         return $this->render('RidwanSiteBundle:Error:permission.html.twig');
     }
@@ -40,13 +46,19 @@ class ApprovalController extends Controller {
         return $this->render('RidwanSiteBundle:Error:permission.html.twig');
     }
 
-    public function organizationAction(Request $request){
+    public function organizationAction(Request $request, $userID){
         $user = $this->getUser();
         if ($user == null) {
             return $this->redirect($this->generateUrl('ridwan_site_loginpage'));
         }
         $userRole = $user->getRoles()[0];
         if ($userRole == 'ADMINISTRATOR' || $userRole = 'NVS'){
+            $em = $this->getDoctrine()->getManager();
+            $organization = $em->getRepository('RidwanEntityBundle:Organization')->find($userID);
+            $organization->setStatus(3);
+            $em->persist($organization);
+            $em->flush();
+            return $this->redirect($this->generateUrl('ridwan_site_home', array('type' => 'S', 'message' => 'successfully approved the organization')));
 
         }
         return $this->render('RidwanSiteBundle:Error:permission.html.twig');

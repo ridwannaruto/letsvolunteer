@@ -19,7 +19,7 @@ use Ridwan\EntityBundle\Form\SkillsType;
 use Ridwan\EntityBundle\Entity\Referees;
 use Ridwan\EntityBundle\Form\RefereesType;
 use Ridwan\EntityBundle\Entity\Profile;
-
+use Ridwan\EntityBundle\Entity\Availability;
 use Symfony\Component\HttpFoundation\Request;
 
 
@@ -358,6 +358,10 @@ class VolunteerController extends Controller
 
             $profile = new Profile();
             $profile->setUser($this->getUser());
+
+            $availability = new Availability();
+            $availability->setUser($this->getUser());
+            $em->persist($availability);
             $em->persist($entity);
             $em->persist($profile);
             $em->flush();

@@ -83,3 +83,27 @@ ridwan_profile_update:
 ridwan_profile_delete:
     pattern:  /profile/{id}/delete
     defaults: { _controller: RidwanEntityBundle:Profile:delete }
+
+ridwan_volunteerpersonal_edit:
+    pattern:  /volunteer/personal/{id}/edit
+    defaults: { _controller: RidwanEntityBundle:Volunteerpersonal:edit }
+
+ridwan_volunteerpersonal_update:
+    pattern:  /volunteer/personal/{id}/update
+    defaults: { _controller: RidwanEntityBundle:Volunteerpersonal:update }
+
+ridwan_volunteerpersonal_delete:
+    pattern:  /volunteer/personal/{id}/delete
+    defaults: { _controller: RidwanEntityBundle:Volunteerpersonal:delete }
+
+ridwan_volunteercontact_edit:
+    pattern:  /volunteer/contact/{id}/edit
+    defaults: { _controller: RidwanEntityBundle:Volunteercontactdetails:edit }
+
+ridwan_volunteercontact_update:
+    pattern:  /volunteer/contact/{id}/update
+    defaults: { _controller: RidwanEntityBundle:Volunteercontactdetails:update }
+
+ridwan_volunteercontact_delete:
+    pattern:  /volunteer/contact/{id}/delete
+    defaults: { _controller: RidwanEntityBundle:Volunteercontactdetails:delete }

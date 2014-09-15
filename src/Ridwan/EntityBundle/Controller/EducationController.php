@@ -166,6 +166,7 @@ class EducationController extends Controller
         $form = $this->createForm(new EducationType(), $entity, array(
             'action' => $this->generateUrl('ridwan_education_update', array('id' => $entity->getId())),
             'method' => 'PUT',
+            'attr' => array ('class'  => 'form-horizontal center')
         ));
 
         $form->add('submit', 'submit', array('label' => 'Update'));
@@ -196,7 +197,7 @@ class EducationController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('ridwan_education_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ridwan_site_home', array('type' => 'S', 'message' => 'successfully updated your information')));
         }
 
         return array(

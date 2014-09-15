@@ -28,7 +28,7 @@ class AvailabilityType extends AbstractType
                         'Saturday'  => 'Saturday'
                     ),
                 ))
-            ->add('preferredtime', 'choice', array(
+            ->add('time', 'choice', array(
                     'expanded' => true,
                     'multiple' => true,
                     'choices'  => array(
@@ -49,7 +49,7 @@ class AvailabilityType extends AbstractType
 
                     ),
                 ))
-            ->add('duration')
+
         ;
     }
     

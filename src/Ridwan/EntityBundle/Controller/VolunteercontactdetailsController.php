@@ -144,11 +144,11 @@ class VolunteercontactdetailsController extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return $this->render('RidwanEntityBundle:Volunteercontactdetails:edit.html.twig',array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        );
+        ));
     }
 
     /**
@@ -161,8 +161,9 @@ class VolunteercontactdetailsController extends Controller
     private function createEditForm(Volunteercontactdetails $entity)
     {
         $form = $this->createForm(new VolunteercontactdetailsType(), $entity, array(
-            'action' => $this->generateUrl('volunteercontactdetails_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('ridwan_volunteercontact_update', array('id' => $entity->getId())),
             'method' => 'PUT',
+            'attr' => array( 'class' => 'form-horizontal center')
         ));
 
         $form->add('submit', 'submit', array('label' => 'Update'));
@@ -193,7 +194,7 @@ class VolunteercontactdetailsController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('volunteercontactdetails_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ridwan_site_home', array('type' => 'S', 'message' => 'successfully updated your information')));
         }
 
         return array(
@@ -238,7 +239,7 @@ class VolunteercontactdetailsController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('volunteercontactdetails_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('ridwan_volunteercontact_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

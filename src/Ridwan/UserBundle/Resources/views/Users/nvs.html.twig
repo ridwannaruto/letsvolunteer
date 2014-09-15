@@ -36,7 +36,7 @@
                                     <td class="center"> {{ entity.email }}</td>
                                     <td class="center">{{ entity.lastlogin | date('Y-m-d H:i:s') }}</td>
                                     <td class="center ">
-                                        <a class="btn btn-primary" href="#">
+                                        <a class="btn btn-primary" href="{{path('ridwan_site_profile', {'ID': entity.id}) }}">
                                             <i class="icon-zoom-in icon-white"></i>
                                             View
                                         </a>
@@ -93,7 +93,7 @@
                                 <td class="center"> {{ entity.nationality }}</td>
                                 <td class="center">{{ entity.category }}</td>
                                 <td class="center ">
-                                    <a class="btn btn-primary" href="#">
+                                    <a class="btn btn-primary" href="{{path('ridwan_site_profile', {'ID': entity.user.id}) }}">
                                         <i class="icon-zoom-in icon-white"></i>
                                         View
                                     </a>
@@ -149,7 +149,7 @@
                                 <td class="center"> {{ entity.branch }}</td>
                                 <td class="center">{{ entity.type }}</td>
                                 <td class="center ">
-                                    <a class="btn btn-primary" href="#">
+                                    <a class="btn btn-primary" href="{{path('ridwan_site_profile', {'ID': entity.user.id}) }}">
                                         <i class="icon-zoom-in icon-white"></i>
                                         View
                                     </a>

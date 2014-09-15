@@ -37,6 +37,9 @@ class HomeController extends Controller
         $volunteer = $this->getVolunteer();
         if ($volunteer) {
             $status = $volunteer->getStatus();
+            if ($status == -1) { //Profile Rejected by NVS
+                return $this->render('RidwanSiteBundle:Error:error.html.twig', array('message' => 'NVS rejected your application'));
+            }
             if ($status == 0) { //Email Verified
                 return $this->render('RidwanUserBundle:Welcome:volunteer.html.twig');
             }
@@ -98,6 +101,10 @@ class HomeController extends Controller
         $organization = $this->getOrganization();
         if ($organization) {
             $status = $organization->getStatus();
+            if ($status == -1) { //Profile Rejected by NVS
+                return $this->render('RidwanSiteBundle:Error:error.html.twig', array('message' => 'NVS rejected your application'));
+            }
+
             if ($status == 0) { //Email Verified
                 return $this->render('RidwanUserBundle:Welcome:organization.html.twig');
             }
@@ -122,11 +129,40 @@ class HomeController extends Controller
 
     private function NVSHome(Request $request)
     {
-        $volunteers = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>1));
-        $organizations = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>1));
+        $em= $this->getDoctrine()->getManager();
+        $volunteers = $em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>1));
+        $organizations = $em->getRepository('RidwanEntityBundle:Organization')->findBy(array('status'=>1));
+        $rejectedOp = count($em->getRepository('RidwanEntityBundle:Opportunities')->findBy(array('status'=>-1)));
+        $ongoingOp = count($em->getRepository('RidwanEntityBundle:Opportunities')->findBy(array('status'=>0)));
+        $pendingOp = count($em->getRepository('RidwanEntityBundle:Opportunities')->findBy(array('status'=>1)));
+        $completedOp = count($em->getRepository('RidwanEntityBundle:Opportunities')->findBy(array('status'=>2)));
+
+        $rejectedOrg = count($em->getRepository('RidwanEntityBundle:Organization')->findBy(array('status'=>-1)));
+        $activeOrg = count($em->getRepository('RidwanEntityBundle:Organization')->findBy(array('status'=>3)));
+        $pendingOrg = count($em->getRepository('RidwanEntityBundle:Organization')->findBy(array('status'=>1)));
+
+        $rejectedVol = count($em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>-1)));
+        $activeVol = count($em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>3)));
+        $pendingVol = count($em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>1)));
+
+        return $this->render('RidwanSiteBundle:Home:NVS.html.twig', array(
+                'volunteers' => $volunteers,
+                'organizations' => $organizations,
+                'message' => $request->get('message'),
+                'type' => $request->get('type'),
+                'RejectedOP' => $rejectedOp,
+                'CurrentOP' => $ongoingOp,
+                'PendingOP' => $pendingOp,
+                'CompletedOP' => $completedOp,
+                'RejectedOrg' => $rejectedOrg,
+                'ActiveOrg' => $activeOrg,
+                'PendingOrg' => $pendingOrg,
+                'RejectedVol' => $rejectedVol,
+                'ActiveVol' => $activeVol,
+                'PendingVol' => $pendingVol,
 
 
-        return $this->render('RidwanSiteBundle:Home:NVS.html.twig', array('volunteers' => $volunteers,'message' => $request->get('message'), 'type' => $request->get('type')));
+            ));
     }
 
     private function adminHome(Request $request)

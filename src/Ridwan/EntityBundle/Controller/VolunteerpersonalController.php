@@ -144,11 +144,11 @@ class VolunteerpersonalController extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return $this->render('RidwanEntityBundle:Volunteerpersonal:edit.html.twig',array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        );
+        ));
     }
 
     /**
@@ -161,7 +161,7 @@ class VolunteerpersonalController extends Controller
     private function createEditForm(Volunteerpersonal $entity)
     {
         $form = $this->createForm(new VolunteerpersonalType(), $entity, array(
-            'action' => $this->generateUrl('volunteerpersonal_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('ridwan_volunteerpersonal_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -193,7 +193,7 @@ class VolunteerpersonalController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('volunteerpersonal_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ridwan_site_home', array('type' => 'S', 'message' => 'successfully updated your information')));
         }
 
         return array(
@@ -238,7 +238,7 @@ class VolunteerpersonalController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('volunteerpersonal_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('ridwan_volunteerpersonal_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

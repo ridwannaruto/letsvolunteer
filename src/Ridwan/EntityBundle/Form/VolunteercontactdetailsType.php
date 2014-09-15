@@ -25,7 +25,7 @@ class VolunteercontactdetailsType extends AbstractType
             ->add('district')
             ->add('country')
             ->add('province')
-            ->add('user')
+
         ;
     }
     

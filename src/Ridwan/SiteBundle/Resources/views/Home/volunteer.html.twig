@@ -2,7 +2,7 @@
 
 
 {% block content %}
-    <div class="box span6">
+    <div class="box span8">
     <div class="box-header well">
         <h2><i class="icon-user"></i> Your Profile</h2>
     </div>
@@ -24,88 +24,149 @@
     <div id="myTabContent" class="tab-content">
     <div class="tab-pane active" id="profile">
         <div class="pull-right">
-            <a href="{{ path('ridwan_profile_edit',{'id':profile.id}) }}"> <button class="btn btn-group btn-small">update info </button></a>
-            <a href="{{ path('ridwan_profile_photo') }}"> <button class="btn btn-group btn-small">update profile picture</button></a>
+            <a href="{{ path('ridwan_profile_edit',{'id':profile.id}) }}">
+                <button class="btn btn-group btn-small">update info</button>
+            </a>
+            <a href="{{ path('ridwan_profile_photo') }}">
+                <button class="btn btn-group btn-small">update profile picture</button>
+            </a>
         </div>
         <br><br>
 
         <h3 align="center">Volunteer Profile</h3>
         <br>
-        <table>
+        <table width="100%">
             <tr>
-            <td width="10%"></td>
+                <td width="10%"></td>
 
+                <td width="40%">
+                    <h6>Profile Picture</h6>
+                    {% if app.user.path %}
+                        <img src="{{ app.user.path }}" width="150px" height="150px" style="border: 2px">
+                    {% else %}
+                        <img src="{{ asset('bundles/ridwansite/images/default.jpg') }}" width="150px" height="150px"
+                             style="border: 2px">
+                    {% endif %}
+                    <br><br>
+                </td>
+                <td width="10%"></td>
+                <td width="30%">
+                    <h6>Volunteered Hours</h6>
+                    <h1>{{ profile.hours }} Hrs</h1> <br>
+                </td>
+                <td width="10%"></td>
+
+
+            </tr>
+
+
+            <tr>
+                <td width="10%"></td>
                 <td width="40%">
                     <h6>Self Introduction</h6>
                     {% if profile.intro == null %}
-                        not listed
+                        please update your profile information
                     {% else %}
-                        <h3>{{profile.intro }}</h3><br>
+                        <p align="justify">{{ profile.intro }}</p><br>
                     {% endif %}
 
+
+                </td>
+                <td width="10%"></td>
+                <td width="30%">
+                    <h6>Volunteer Value </h6>
+
+                    <h1>Rs. {{ profile.value }}.00</h1><br>
+
+
+                </td>
+                <td width="10%"></td>
+
+
+            </tr>
+
+            <br>
+            <tr>
+                <td width="10%"></td>
+
+                <td width="40%">
                     <h6>Reason to Volunteer</h6>
                     {% if profile.reason == null %}
-                        not listed
+                        please update your profile information
                     {% else %}
-                        <h3>{{profile.reason }}</h3><br>
-                    {% endif %}
-
-
-                    <h6>Previous Experience</h6>
-                    {% if profile.experience == null %}
-                        not listed
-                    {% else %}
-                        <h3>{{profile.experience }}</h3><br>
-                    {% endif %}
-
-                    <h6>Health</h6>
-                    {% if profile.health == null %}
-                        not listed
-                    {% else %}
-                        <h3>{{profile.health }}</h3><br>
-                    {% endif %}
-
-                    <h6>Driving License</h6>
-                    {% if profile.drivinglicense == null %}
-                        not listed
-                    {% else %}
-                        <h3>{{profile.drivinglicense }}</h3><br>
-                    {% endif %}
-
-                    <h6>Arrested</h6>
-                    {% if profile.arrested == null %}
-                        not listed
-                    {% else %}
-                        <h3>{{profile.arrested }}</h3><br>
+                        <p align="justify">{{ profile.reason }}</p><br>
                     {% endif %}
 
                 </td>
                 <td width="10%"></td>
                 <td width="30%">
-                    <h6>Profile Picture</h6>
-                    {%  if app.user.path %}
-                        <img src="{{app.user.path}}" width="150px" height="150px" style="border: 2px">
-                    {%  else  %}
-                        <img src="{{ asset('bundles/ridwansite/images/default.jpg') }}" width="150px" height="150px" style="border: 2px">
-                    {%  endif %}
-                    <br><br>
-                    <h6>Volunteered Hours</h6>
-                    <h3>{{profile.hours }} Hrs</h3> <br>
-
-
-                    <h6>Volunteer Value </h6>
-                    <h3>Rs. {{profile.value }}.00</h3><br>
-
                     <h6>Volunteer Rating </h6>
-                    <h3>{{profile.aggregatedRating }}</h3><br>
+
+                    <h3>{{ profile.aggregatedRating }}</h3><br>
+
+                </td>
+                <td width="10%"></td>
+
+            </tr>
+
+            <tr>
+                <td width="10%"></td>
+
+                <td width="40%">
+
+                    <h6>Previous Experience</h6>
+                    {% if profile.experience == null %}
+                        please update your profile information
+                    {% else %}
+                        <p align="justify">{{ profile.experience }}</p><br>
+                    {% endif %}
+
+
+                </td>
+                <td width="10%"></td>
+                <td width="30%">
+                    <h6>Driving License</h6>
+                    {% if profile.drivinglicense == null %}
+                        please update your profile information
+                    {% else %}
+                        <h3>{{ profile.drivinglicense }}</h3><br>
+                    {% endif %}
+                </td>
+                <td width="10%"></td>
+            </tr>
+
+
+            <br>
+            <tr>
+                <td width="10%"></td>
+
+                <td width="40%">
+
+                    <h6>Health</h6>
+                    {% if profile.health == null %}
+                        please update your profile information
+                    {% else %}
+                        <p align="justify">{{ profile.health }}</p><br>
+                    {% endif %}
+
+                </td>
+                <td width="10%"></td>
+                <td width="30%">
+
+
+                    <h6>Arrested</h6>
+                    {% if profile.arrested == null %}
+                        please update your profile information
+                    {% else %}
+                        <h3>{{ profile.arrested }}</h3><br>
+                    {% endif %}
 
                 </td>
                 <td width="10%"></td>
 
 
+            </tr>
 
-
-        </tr>
 
         </table>
 
@@ -113,13 +174,15 @@
     </div>
     <div class="tab-pane active" id="personal">
         <div class="pull-right">
-            <button class="btn btn-group btn-small">update</button>
+            <a href="{{ path('ridwan_volunteerpersonal_edit',{'id':personal.id}) }}">
+                <button class="btn btn-group btn-small">update</button>
+            </a>
         </div>
         <br><br>
 
         <h3 align="center">Personal Information</h3>
         <br>
-        <table>
+        <table width="'100%">
             <tr>
                 <td width="16%"></td>
                 <td width="40%">
@@ -247,13 +310,15 @@
     </div>
     <div class="tab-pane" id="contact">
         <div class="pull-right">
-            <button class="btn btn-group btn-small">update</button>
+            <a href="{{ path('ridwan_volunteercontact_edit',{'id':contact.id}) }}">
+                <button class="btn btn-group btn-small">update</button>
+            </a>
         </div>
         <br><br>
 
         <h3 align="center">Contact Information</h3>
         <br>
-        <table>
+        <table width="'100%">
             <tr>
                 <td width="16%"></td>
                 <td width="40%">
@@ -359,7 +424,7 @@
                     <strong>Country</strong>
                 </td>
                 <td width="4%"></td>
-                <td width="40%"> <p align="left">{{ contact.Country }}</p> </td>
+                <td width="40%"><p align="left">{{ contact.Country }}</p></td>
             </tr>
 
             <tr>
@@ -368,7 +433,7 @@
                     <strong>Mobile Number</strong>
                 </td>
                 <td width="4%"></td>
-                <td width="40%"> <p align="left">{{ contact.mobile }}</p> </td>
+                <td width="40%"><p align="left">{{ contact.mobile }}</p></td>
             </tr>
 
             <tr>
@@ -377,7 +442,7 @@
                     <strong>Phone Number</strong>
                 </td>
                 <td width="4%"></td>
-                <td width="40%"> <p align="left">{{ contact.phone }}</p> </td>
+                <td width="40%"><p align="left">{{ contact.phone }}</p></td>
             </tr>
 
             <tr>
@@ -386,14 +451,11 @@
                     <strong>Fax Number</strong>
                 </td>
                 <td width="4%"></td>
-                <td width="40%"> <p align="left">{{ contact.fax }}</p> </td>
+                <td width="40%"><p align="left">{{ contact.fax }}</p></td>
             </tr>
         </table>
     </div>
     <div class="tab-pane" id="education">
-        <div class="pull-right">
-            <button class="btn btn-group btn-small">update</button>
-        </div>
         <br><br>
 
         <h3 align="center">Educational Qualifications</h3>
@@ -427,9 +489,7 @@
 
     </div>
     <div class="tab-pane" id="employment">
-        <div class="pull-right">
-            <button class="btn btn-group btn-small">update</button>
-        </div>
+
         <br><br>
 
         <h3 align="center">Employment History</h3>
@@ -462,9 +522,7 @@
 
     </div>
     <div class="tab-pane center" id="skills">
-        <div class="pull-right">
-            <button class="btn btn-group btn-small">update</button>
-        </div>
+
         <br><br>
 
         <h3 align="center">Skills </h3>
@@ -503,14 +561,10 @@
     </div>
     </div>
 
-    <div class="box span4">
+    <div class="box span2">
         <div class="box-header well"><h2><i class="icon-calendar"></i> Your Availability</h2></div>
 
         <div class="box-content">
-            <div class="pull-right">
-                <button class="btn btn-group btn-small">update</button>
-            </div>
-            <br>
 
             {{ form_start(availability) }}
 
@@ -518,35 +572,32 @@
             <div class="control-group primary">
 
 
-                <strong>Volunteering Hours</strong><br><br>
+                <strong>Volunteering Hours</strong><br>
                 <table width="100%">
                     <tr>
-                        <td width="40%">
-                            {{ form_widget(availability.preferredtime[0],{'attr':{'disabled':'true' }}) }} 07:00 - 08:00<br>
-                            {{ form_widget(availability.preferredtime[1],{'attr':{'disabled':'true' }}) }} 08:00 - 09:00<br>
-                            {{ form_widget(availability.preferredtime[2],{'attr':{'disabled':'true' }}) }} 09:00 - 10:00<br>
-                            {{ form_widget(availability.preferredtime[3],{'attr':{'disabled':'true' }}) }} 10:00 - 11:00<br>
-                            {{ form_widget(availability.preferredtime[4],{'attr':{'disabled':'true' }}) }} 11:00 - 12:00<br>
-                            {{ form_widget(availability.preferredtime[5],{'attr':{'disabled':'true' }}) }} 12:00 - 13:00<br>
-                            {{ form_widget(availability.preferredtime[6],{'attr':{'disabled':'true' }}) }} 13:00 - 14:00<br>
 
-                        </td>
-                        <td width="20%"></td>
-                        <td width="40%">
-                            {{ form_widget(availability.preferredtime[7],{'attr':{'disabled':'true' }}) }} 14:00 - 15:00<br>
-                            {{ form_widget(availability.preferredtime[8],{'attr':{'disabled':'true' }}) }} 15:00 - 16:00<br>
-                            {{ form_widget(availability.preferredtime[9],{'attr':{'disabled':'true' }}) }} 16:00 - 17:00<br>
-                            {{ form_widget(availability.preferredtime[10],{'attr':{'disabled':'true' }}) }} 17:00 -
-                            18:00<br>
-                            {{ form_widget(availability.preferredtime[11],{'attr':{'disabled':'true' }}) }} 18:00 -
-                            19:00<br>
-                            {{ form_widget(availability.preferredtime[12],{'attr':{'disabled':'true' }}) }} 19:00 -
-                            20:00<br>
-                            {{ form_widget(availability.preferredtime[13],{'attr':{'disabled':'true' }}) }} 20:00 -
-                            21:00<br>
+                        {{ form_widget(availability.time[0],{'attr':{'disabled':'true' }}) }} 07:00 - 08:00<br>
+                        {{ form_widget(availability.time[1],{'attr':{'disabled':'true' }}) }} 08:00 - 09:00<br>
+                        {{ form_widget(availability.time[2],{'attr':{'disabled':'true' }}) }} 09:00 - 10:00<br>
+                        {{ form_widget(availability.time[3],{'attr':{'disabled':'true' }}) }} 10:00 - 11:00<br>
+                        {{ form_widget(availability.time[4],{'attr':{'disabled':'true' }}) }} 11:00 - 12:00<br>
+                        {{ form_widget(availability.time[5],{'attr':{'disabled':'true' }}) }} 12:00 - 13:00<br>
+                        {{ form_widget(availability.time[6],{'attr':{'disabled':'true' }}) }} 13:00 - 14:00<br>
 
 
-                        </td>
+                        {{ form_widget(availability.time[7],{'attr':{'disabled':'true' }}) }} 14:00 - 15:00<br>
+                        {{ form_widget(availability.time[8],{'attr':{'disabled':'true' }}) }} 15:00 - 16:00<br>
+                        {{ form_widget(availability.time[9],{'attr':{'disabled':'true' }}) }} 16:00 - 17:00<br>
+                        {{ form_widget(availability.time[10],{'attr':{'disabled':'true' }}) }} 17:00 -
+                        18:00<br>
+                        {{ form_widget(availability.time[11],{'attr':{'disabled':'true' }}) }} 18:00 -
+                        19:00<br>
+                        {{ form_widget(availability.time[12],{'attr':{'disabled':'true' }}) }} 19:00 -
+                        20:00<br>
+                        {{ form_widget(availability.time[13],{'attr':{'disabled':'true' }}) }} 20:00 -
+                        21:00<br>
+
+
                     </tr>
                 </table>
 
@@ -555,23 +606,21 @@
 
             <div class="control-group">
 
-                <strong>Volunteering Days</strong><br><br>
+                <strong>Volunteering Days</strong><br>
 
                 <table>
                     <tr>
-                        <td width="40%">
-                            {{ form_widget(availability.days[0],{'attr':{'disabled':'true' }}) }} Sunday<br>
-                            {{ form_widget(availability.days[1],{'attr':{'disabled':'true' }}) }} Monday<br>
-                            {{ form_widget(availability.days[2],{'attr':{'disabled':'true' }}) }} Tuesday<br>
-                            {{ form_widget(availability.days[3],{'attr':{'disabled':'true' }}) }} Wednesday<br>
-                        </td>
-                        <td width="20%"></td>
-                        <td width="40%">
-                            {{ form_widget(availability.days[4],{'attr':{'disabled':'true' }}) }} Thursday<br>
-                            {{ form_widget(availability.days[5],{'attr':{'disabled':'true' }}) }} Friday<br>
-                            {{ form_widget(availability.days[6],{'attr':{'disabled':'true' }}) }} Saturday<br>
 
-                        </td>
+                        {{ form_widget(availability.days[0],{'attr':{'disabled':'true' }}) }} Sunday<br>
+                        {{ form_widget(availability.days[1],{'attr':{'disabled':'true' }}) }} Monday<br>
+                        {{ form_widget(availability.days[2],{'attr':{'disabled':'true' }}) }} Tuesday<br>
+                        {{ form_widget(availability.days[3],{'attr':{'disabled':'true' }}) }} Wednesday<br>
+
+                        {{ form_widget(availability.days[4],{'attr':{'disabled':'true' }}) }} Thursday<br>
+                        {{ form_widget(availability.days[5],{'attr':{'disabled':'true' }}) }} Friday<br>
+                        {{ form_widget(availability.days[6],{'attr':{'disabled':'true' }}) }} Saturday<br>
+
+
                     </tr>
                 </table>
 
@@ -579,6 +628,9 @@
             </div>
 
             </form>
+            <div class="center">
+                <button class="btn btn-group btn-small">update</button>
+            </div>
 
 
         </div>

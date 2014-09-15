@@ -1,16 +1,14 @@
+{% extends '::base.html.twig' %}
 
+{% block content%}
+    <div id="content" class="span10">
+        <div class="row-fluid">
 
-{% block body -%}
-    <h1>Education edit</h1>
-
-    {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('ridwan_education') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+            <br>
+            <h2>Profile Information</h2>
+            <hr><br>
+            {{ form_start(edit_form) }}
+            {{ form_end(edit_form) }}
+        </div>
+    </div>
 {% endblock %}

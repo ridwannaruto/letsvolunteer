@@ -10,7 +10,7 @@ class __TwigTemplate_848ed3cbeb6459ef28dfeafbe81b02b2834c13067ff14036cd0b330709e
         $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
@@ -25,30 +25,235 @@ class __TwigTemplate_848ed3cbeb6459ef28dfeafbe81b02b2834c13067ff14036cd0b330709e
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Volunteercontactdetails edit</h1>
+        echo "<div id=\"content\" class=\"span10\">
+    <div class=\"row-fluid\">
 
-    ";
-        // line 6
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form');
+        <br>
+        <h2>Profile Information</h2>
+        <hr><br>
+        ";
+        // line 10
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_start');
         echo "
 
-        <ul class=\"record_actions\">
-    <li>
-        <a href=\"";
-        // line 10
-        echo $this->env->getExtension('routing')->getPath("volunteercontactdetails");
-        echo "\">
-            Back to the list
-        </a>
-    </li>
-    <li>";
+
+        <div class=\"control-group primary\">
+            ";
         // line 14
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
-        echo "</li>
-</ul>
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "mobile"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Mobile Number"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 17
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "mobile"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 18
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "mobile"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+        <div class=\"control-group primary\">
+            ";
+        // line 23
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "phone"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Phone Number"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 26
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "phone"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 27
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "phone"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+
+        <div class=\"control-group primary\">
+            ";
+        // line 33
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "fax"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Fax Number"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 36
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "fax"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 37
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "fax"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+        <div class=\"control-group primary\">
+            ";
+        // line 42
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "streetnumber"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Street Number"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 45
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "streetnumber"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 46
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "streetnumber"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+
+        <div class=\"control-group primary\">
+            ";
+        // line 52
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "street"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Street"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 55
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "street"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 56
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "street"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+
+
+        <div class=\"control-group primary\">
+            ";
+        // line 63
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "city"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "City"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 66
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "city"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 67
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "city"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+
+        <div class=\"control-group primary\">
+            ";
+        // line 73
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "district"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "District"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 76
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "district"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 77
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "district"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+        <div class=\"control-group primary\">
+            ";
+        // line 82
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "divisionalsecretary"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Divisional Secretary"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 85
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "divisionalsecretary"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 86
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "divisionalsecretary"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+        <div class=\"control-group primary\">
+            ";
+        // line 91
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "province"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Province"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 94
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "province"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 95
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "province"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+        <div class=\"control-group primary\">
+            ";
+        // line 100
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "country"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Country"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 103
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "country"), 'widget');
+        echo "
+                <span class=\"help-inline\">";
+        // line 104
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "country"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+
+        ";
+        // line 109
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "_token"), 'widget');
+        echo "
+        <div class=\"control-group primary\">
+            ";
+        // line 111
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "country"), 'label', array("label_attr" => array("class" => "control-label"), "label" => " "));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 114
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "submit"), 'widget', array("attr" => array("class" => "btn btn-success")));
+        echo "
+                <span class=\"help-inline\">";
+        // line 115
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "country"), 'errors');
+        echo "</span>
+            </div>
+        </div>
+
+        ";
+        // line 119
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
+        echo "
+        </div>
+    </div>
 ";
     }
 
@@ -64,6 +269,6 @@ class __TwigTemplate_848ed3cbeb6459ef28dfeafbe81b02b2834c13067ff14036cd0b330709e
 
     public function getDebugInfo()
     {
-        return array (  100 => 34,  124 => 47,  20 => 1,  153 => 60,  146 => 55,  104 => 42,  97 => 36,  134 => 49,  127 => 62,  81 => 34,  76 => 28,  872 => 572,  868 => 571,  864 => 570,  857 => 566,  853 => 565,  849 => 564,  845 => 563,  809 => 539,  805 => 538,  797 => 536,  789 => 531,  785 => 530,  781 => 529,  777 => 528,  773 => 527,  769 => 526,  765 => 525,  752 => 515,  730 => 495,  721 => 493,  717 => 492,  710 => 487,  701 => 485,  689 => 478,  680 => 476,  676 => 475,  645 => 452,  640 => 450,  635 => 448,  628 => 446,  603 => 423,  592 => 418,  583 => 415,  578 => 413,  575 => 412,  571 => 411,  546 => 389,  534 => 380,  510 => 362,  494 => 349,  473 => 331,  452 => 313,  431 => 295,  396 => 266,  334 => 210,  292 => 173,  288 => 171,  284 => 169,  282 => 168,  263 => 151,  255 => 147,  186 => 93,  170 => 87,  155 => 78,  129 => 67,  113 => 54,  84 => 30,  248 => 169,  236 => 160,  212 => 142,  198 => 131,  181 => 117,  58 => 24,  828 => 388,  824 => 545,  821 => 306,  817 => 279,  814 => 541,  801 => 537,  827 => 381,  823 => 300,  820 => 299,  816 => 272,  813 => 271,  803 => 250,  798 => 248,  794 => 247,  77 => 26,  65 => 23,  34 => 6,  826 => 383,  822 => 302,  819 => 543,  815 => 274,  812 => 273,  799 => 249,  795 => 248,  786 => 243,  780 => 241,  774 => 239,  772 => 238,  766 => 234,  763 => 233,  750 => 223,  746 => 221,  738 => 216,  732 => 212,  726 => 208,  722 => 206,  715 => 204,  707 => 199,  702 => 197,  697 => 484,  690 => 193,  687 => 192,  684 => 191,  677 => 187,  672 => 185,  667 => 183,  660 => 181,  657 => 458,  655 => 179,  652 => 178,  642 => 171,  637 => 169,  632 => 447,  625 => 165,  622 => 164,  620 => 163,  617 => 162,  609 => 157,  604 => 155,  598 => 152,  591 => 150,  588 => 417,  586 => 148,  582 => 146,  576 => 143,  573 => 142,  567 => 139,  564 => 138,  561 => 137,  557 => 136,  554 => 135,  552 => 134,  547 => 131,  541 => 129,  538 => 128,  532 => 127,  529 => 126,  524 => 125,  522 => 371,  516 => 120,  514 => 119,  506 => 114,  502 => 113,  495 => 109,  490 => 106,  488 => 105,  468 => 88,  450 => 74,  446 => 45,  443 => 44,  432 => 2,  429 => 1,  421 => 388,  415 => 385,  410 => 383,  405 => 381,  400 => 379,  395 => 377,  390 => 375,  385 => 373,  380 => 371,  375 => 369,  370 => 367,  353 => 226,  349 => 358,  345 => 357,  331 => 352,  326 => 350,  316 => 346,  311 => 344,  306 => 342,  301 => 340,  296 => 338,  291 => 336,  286 => 334,  281 => 332,  276 => 330,  266 => 326,  261 => 324,  251 => 320,  234 => 132,  232 => 306,  185 => 263,  180 => 74,  165 => 104,  161 => 81,  148 => 74,  118 => 43,  114 => 46,  110 => 38,  90 => 33,  70 => 29,  343 => 217,  321 => 348,  315 => 195,  313 => 194,  295 => 182,  271 => 328,  265 => 158,  259 => 149,  256 => 322,  253 => 146,  244 => 147,  237 => 144,  226 => 137,  218 => 131,  215 => 130,  210 => 128,  207 => 127,  202 => 278,  53 => 18,  480 => 162,  474 => 161,  469 => 158,  461 => 155,  457 => 153,  453 => 75,  444 => 149,  440 => 148,  437 => 13,  435 => 146,  430 => 144,  427 => 143,  423 => 391,  413 => 280,  409 => 132,  407 => 131,  402 => 130,  398 => 129,  393 => 126,  387 => 122,  384 => 121,  381 => 120,  379 => 119,  374 => 116,  368 => 112,  365 => 365,  362 => 110,  360 => 363,  355 => 106,  341 => 356,  337 => 355,  322 => 101,  314 => 99,  312 => 191,  309 => 97,  305 => 189,  298 => 91,  294 => 90,  285 => 89,  283 => 88,  278 => 86,  268 => 85,  264 => 84,  258 => 81,  252 => 80,  247 => 78,  241 => 77,  229 => 73,  220 => 70,  214 => 69,  177 => 65,  169 => 60,  140 => 69,  132 => 77,  128 => 46,  107 => 41,  61 => 22,  273 => 96,  269 => 94,  254 => 92,  243 => 88,  240 => 145,  238 => 85,  235 => 143,  230 => 82,  227 => 81,  224 => 151,  221 => 77,  219 => 76,  217 => 75,  208 => 68,  204 => 280,  179 => 69,  159 => 63,  143 => 56,  135 => 70,  119 => 57,  102 => 39,  71 => 24,  67 => 26,  63 => 21,  59 => 20,  93 => 30,  88 => 38,  78 => 34,  38 => 10,  28 => 3,  201 => 92,  196 => 90,  183 => 82,  171 => 61,  166 => 71,  163 => 62,  158 => 67,  156 => 62,  151 => 77,  142 => 59,  138 => 54,  136 => 56,  121 => 42,  117 => 45,  105 => 39,  91 => 32,  62 => 23,  49 => 14,  26 => 6,  87 => 31,  46 => 14,  44 => 15,  31 => 4,  94 => 34,  89 => 29,  85 => 38,  75 => 25,  68 => 26,  56 => 24,  24 => 4,  27 => 1,  25 => 5,  21 => 2,  19 => 1,  79 => 27,  72 => 27,  69 => 24,  47 => 15,  40 => 17,  37 => 6,  22 => 1,  246 => 318,  157 => 56,  145 => 74,  139 => 72,  131 => 52,  123 => 58,  120 => 58,  115 => 43,  111 => 37,  108 => 36,  101 => 37,  98 => 45,  96 => 37,  83 => 30,  74 => 30,  66 => 26,  55 => 21,  52 => 20,  50 => 18,  43 => 14,  41 => 10,  35 => 6,  32 => 3,  29 => 2,  209 => 82,  203 => 78,  199 => 100,  193 => 97,  189 => 71,  187 => 84,  182 => 91,  176 => 89,  173 => 71,  168 => 86,  164 => 59,  162 => 57,  154 => 58,  149 => 76,  147 => 58,  144 => 55,  141 => 54,  133 => 69,  130 => 62,  125 => 48,  122 => 41,  116 => 54,  112 => 41,  109 => 44,  106 => 38,  103 => 42,  99 => 46,  95 => 33,  92 => 42,  86 => 35,  82 => 31,  80 => 29,  73 => 25,  64 => 26,  60 => 22,  57 => 23,  54 => 22,  51 => 22,  48 => 19,  45 => 14,  42 => 10,  39 => 10,  36 => 16,  33 => 7,  30 => 4,);
+        return array (  253 => 119,  246 => 115,  242 => 114,  236 => 111,  231 => 109,  223 => 104,  219 => 103,  213 => 100,  205 => 95,  201 => 94,  195 => 91,  187 => 86,  183 => 85,  177 => 82,  169 => 77,  165 => 76,  159 => 73,  150 => 67,  146 => 66,  140 => 63,  130 => 56,  126 => 55,  120 => 52,  111 => 46,  107 => 45,  101 => 42,  93 => 37,  89 => 36,  83 => 33,  74 => 27,  70 => 26,  64 => 23,  56 => 18,  52 => 17,  46 => 14,  39 => 10,  31 => 4,  28 => 3,);
     }
 }

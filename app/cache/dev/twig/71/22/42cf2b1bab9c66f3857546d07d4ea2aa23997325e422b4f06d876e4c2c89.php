@@ -105,35 +105,71 @@ class __TwigTemplate_712242cf2b1bab9c66f3857546d07d4ea2aa23997325e422b4f06d876e4
                     <td width=\"30%\">
                         <ul class=\"dashboard-list\">
                             <h6>Opportunities</h6>
-                            <li> <span class=\"green\">92</span> Completed</li>
-                            <li> <span class=\"red\">15</span> Rejected </li>
-                            <li> <span class=\"yellow\">45</span> On going</li><br>
-                             <span class=\"blue\">36</span>  <strong>Total</strong>
+                            <li> <span class=\"green\">";
+        // line 55
+        echo twig_escape_filter($this->env, (isset($context["CompletedOP"]) ? $context["CompletedOP"] : $this->getContext($context, "CompletedOP")), "html", null, true);
+        echo "</span> Completed</li>
+                            <li> <span class=\"red\">";
+        // line 56
+        echo twig_escape_filter($this->env, (isset($context["RejectedOP"]) ? $context["RejectedOP"] : $this->getContext($context, "RejectedOP")), "html", null, true);
+        echo "</span> Rejected </li>
+                            <li> <span class=\"yellow\">";
+        // line 57
+        echo twig_escape_filter($this->env, ((isset($context["CurrentOP"]) ? $context["CurrentOP"] : $this->getContext($context, "CurrentOP")) + (isset($context["PendingOP"]) ? $context["PendingOP"] : $this->getContext($context, "PendingOP"))), "html", null, true);
+        echo "</span> On going</li><br>
+                             <span class=\"blue\">";
+        // line 58
+        echo twig_escape_filter($this->env, ((((isset($context["CurrentOP"]) ? $context["CurrentOP"] : $this->getContext($context, "CurrentOP")) + (isset($context["PendingOP"]) ? $context["PendingOP"] : $this->getContext($context, "PendingOP"))) + (isset($context["RejectedOP"]) ? $context["RejectedOP"] : $this->getContext($context, "RejectedOP"))) + (isset($context["CompletedOP"]) ? $context["CompletedOP"] : $this->getContext($context, "CompletedOP"))), "html", null, true);
+        echo " </span><strong>Total</strong>
                         </ul>
                     </td>
                     <td width=\"3%\"></td>
-                    <td width=\"30%\">
-
-                        <ul class=\"dashboard-list\">
-                            <h6>Volunteers</h6>
-                            <li> <span class=\"green\">92</span> Active</li>
-                            <li> <span class=\"red\">15</span> Rejected</li>
-                            <li> <span class=\"yellow\">45</span> Pending</li><br>
-                            <span class=\"blue\">36</span>  <strong>Total</strong>
-
-                        </ul>
-
-                    </td>
-                    <td width=\"3%\"></td>
-
                     <td width=\"30%\">
 
                         <ul class=\"dashboard-list\">
                             <h6>Organizations</h6>
-                            <li> <span class=\"green\">92</span> Active</li>
-                            <li> <span class=\"red\">15</span> Rejected</li>
-                            <li> <span class=\"yellow\">45</span> Pending</li><br>
-                            <span class=\"blue\">36</span>  <strong>Total</strong>
+                            <li> <span class=\"green\">";
+        // line 66
+        echo twig_escape_filter($this->env, (isset($context["ActiveOrg"]) ? $context["ActiveOrg"] : $this->getContext($context, "ActiveOrg")), "html", null, true);
+        echo "</span> Active</li>
+                            <li> <span class=\"red\">";
+        // line 67
+        echo twig_escape_filter($this->env, (isset($context["RejectedOrg"]) ? $context["RejectedOrg"] : $this->getContext($context, "RejectedOrg")), "html", null, true);
+        echo "</span> Rejected</li>
+                            <li> <span class=\"yellow\">";
+        // line 68
+        echo twig_escape_filter($this->env, (isset($context["PendingOrg"]) ? $context["PendingOrg"] : $this->getContext($context, "PendingOrg")), "html", null, true);
+        echo "</span> Pending</li><br>
+                            <span class=\"blue\">";
+        // line 69
+        echo twig_escape_filter($this->env, (((isset($context["ActiveOrg"]) ? $context["ActiveOrg"] : $this->getContext($context, "ActiveOrg")) + (isset($context["RejectedOrg"]) ? $context["RejectedOrg"] : $this->getContext($context, "RejectedOrg"))) + (isset($context["PendingOrg"]) ? $context["PendingOrg"] : $this->getContext($context, "PendingOrg"))), "html", null, true);
+        echo "</span>  <strong>Total</strong>
+
+                        </ul>
+
+                    </td>
+                    <td width=\"3%\"></td>
+
+                    <td width=\"30%\">
+
+                        <ul class=\"dashboard-list\">
+                            <h6>Volunteers</h6>
+                            <li> <span class=\"green\">";
+        // line 80
+        echo twig_escape_filter($this->env, (isset($context["ActiveVol"]) ? $context["ActiveVol"] : $this->getContext($context, "ActiveVol")), "html", null, true);
+        echo "</span> Active</li>
+                            <li> <span class=\"red\">";
+        // line 81
+        echo twig_escape_filter($this->env, (isset($context["RejectedVol"]) ? $context["RejectedVol"] : $this->getContext($context, "RejectedVol")), "html", null, true);
+        echo "</span> Rejected</li>
+                            <li> <span class=\"yellow\">";
+        // line 82
+        echo twig_escape_filter($this->env, (isset($context["PendingVol"]) ? $context["PendingVol"] : $this->getContext($context, "PendingVol")), "html", null, true);
+        echo "</span> Pending</li><br>
+                            <span class=\"blue\">";
+        // line 83
+        echo twig_escape_filter($this->env, (((isset($context["ActiveVol"]) ? $context["ActiveVol"] : $this->getContext($context, "ActiveVol")) + (isset($context["RejectedVol"]) ? $context["RejectedVol"] : $this->getContext($context, "RejectedVol"))) + (isset($context["PendingVol"]) ? $context["PendingVol"] : $this->getContext($context, "PendingVol"))), "html", null, true);
+        echo "</span>  <strong>Total</strong>
 
                         </ul>
 
@@ -196,7 +232,7 @@ class __TwigTemplate_712242cf2b1bab9c66f3857546d07d4ea2aa23997325e422b4f06d876e4
             echo "                                </div>
                                 <a href=\"";
             // line 122
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_profile_volunteer", array("userID" => $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "id"))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_site_profile", array("ID" => $this->getAttribute($this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "user"), "id"))), "html", null, true);
             echo "\">
 
                                     <img class=\"dashboard-avatar\" alt=\"Not Found\" src=\"";
@@ -247,7 +283,7 @@ class __TwigTemplate_712242cf2b1bab9c66f3857546d07d4ea2aa23997325e422b4f06d876e4
                         ";
         // line 150
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["volunteers"]) ? $context["volunteers"] : $this->getContext($context, "volunteers")));
+        $context['_seq'] = twig_ensure_traversable((isset($context["organizations"]) ? $context["organizations"] : $this->getContext($context, "organizations")));
         foreach ($context['_seq'] as $context["_key"] => $context["member"]) {
             // line 151
             echo "                            <li>
@@ -260,13 +296,13 @@ class __TwigTemplate_712242cf2b1bab9c66f3857546d07d4ea2aa23997325e422b4f06d876e4
                 echo "                                        <span class=\"label label-warning\">Pending Approval</span>   <br><br>
                                         <button url=\"";
                 // line 156
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_site_approve_volunteer", array("userID" => $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "id"))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_site_approve_organization", array("userID" => $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "id"))), "html", null, true);
                 echo "\" id=\"";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "id"), "html", null, true);
                 echo "\" class=\"btn btn-mini btn-round btn-complete\"><i class=\"icon-ok\"></i></button>
                                         <button url=\"";
                 // line 157
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_site_reject_volunteer", array("userID" => $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "id"))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_site_reject_organization", array("userID" => $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "id"))), "html", null, true);
                 echo "\" id=\"";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "id"), "html", null, true);
                 echo "\" class=\"btn btn-mini btn-round btn-delete\"><i class=\"icon-remove\"></i></button>
@@ -280,7 +316,7 @@ class __TwigTemplate_712242cf2b1bab9c66f3857546d07d4ea2aa23997325e422b4f06d876e4
             echo "                                </div>
                                 <a href=\"";
             // line 162
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_profile_volunteer", array("userID" => $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "id"))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_site_profile", array("ID" => $this->getAttribute($this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "user"), "id"))), "html", null, true);
             echo "\">
 
                                     <img class=\"dashboard-avatar\" alt=\"Not Found\" src=\"";
@@ -290,18 +326,16 @@ class __TwigTemplate_712242cf2b1bab9c66f3857546d07d4ea2aa23997325e422b4f06d876e4
 
                                     <strong>Name:</strong> ";
             // line 166
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "firstname"), "html", null, true);
-            echo " ";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "lastname"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "name"), "html", null, true);
             echo "</a>
                                 </a><br>
-                                <strong>Nationality:</strong> ";
+                                <strong>Location:</strong> ";
             // line 168
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "nationality"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "branch"), "html", null, true);
             echo "<br>
                                 <strong>Category:</strong> ";
             // line 169
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "category"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["member"]) ? $context["member"] : $this->getContext($context, "member")), "type"), "html", null, true);
             echo "
                                 <br><br>
                             </li>
@@ -320,6 +354,52 @@ class __TwigTemplate_712242cf2b1bab9c66f3857546d07d4ea2aa23997325e422b4f06d876e4
     </div>
     </div>
 
+
+
+    <div class=\"modal hide fade\" id=\"delete\">
+        <div class=\"modal-header\">
+            <button type=\"button\" class=\"close\" data-dismiss=\"modal\">×</button>
+            <h3>Confirmation</h3>
+        </div>
+        <div class=\"modal-body\">
+            <p align=\"center\">Are you sure you want to reject this request?<br>
+            </p>
+
+
+        </div>
+        <div class=\"modal-footer\">
+
+            <form action=\"empty\" id = \"continue-form\" method=\"POST\">
+                <input name=\"id\" id=\"del-id\" type=\"hidden\" value=\"empty\" />
+                <a href=\"#\" class=\"btn\" data-dismiss=\"modal\">Close</a>
+                <input type=\"submit\" class=\"btn btn-primary\" value=\"continue\">
+            </form>
+
+        </div>
+    </div>
+
+    <div class=\"modal hide fade\" id=\"complete\">
+        <div class=\"modal-header\">
+            <button type=\"button\" class=\"close\" data-dismiss=\"modal\">×</button>
+            <h3>Confirmation</h3>
+        </div>
+        <div class=\"modal-body\">
+            <p align=\"center\">Are you sure this is a authorize this process?
+            </p>
+
+
+        </div>
+        <div class=\"modal-footer\">
+
+            <form action=\"empty\" id = \"continue-form\" method=\"POST\">
+                <input name=\"id\" id=\"del-id\" type=\"hidden\" value=\"empty\" />
+                <a href=\"#\" class=\"btn\" data-dismiss=\"modal\">Close</a>
+                <input type=\"submit\" class=\"btn btn-primary\" value=\"continue\">
+            </form>
+
+        </div>
+    </div>
+
 ";
     }
 
@@ -335,6 +415,6 @@ class __TwigTemplate_712242cf2b1bab9c66f3857546d07d4ea2aa23997325e422b4f06d876e4
 
     public function getDebugInfo()
     {
-        return array (  314 => 173,  304 => 169,  300 => 168,  293 => 166,  288 => 164,  283 => 162,  280 => 161,  276 => 159,  269 => 157,  263 => 156,  260 => 155,  258 => 154,  253 => 151,  249 => 150,  230 => 133,  220 => 129,  216 => 128,  209 => 126,  204 => 124,  199 => 122,  196 => 121,  192 => 119,  185 => 117,  179 => 116,  176 => 115,  174 => 114,  169 => 111,  165 => 110,  83 => 31,  78 => 29,  73 => 27,  68 => 25,  64 => 23,  58 => 21,  52 => 19,  50 => 18,  39 => 10,  31 => 4,  28 => 3,);
+        return array (  348 => 173,  338 => 169,  334 => 168,  329 => 166,  324 => 164,  319 => 162,  316 => 161,  312 => 159,  305 => 157,  299 => 156,  296 => 155,  294 => 154,  289 => 151,  285 => 150,  266 => 133,  256 => 129,  252 => 128,  245 => 126,  240 => 124,  235 => 122,  232 => 121,  228 => 119,  221 => 117,  215 => 116,  212 => 115,  210 => 114,  205 => 111,  201 => 110,  171 => 83,  167 => 82,  163 => 81,  159 => 80,  145 => 69,  141 => 68,  137 => 67,  133 => 66,  122 => 58,  118 => 57,  114 => 56,  110 => 55,  83 => 31,  78 => 29,  73 => 27,  68 => 25,  64 => 23,  58 => 21,  52 => 19,  50 => 18,  39 => 10,  31 => 4,  28 => 3,);
     }
 }

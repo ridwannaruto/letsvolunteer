@@ -475,6 +475,45 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/volunteer')) {
+            if (0 === strpos($pathinfo, '/volunteer/personal')) {
+                // ridwan_volunteerpersonal_edit
+                if (preg_match('#^/volunteer/personal/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_volunteerpersonal_edit')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\VolunteerpersonalController::editAction',));
+                }
+
+                // ridwan_volunteerpersonal_update
+                if (preg_match('#^/volunteer/personal/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_volunteerpersonal_update')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\VolunteerpersonalController::updateAction',));
+                }
+
+                // ridwan_volunteerpersonal_delete
+                if (preg_match('#^/volunteer/personal/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_volunteerpersonal_delete')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\VolunteerpersonalController::deleteAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/volunteer/contact')) {
+                // ridwan_volunteercontact_edit
+                if (preg_match('#^/volunteer/contact/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_volunteercontact_edit')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\VolunteercontactdetailsController::editAction',));
+                }
+
+                // ridwan_volunteercontact_update
+                if (preg_match('#^/volunteer/contact/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_volunteercontact_update')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\VolunteercontactdetailsController::updateAction',));
+                }
+
+                // ridwan_volunteercontact_delete
+                if (preg_match('#^/volunteer/contact/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_volunteercontact_delete')), array (  '_controller' => 'Ridwan\\EntityBundle\\Controller\\VolunteercontactdetailsController::deleteAction',));
+                }
+
+            }
+
+        }
+
         // ridwan_site_home
         if ($pathinfo === '/home') {
             return array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\HomeController::homeAction',  '_route' => 'ridwan_site_home',);
@@ -586,6 +625,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_reject_referee')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\RejectionController::refereeAction',));
             }
 
+        }
+
+        // ridwan_site_profile
+        if (0 === strpos($pathinfo, '/profile') && preg_match('#^/profile/(?P<ID>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_profile')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\ProfileController::profileAction',));
         }
 
         if (0 === strpos($pathinfo, '/log')) {
