@@ -248,6 +248,10 @@ class VolunteerController extends Controller
         if ($form->isValid()) {
             $contacts = $form->getData();
             $contacts->setUser($this->getUser());
+            $location = $contacts->getDivisionalsecretary();
+            $contacts->setDivisionalsecretary($location->getDivision());
+            $contacts->setDistrict($location->getDistrict());
+            $contacts->setProvince($location->getProvince);
             $em = $this->getDoctrine()->getManager();
             try {
                 $em->persist($contacts);

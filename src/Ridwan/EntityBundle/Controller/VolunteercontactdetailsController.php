@@ -192,6 +192,13 @@ class VolunteercontactdetailsController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+
+            $contacts = $editForm->getData();
+            $location = $contacts->getDivisionalsecretary();
+            $contacts->setDivisionalsecretary($location->getDivision());
+            $contacts->setDistrict($location->getDistrict());
+            $contacts->setProvince($location->getProvince());
+
             $em->flush();
 
             return $this->redirect($this->generateUrl('ridwan_site_home', array('type' => 'S', 'message' => 'successfully updated your information')));

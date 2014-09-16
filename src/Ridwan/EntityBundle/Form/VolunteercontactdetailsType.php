@@ -21,10 +21,20 @@ class VolunteercontactdetailsType extends AbstractType
             ->add('streetnumber')
             ->add('street')
             ->add('city')
-            ->add('divisionalsecretary')
-            ->add('district')
             ->add('country')
-            ->add('province')
+            ->add('divisionalsecretary', 'entity', array(
+                    'label' => 'Select your primary role',
+                    'class' => 'RidwanEntityBundle:Locations',
+                    'property' => 'Place',
+                    'label_attr' => array('class' => 'control-label'),
+                    'attr' => array(
+                        'class' => 'controls span6',
+                        'data-rel' => 'chosen'
+                    )
+
+                ))
+
+
 
         ;
     }

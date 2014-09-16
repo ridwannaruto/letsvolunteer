@@ -69,7 +69,7 @@ class __TwigTemplate_e1e565768a33e8681f066d08b6b10abe65ddc287c8b2380beace2616114
                     <tr>
                         <th width=\"15%\">Title</th>
                         <th width=\"45%\">Details</th>
-                        <th width=\"10%\">Cause</th>
+                        <th width=\"10%\">Type</th>
                         <th width=\"10%\">Location</th>
                         <th width=\"10%\">Status</th>
 

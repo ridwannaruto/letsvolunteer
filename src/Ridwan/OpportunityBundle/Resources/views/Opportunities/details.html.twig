@@ -40,7 +40,7 @@
 
                         <h6>Description</h6>
 
-                        <h3>{{ Opportunity.description }}</h3>
+                        <p align="justify">{{ Opportunity.description }}</p>
                         <br>
 
                         <table width='100%'>
@@ -48,39 +48,56 @@
                                 <td width='40%'>
                                     <h6>Location</h6>
 
-                                    <h3>{{ Opportunity.location }}</h3>
+                                    <p align="justify">{{ Opportunity.location }}</p>
                                     <br>
 
                                     <h6>Start Date</h6>
 
-                                    <h3>{{ Opportunity.startdate|date('Y-m-d') }}</h3>
+                                    <p align="justify">{{ Opportunity.startdate|date('Y-m-d') }}</p>
                                     <br>
 
                                     <h6>Expected End Date</h6>
 
-                                    <h3>{{ Opportunity.enddate| date('Y-m-d') }}</h3>
+                                    <p align="justify">{{ Opportunity.enddate| date('Y-m-d') }}</p>
                                     <br>
 
                                     <h6>Number of Volunteers</h6>
 
-                                    <h3>{{ Opportunity.numberofvolunteers }}</h3>
+                                    <p align="justify">{{ Opportunity.numberofvolunteers }}</p>
                                     <br>
                                 </td>
                                 <td width='10%'></td>
                                 <td width='40%'>
                                     <h6>Age Group</h6>
 
-                                    <h3>{{ Opportunity.agegroup }}</h3>
+                                    <p align="justify">{{ Opportunity.agegroup }}</p>
                                     <br>
 
                                     <h6>Difficulty</h6>
 
-                                    <h3>{{ Opportunity.difficulty }}</h3>
+                                    <p align="justify">
+                                        {% if Opportunity.difficulty == 8 %}
+                                    <h3><span class="label label-important"> Extreme</span></h3>
+                                    {% elseif Opportunity.difficulty == 6 %}
+                                        <h3><span class="label label-warning"> Hard</span></h3>
+
+                                    {% elseif Opportunity.difficulty == 4 %}
+                                        <h3><span class="label label-inverse"> Normal</span></h3>
+
+                                    {% elseif Opportunity.difficulty == 2 %}
+                                        <h3><span class="label label-inverse"> Easy </span></h3>
+
+                                    {% elseif Opportunity.difficulty == 0 %}
+                                        <h3><span class="label label-info"> Very Easy</span></h3>
+                                    {% endif %}
+
+
+                                    </p>
                                     <br>
 
                                     <h6>Cause</h6>
 
-                                    <h3>{{ Opportunity.cause }}</h3>
+                                    <p align="justify">{{ Opportunity.cause }}</p>
                                     <br>
 
                                     <h6>Status</h6>
@@ -108,12 +125,12 @@
 
                         <h6>Training</h6>
 
-                        <h3>{{ Opportunity.training }}</h3>
+                        <p align="justify">{{ Opportunity.training }}</p>
                         <br>
 
                         <h6>Expenses</h6>
 
-                        <h3>{{ Opportunity.expenses }}</h3>
+                        <p align="justify">{{ Opportunity.expenses }}</p>
                         <br>
 
 
@@ -169,6 +186,6 @@
             </div>
         </div>
 
-
+</div>
 
 {% endblock %}

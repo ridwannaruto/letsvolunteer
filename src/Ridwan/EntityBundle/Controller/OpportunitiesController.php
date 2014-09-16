@@ -192,6 +192,15 @@ class OpportunitiesController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $opportunity = $editForm->getData();
+            $profession = $opportunity->getRole()->getSelection();
+            $location = $opportunity->getLocation()->getPlace();
+            $opportunity->setLocation($location);
+            $opportunity->setRole($profession);
+
+
+
+
             $em->flush();
 
             return $this->redirect($this->generateUrl('ridwan_opportunity_details', array('opportunityID'=>$id,'type' => 'S', 'message' => 'successfully updated your information')));

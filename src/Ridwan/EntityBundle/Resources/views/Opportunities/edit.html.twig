@@ -18,6 +18,14 @@
         </div>
 
         <div class="control-group primary">
+            {{form_label(edit_form.role, 'Volunteer Role',{ 'label_attr': {'class': 'control-label'} })}}
+
+            <div class="controls">
+                {{form_widget(edit_form.role)}}
+                <span class="help-inline">{{ form_errors(edit_form.role) }}</span>
+            </div>
+        </div>
+        <div class="control-group primary">
             {{form_label(edit_form.difficulty, 'Difficulty',{ 'label_attr': {'class': 'control-label'} })}}
 
             <div class="controls">

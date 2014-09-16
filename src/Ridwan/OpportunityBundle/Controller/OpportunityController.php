@@ -368,8 +368,12 @@ class OpportunityController extends Controller
                 if ($form->isValid()) {
 
                     $Opportunity = $form->getData();
-                    $Opportunity->setOrganization($this->getOrganization());
+                    $Opportunity->setOrganization($this->getOrganization()->getId());
                     $Opportunity->setStatus(0);
+                    $profession = $Opportunity->getRole()->getSelection();
+                    $location = $Opportunity->getLocation()->getPlace();
+                    $Opportunity->setLocation($location);
+                    $Opportunity->setRole($profession);
                     $em->persist($Opportunity);
 
                     try {

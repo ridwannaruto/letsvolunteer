@@ -229,7 +229,7 @@ class Volunteercontactdetails
     /**
      * Get city
      *
-     * @return string 
+     * @return string
      */
     public function getCity()
     {
@@ -252,7 +252,7 @@ class Volunteercontactdetails
     /**
      * Get divisionalsecretary
      *
-     * @return string 
+     * @return string
      */
     public function getDivisionalsecretary()
     {
@@ -275,7 +275,7 @@ class Volunteercontactdetails
     /**
      * Get district
      *
-     * @return string 
+     * @return string
      */
     public function getDistrict()
     {
@@ -321,7 +321,7 @@ class Volunteercontactdetails
     /**
      * Get province
      *
-     * @return string 
+     * @return string
      */
     public function getProvince()
     {
