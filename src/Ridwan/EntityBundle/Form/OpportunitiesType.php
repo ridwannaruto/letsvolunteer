@@ -16,14 +16,58 @@ class OpportunitiesType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('cause')
-            ->add('location')
+            ->add('cause', 'choice', array(
+                    'choices'  => array(
+                        'Agriculture' => 'Agriculture',
+                        'Business Development'  => 'Business Development',
+                        'Communications'   => 'Communications',
+                        'Education'   => 'Education',
+                        'Engineering'   => 'Engineering',
+                        'Finance'   => 'Finance',
+                        'Health'   => 'Health',
+                        'Human Resource'   => 'Human Resource',
+                        'Information Technology'   => 'Information Technology',
+                        'Legal'   => 'Legal',
+                        'Management'   => 'Management',
+                        'Military Specific'   => 'Military Specific',
+                        'Natural Resource Management'   => 'Natural Resource Management',
+                        'Office & Administrative Support'   => 'Office & Administrative Support',
+                        'Plant and Machine Operators'   => 'Plant and Machine Operators',
+                        'Surveyor\'s Services'   => 'Surveyor\'s Services',
+                        'Special Education'   => 'Special Education',
+                        'Social Worker'   => 'Social Worker',
+                        'Social Development '   => 'Social Development ',
+                        'Support Services'   => 'Support Services',
+                        'Technical'   => 'Technical',
+                        'Translator\'s Service'   => 'Translator\'s Service',
+                        'Vocational Technical Trainer'   => 'Vocational Technical Trainer'
+                    ),
+                    'attr' => array(
+                        'class' => 'controls',
+                        'data-rel' => 'chosen'
+                    )
+                ))
+            ->add('location', 'entity', array(
+                    'label' => 'Select your primary role',
+                    'class' => 'RidwanEntityBundle:Locations',
+                    'property' => 'Place',
+                    'label_attr' => array('class' => 'control-label'),
+                    'attr' => array(
+                        'class' => 'controls span6',
+                        'data-rel' => 'chosen'
+                    )
+
+                ))
             ->add('description', 'textarea', array(
                     'attr' => array(
                         'style' => "height:150px; resize:none",
                         'class' => 'span8',
                         'placeholder' => 'write a good description for the task')))
-            ->add('shortdescription')
+            ->add('shortdescription', 'textarea', array(
+                    'attr' => array(
+                        'style' => "height:70px; resize:none",
+                        'class' => 'span8',
+                        'placeholder' => 'write a short description for the volunteer')))
             ->add('startdate', 'text', array(
                     'label_attr' => array('class' => 'control-label'),
                     'label' => 'Date',
@@ -45,9 +89,33 @@ class OpportunitiesType extends AbstractType
                 ))
 
             ->add('numberofvolunteers')
-            ->add('agegroup')
-            ->add('training')
-            ->add('expenses')
+            ->add('agegroup', 'choice', array(
+                    'choices' => array(
+                        '15-20' => '15-20',
+                        '20-25' => '20-25',
+                        '25-30' => '25-30',
+                        '30-35' => '30-35',
+                        '35-40' => '35-40',
+                        '40-45' => '40-45',
+                        '45-50' => '45-50'
+                    ),
+                    'attr' => array(
+                        'class' => 'controls',
+                        'data-rel' => 'chosen'
+                    )
+                ))
+
+            ->add('training', 'textarea', array(
+                    'attr' => array(
+                        'style' => "height:70px; resize:none",
+                        'class' => 'span8',
+                        'placeholder' => 'what kind of training will you be providing')))
+
+            ->add('expenses', 'textarea', array(
+                    'attr' => array(
+                        'style' => "height:70px; resize:none",
+                        'class' => 'span8',
+                        'placeholder' => 'what are the expenses you will cover for the volunteer')))
             ->add('difficulty', 'choice', array(
                     'choices' => array(
                         '2' => 'Very Easy',
@@ -60,6 +128,17 @@ class OpportunitiesType extends AbstractType
                         'class' => 'controls',
                         'data-rel' => 'chosen'
                     )
+                ))
+            ->add('role', 'entity', array(
+                    'label' => 'Select your primary role',
+                    'class' => 'RidwanEntityBundle:Profession',
+                    'property' => 'selection',
+                    'label_attr' => array('class' => 'control-label'),
+                    'attr' => array(
+                        'class' => 'controls span6',
+                        'data-rel' => 'chosen'
+                    )
+
                 ))
 
             ->add('submit','submit')

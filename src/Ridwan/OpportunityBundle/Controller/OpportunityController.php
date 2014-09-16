@@ -6,6 +6,7 @@ use Ridwan\EntityBundle\Entity\Opportunities;
 use Ridwan\EntityBundle\Form\OpportunitiesType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class OpportunityController extends Controller
@@ -44,16 +45,30 @@ class OpportunityController extends Controller
                     )
                 );
             }
-            if ($type == 'VOLUNTEER') {
 
-                $opportunities = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Opportunities')->findBy(array('status'=>0));
+            if ($type == 'VOLUNTEER') {
+                $opportunityList = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Profile')->findOneBy(array('user'=>$user))->getOpportunities();
+                $opportunityCurrent = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Profile')->findOneBy(array('user'=>$user))->getCurrent();
+                $opportunities = array();
+                if ($opportunityList != null){
+                    foreach( $opportunityList as$op){
+                        $opportunities[] = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Opportunities')->find($op);
+                    }
+
+                }
+                $current = $this->getDoctrine()->getManager()->getRepository('RidwanEntityBundle:Opportunities')->find($opportunityCurrent);
                 return $this->render(
                     'RidwanOpportunityBundle:Opportunities:volunteer.html.twig', array(
                         'Opportunities' => $opportunities,
+                        'current' => $current,
                         'message' => $request->get('message'),
                         'type' => $request->get('type'),
                     )
+
                 );
+
+
+
             }
             if ($type == 'NVS') {
 
@@ -325,10 +340,7 @@ class OpportunityController extends Controller
                 );
             } else {
                 return $this->render(
-                    'ridwanStyleBundle:Error:permission.html.twig', array(
-                        'Notifications' => $Notifications
-                    )
-                );
+                    'ridwanStyleBundle:Error:permission.html.twig');
             }
         }
         return $this->redirect($this->generateUrl('ridwan_site_login'));
@@ -399,6 +411,7 @@ class OpportunityController extends Controller
         }
         return $this->redirect($this->generateUrl('ridwan_site_loginpage'));
     }
+
 
     public function deleteOpportunityAction(Request $request)
     {

@@ -96,4 +96,12 @@ fos_user:
             address:        noreply@acmedemo.com
             sender_name:    Let's Volunteer
 
-
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltopdf
+        options:    []
+    image:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltoimage
+        options:    []

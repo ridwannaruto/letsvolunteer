@@ -15,10 +15,30 @@ class ProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('intro')
-            ->add('reason')
-            ->add('experience')
-            ->add('health')
+
+            ->add('intro', 'textarea', array(
+                    'attr' => array(
+                        'style' => "height:150px; resize:none",
+                        'class' => 'span8',
+                        'placeholder' => 'write a good description about your self')))
+            ->add('reason', 'textarea', array(
+                    'attr' => array(
+                        'style' => "height:150px; resize:none",
+                        'class' => 'span8',
+                        'placeholder' => 'write a short explanation why you want to volunteer?')))
+
+            ->add('experience', 'textarea', array(
+                    'attr' => array(
+                        'style' => "height:150px; resize:none",
+                        'class' => 'span8',
+                        'placeholder' => 'what are your previous experience in Volunteering?')))
+
+            ->add('health', 'textarea', array(
+                    'attr' => array(
+                        'style' => "height:70px; resize:none",
+                        'class' => 'span8',
+                        'placeholder' => 'write a description about your health conidition')))
+
             ->add('drivinglicense', 'choice', array(
                     'choices' => array(
                         'yes' => 'I have a valid License',

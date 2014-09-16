@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Ridwan\OpportunityBundle\RidwanOpportunityBundle(),
             new Ridwan\UserBundle\RidwanUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

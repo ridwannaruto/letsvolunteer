@@ -24,6 +24,8 @@
     <field name="organization" type="integer" column="organization"/>
     <field name="status" type="integer" column="status"/>
     <field name="enrolled" type="text" column="enrolled" nullable="true"/>
+    <field name="role" type="text" column="role" nullable="true"/>
+    <field name="time" type="array" column="time" nullable="true"/>
 
   </entity>
 </doctrine-mapping>

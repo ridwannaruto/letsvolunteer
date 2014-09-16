@@ -16,7 +16,9 @@
     <field name="aggregatedrating" type="smallint" column="aggregatedRating" nullable="true"/>
     <field name="totalweight" type="integer" column="totalWeight" nullable="true"/>
       <field name="hours" type="integer" column="hours" nullable="true"/>
+      <field name="current" type="integer" column="current" nullable="true"/>
       <field name="value" type="integer" column="value" nullable="true"/>
+      <field name="opportunities" type="array" column="opportunities" nullable="true"/>
     <many-to-one field="user" target-entity="Authentication">
       <join-columns>
         <join-column name="user" referenced-column-name="id"/>

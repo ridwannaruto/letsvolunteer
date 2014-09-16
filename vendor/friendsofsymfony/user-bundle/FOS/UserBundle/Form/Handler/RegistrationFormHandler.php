@@ -72,8 +72,6 @@ class RegistrationFormHandler
             $user->setEnabled(true);
         }
 
-        $type = $user->getType();
-        $user->addRole(strtolower($type));
         $this->userManager->updateUser($user);
     }
 

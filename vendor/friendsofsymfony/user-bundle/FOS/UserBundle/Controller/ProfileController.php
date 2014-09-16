@@ -71,7 +71,7 @@ class ProfileController extends ContainerAware
      */
     protected function getRedirectionUrl(UserInterface $user)
     {
-        return $this->container->get('router')->generate('ridwan_site_home', array('type' => 'S', 'message' => 'successfully updated your account'));
+        return $this->container->get('router')->generate('fos_user_profile_show');
     }
 
     /**

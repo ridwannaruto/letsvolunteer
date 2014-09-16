@@ -70,6 +70,7 @@ class ProfileController extends Controller {
         $skills = $em->getRepository('RidwanEntityBundle:Skills')->findOneBy(array('user'=>$authProfile));
         $profile = $em->getRepository('RidwanEntityBundle:Profile')->findOneBy(array('user'=>$authProfile));
         $availability = $em->getRepository('RidwanEntityBundle:Availability')->findOneBy(array('user'=>$authProfile));
+        $referees = $em->getRepository('RidwanEntityBundle:Referees')->findBy(array('user'=>$authProfile->getId()));
 
         $form = $this->createForm(
             new AvailabilityType(), $availability, array(
@@ -79,7 +80,7 @@ class ProfileController extends Controller {
                 )
             )
         );
-        return array ('authProfile'=>$authProfile,'personal' => $personalDetails, 'education' => $education, 'employment' => $employment, 'contact' => $contactDetails, 'skills'=> $skills, 'profile' => $profile,'availability'=>$form->createView());
+        return array ('referees' => $referees,'authProfile'=>$authProfile,'personal' => $personalDetails, 'education' => $education, 'employment' => $employment, 'contact' => $contactDetails, 'skills'=> $skills, 'profile' => $profile,'availability'=>$form->createView());
     }
 
     private function getOrganizationInformation($authProfile){

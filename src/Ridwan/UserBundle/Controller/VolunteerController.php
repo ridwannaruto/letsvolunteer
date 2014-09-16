@@ -298,10 +298,17 @@ class VolunteerController extends Controller
             $skills = $form->getData();
             $em = $this->getDoctrine()->getManager();
             try {
+                $strprimary = $skills->getPrimary()->getSelection();
+                //echo $strprimary;
+                $skills->setPrimary($strprimary);
+                $strsecondary = $skills->getSecondary()->getSelection();
+                //echo $strsecondary;
+                $skills->setSecondary($strsecondary);
                 $skills->setUser($this->getUser());
                 $em->persist($skills);
                 $em->flush();
             } catch (\Exception $e) {
+                //echo $e->getMessage();
                 return $this->render(
                     'RidwanUserBundle:Welcome:skills.html.twig', array(
                         'form' => $form->createView(),
@@ -325,13 +332,15 @@ class VolunteerController extends Controller
 
     public function RefereesAction(Request $request)
     {
+        if ($this->check('RidwanEntityBundle:Referees') != null) {
+            return $this->redirect($this->generateUrl('ridwan_site_home'));
+        }
+
         $em = $this->getDoctrine()->getManager();
         $database = $em->getRepository('RidwanEntityBundle:Referees')->findBy(array('user'=>$this->getUser()->getId()));
 
         $referee1 = new Referees();
-        $referee1->setUser($this->getUser());
         $referee2 = new Referees();
-        $referee2->setUser($this->getUser());
 
         $entity = new RefereeAndUser();
         $entity->getReferees()->add($referee1);
@@ -352,18 +361,24 @@ class VolunteerController extends Controller
         if ($form->isValid()) {
             $entity = $form->getData();
             $entity->setUser($this->getUser());
+            $referee1 = $entity->getReferees()[0];
+            $referee2 = $entity->getReferees()[1];
+            $referee1->setUser($this->getUser()->getId());
+            $referee2->setUser($this->getUser()->getId());
             $volunteer = $em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findOneBy(array('user'=>$this->getUser()->getId()));
             $volunteer->setStatus(1);
             $em->persist($volunteer);
+
 
             $profile = new Profile();
             $profile->setUser($this->getUser());
 
             $availability = new Availability();
             $availability->setUser($this->getUser());
-            $em->persist($availability);
-            $em->persist($entity);
-            $em->persist($profile);
+           // $em->persist($availability);
+            $em->persist($referee1);
+            $em->persist($referee2);
+           // $em->persist($profile);
             $em->flush();
 
 

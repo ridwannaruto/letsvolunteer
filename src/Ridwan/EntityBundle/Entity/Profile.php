@@ -17,6 +17,10 @@ class Profile
     /**
      * @var string
      */
+    private $opportunities;
+    /**
+     * @var string
+     */
     private $reason;
 
     /**
@@ -57,6 +61,11 @@ class Profile
     /**
      * @var integer
      */
+    private $current;
+
+    /**
+     * @var integer
+     */
     private $value;
 
     /**
@@ -91,6 +100,29 @@ class Profile
     public function getIntro()
     {
         return $this->intro;
+    }
+
+    /**
+     * Set opportunities
+     *
+     * @param string $opportunities
+     * @return Profile
+     */
+    public function setOpportunities($opportunities)
+    {
+        $this->opportunities = $opportunities;
+
+        return $this;
+    }
+
+    /**
+     * Get opportunities
+     *
+     * @return string
+     */
+    public function getOpportunities()
+    {
+        return $this->opportunities;
     }
 
     /**
@@ -276,6 +308,30 @@ class Profile
     {
         return $this->hours;
     }
+
+    /**
+     * Set current
+     *
+     * @param integer $current
+     * @return Profile
+     */
+    public function setCurrent($current)
+    {
+        $this->current = $current;
+
+        return $this;
+    }
+
+    /**
+     * Get current
+     *
+     * @return integer
+     */
+    public function getCurrent()
+    {
+        return $this->current;
+    }
+
 
     /**
      * Set value

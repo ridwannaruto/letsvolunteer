@@ -12,7 +12,6 @@
 namespace Sensio\Bundle\FrameworkExtraBundle\Tests\Templating;
 
 use Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser;
-use Sensio\Bundle\FrameworkExtraBundle\Tests\Templating\Fixture;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\KernelInterface;
 
@@ -50,7 +49,7 @@ class TemplateGuesserTest extends \PHPUnit_Framework_TestCase
             'indexAction',
         ), new Request());
 
-        $this->assertEquals('FooBundle:Foo:message.html.twig', (string) $templateReference);;
+        $this->assertEquals('FooBundle:Foo:index.html.twig', (string) $templateReference);;
     }
 
     public function testGuessTemplateNameWithParentBundle()
@@ -67,7 +66,7 @@ class TemplateGuesserTest extends \PHPUnit_Framework_TestCase
             'indexAction',
         ), new Request());
 
-        $this->assertEquals('FooBundle:Bar:message.html.twig', (string) $templateReference);;
+        $this->assertEquals('FooBundle:Bar:index.html.twig', (string) $templateReference);;
     }
 
     public function testGuessTemplateNameWithCascadingParentBundle()
@@ -90,7 +89,18 @@ class TemplateGuesserTest extends \PHPUnit_Framework_TestCase
             'indexAction',
         ), new Request());
 
-        $this->assertEquals('FooBundle:FooBar:message.html.twig', (string) $templateReference);;
+        $this->assertEquals('FooBundle:FooBar:index.html.twig', (string) $templateReference);;
+    }
+
+    public function testGuessTemplateWithoutBundle()
+    {
+        $templateGuesser = new TemplateGuesser($this->kernel);
+        $templateReference = $templateGuesser->guessTemplateName(array(
+            new Fixture\Controller\OutOfBundleController(),
+            'indexAction',
+        ), new Request());
+
+        $this->assertEquals(':OutOfBundle:index.html.twig', (string) $templateReference);
     }
 
     protected function getBundle($name, $namespace, $parent = null)

@@ -67,5 +67,5 @@ ridwan_site_reject_referee:
     defaults: {_controller: RidwanSiteBundle:Rejection:referee}
 
 ridwan_site_profile:
-    pattern: /profile/{ID}
+    pattern: /view/profile/{ID}
     defaults: {_controller: RidwanSiteBundle:Profile:profile}

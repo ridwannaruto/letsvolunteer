@@ -7,9 +7,9 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="skills" type="array" column="skills" nullable="true"/>
+    <field name="primary" type="text" column="primaryRole" nullable="true"/>
     <field name="causes" type="array" column="causes" nullable="true"/>
-    <field name="other" type="text" column="other" nullable="true"/>
+    <field name="secondary" type="text" column="secondaryRole" nullable="true"/>
     <field name="languages" type="array" column="languages" nullable="true"/>
     <many-to-one field="user" target-entity="Authentication">
       <join-columns>

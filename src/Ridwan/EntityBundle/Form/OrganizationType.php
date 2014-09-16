@@ -17,7 +17,21 @@ class OrganizationType extends AbstractType
         $builder
             ->add('name')
             ->add('branch')
-            ->add('type')
+            ->add('type', 'choice', array(
+                    'choices' => array(
+                        'Government State' => 'Government State',
+                        'Non Government Organization' => 'Non Government Organization',
+                        'Volunteering Organization' => 'Volunteering Organization',
+                        'Private Sector' => 'Private Sector',
+                        'Academia' => 'Academia',
+                        'Military' => 'Military',
+                        'Other' => 'Other'
+                    ),
+                    'attr' => array(
+                        'class' => 'controls',
+                        'data-rel' => 'chosen'
+                    )
+                ))
         ;
     }
     

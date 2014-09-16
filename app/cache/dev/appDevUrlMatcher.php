@@ -236,14 +236,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::indexAction',  '_route' => 'ridwan_opportunity_index',);
             }
 
-            if (0 === strpos($pathinfo, '/opportunitydetails')) {
-                // ridwan_opportunity_details
-                if (preg_match('#^/opportunitydetails/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_details')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::detailAction',));
+            // ridwan_opportunity_details
+            if (0 === strpos($pathinfo, '/opportunitydetails') && preg_match('#^/opportunitydetails/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_details')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::detailAction',));
+            }
+
+            // ridwan_opportunity_assignment_index
+            if ($pathinfo === '/opportunities/assign') {
+                return array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\AssignmentController::indexAction',  '_route' => 'ridwan_opportunity_assignment_index',);
+            }
+
+            if (0 === strpos($pathinfo, '/opportunity')) {
+                // ridwan_opportunity_assignment_details
+                if (preg_match('#^/opportunity/(?P<opportunityID>[^/]++)/assign/details$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_assignment_details')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\AssignmentController::detailsAction',));
                 }
 
                 // ridwan_opportunity_details_notification
-                if (preg_match('#^/opportunitydetails/(?P<opportunityID>[^/]++)/(?P<notificationID>[^/]++)$#s', $pathinfo, $matches)) {
+                if (0 === strpos($pathinfo, '/opportunitydetails') && preg_match('#^/opportunitydetails/(?P<opportunityID>[^/]++)/(?P<notificationID>[^/]++)$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_details_notification')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::notificationAction',));
                 }
 
@@ -646,7 +656,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // ridwan_site_profile
-        if (0 === strpos($pathinfo, '/profile') && preg_match('#^/profile/(?P<ID>[^/]++)$#s', $pathinfo, $matches)) {
+        if (0 === strpos($pathinfo, '/view/profile') && preg_match('#^/view/profile/(?P<ID>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_site_profile')), array (  '_controller' => 'Ridwan\\SiteBundle\\Controller\\ProfileController::profileAction',));
         }
 

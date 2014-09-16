@@ -15,34 +15,60 @@ class SkillsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('skills', 'choice', array(
-                    'expanded' => true,
-                    'multiple' => true,
-                    'choices'  => array(
-                        'Photography' => 'Photography',
-                        'Video and Graphic Design'  => 'Video and Graphic Design',
-                        'Teaching'   => 'Teaching',
-                        'Consulting'   => 'Consulting',
-                        'Team Management'   => 'Team Management'
-                    ),
-                ))
             ->add('causes', 'choice', array(
                     'expanded' => true,
                     'multiple' => true,
                     'choices'  => array(
-                        'Poverty Eradication' => 'Poverty Eradication',
-                        'Education'  => 'Education',
-                        'Wild Life'   => 'Wild Life',
-                        'Peace and Reconciliation'   => 'Peace and Reconciliation',
-                        'International Understanding '   => 'International Understanding '
+                        'Agriculture' => 'Agriculture',
+                        'Business Development'  => 'Business Development',
+                        'Communications'   => 'Communications',
+                        'Education'   => 'Education',
+                        'Engineering'   => 'Engineering',
+                        'Finance'   => 'Finance',
+                        'Health'   => 'Health',
+                        'Human Resource'   => 'Human Resource',
+                        'Information Technology'   => 'Information Technology',
+                        'Legal'   => 'Legal',
+                        'Management'   => 'Management',
+                        'Military Specific'   => 'Military Specific',
+                        'Natural Resource Management'   => 'Natural Resource Management',
+                        'Office & Administrative Support'   => 'Office & Administrative Support',
+                        'Plant and Machine Operators'   => 'Plant and Machine Operators',
+                        'Surveyor\'s Services'   => 'Surveyor\'s Services',
+                        'Special Education'   => 'Special Education',
+                        'Social Worker'   => 'Social Worker',
+                        'Social Development '   => 'Social Development ',
+                        'Support Services'   => 'Support Services',
+                        'Technical'   => 'Technical',
+                        'Translator\'s Service'   => 'Translator\'s Service',
+                        'Vocational Technical Trainer'   => 'Vocational Technical Trainer'
                     ),
                 ))
-            ->add('other','textarea',array(
+            ->add('primary', 'entity', array(
+                    'label' => 'Select your primary role',
+                    'class' => 'RidwanEntityBundle:Profession',
+                    'property' => 'selection',
+                    'label_attr' => array('class' => 'control-label'),
                     'attr' => array(
-                        'rows' => 8,
-                        'class' => 'span10'
+                        'class' => 'controls span6',
+                        'data-rel' => 'chosen'
                     )
+
                 ))
+
+            ->add('secondary', 'entity', array(
+                    'label' => 'Select your primary role',
+                    'class' => 'RidwanEntityBundle:Profession',
+                    'property' => 'selection',
+                    'label_attr' => array('class' => 'control-label'),
+                    'attr' => array(
+                        'class' => 'controls span6',
+                        'data-rel' => 'chosen'
+                    )
+
+                ))
+
+
             ->add('languages', 'choice', array(
                     'expanded' => true,
                     'multiple' => true,
@@ -51,7 +77,10 @@ class SkillsType extends AbstractType
                         'Sinhala'  => 'Sinhala',
                         'Tamil'   => 'Tamil',
                         'Hindi'   => 'Hindi',
-                        'Spanish'   => 'Spanish'
+                        'Spanish'   => 'Spanish',
+                        'Arabic'   => 'Arabic',
+                        'Chinese'   => 'Chinese',
+                        'French'   => 'French'
                     ),
                 ))
 

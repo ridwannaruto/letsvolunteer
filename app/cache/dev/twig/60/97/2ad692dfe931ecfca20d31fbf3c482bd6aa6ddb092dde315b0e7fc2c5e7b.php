@@ -740,57 +740,36 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
         <br><br>
 
         <h3 align=\"center\">Skills </h3>
-        <br>
-        <strong>Languages</strong>
+       <br>
+
+        <strong>Primary Role</strong>
 
         <p align=\"center\">
             ";
-        // line 533
-        $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["skills"]) ? $context["skills"] : $this->getContext($context, "skills")), "languages"));
-        foreach ($context['_seq'] as $context["_key"] => $context["language"]) {
-            // line 534
-            echo "                ";
-            echo twig_escape_filter($this->env, (isset($context["language"]) ? $context["language"] : $this->getContext($context, "language")), "html", null, true);
-            echo "<br>
-            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['language'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 536
-        echo "        </p>
+        // line 534
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["skills"]) ? $context["skills"] : $this->getContext($context, "skills")), "primary"), "html", null, true);
+        echo "
+        </p>
         <br><br>
-
-        <strong>Capabilities</strong>
+        <strong>Secondary Role</strong>
 
         <p align=\"center\">
-            ";
-        // line 542
-        $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["skills"]) ? $context["skills"] : $this->getContext($context, "skills")), "skills"));
-        foreach ($context['_seq'] as $context["_key"] => $context["skill"]) {
-            // line 543
-            echo "                ";
-            echo twig_escape_filter($this->env, (isset($context["skill"]) ? $context["skill"] : $this->getContext($context, "skill")), "html", null, true);
-            echo "<br>
-            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['skill'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 545
-        echo "        </p>
+           ";
+        // line 540
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["skills"]) ? $context["skills"] : $this->getContext($context, "skills")), "secondary"), "html", null, true);
+        echo "
+
+        </p>
         <br><br>
         <strong>Interested Causes</strong>
 
         <p align=\"center\">
             ";
-        // line 550
+        // line 547
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["skills"]) ? $context["skills"] : $this->getContext($context, "skills")), "causes"));
         foreach ($context['_seq'] as $context["_key"] => $context["cause"]) {
-            // line 551
+            // line 548
             echo "                ";
             echo twig_escape_filter($this->env, (isset($context["cause"]) ? $context["cause"] : $this->getContext($context, "cause")), "html", null, true);
             echo "<br>
@@ -799,9 +778,30 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cause'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 553
+        // line 550
         echo "
         </p>
+        <br>
+        <strong>Languages</strong>
+
+        <p align=\"center\">
+            ";
+        // line 556
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["skills"]) ? $context["skills"] : $this->getContext($context, "skills")), "languages"));
+        foreach ($context['_seq'] as $context["_key"] => $context["language"]) {
+            // line 557
+            echo "                ";
+            echo twig_escape_filter($this->env, (isset($context["language"]) ? $context["language"] : $this->getContext($context, "language")), "html", null, true);
+            echo "<br>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['language'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 559
+        echo "        </p>
+        <br>
 
     </div>
 
@@ -817,7 +817,7 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
         <div class=\"box-content\">
 
             ";
-        // line 569
+        // line 575
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), 'form_start');
         echo "
 
@@ -830,18 +830,18 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
                     <tr>
                         <br>
                         ";
-        // line 579
+        // line 585
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "time"));
         foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
-            // line 580
+            // line 586
             echo "                            <label>
                                 ";
-            // line 581
+            // line 587
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), 'widget', array("attr" => array("disabled" => "true", "class" => (($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class"), "")) : ("")))));
             echo "
                                 ";
-            // line 582
+            // line 588
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), "vars"), "label"), array()), "html", null, true);
             echo "
                             </label>
@@ -850,7 +850,7 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 585
+        // line 591
         echo "
 
                     </tr>
@@ -867,18 +867,18 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
                     <tr>
                         <br>
                         ";
-        // line 600
+        // line 606
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["availability"]) ? $context["availability"] : $this->getContext($context, "availability")), "days"));
         foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
-            // line 601
+            // line 607
             echo "                            <label>
                                 ";
-            // line 602
+            // line 608
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), 'widget', array("attr" => array("disabled" => "true", "class" => (($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class"), "")) : ("")))));
             echo "
                                 ";
-            // line 603
+            // line 609
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), "vars"), "label"), array()), "html", null, true);
             echo "
                             </label>
@@ -887,7 +887,7 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 606
+        // line 612
         echo "                    </tr>
 
                     </tr>
@@ -899,7 +899,7 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
             </form>
             <div class=\"center\">
                 <a href=\"";
-        // line 616
+        // line 622
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ridwan_availability_edit", array("id" => $this->getAttribute($this->getAttribute((isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "user"), "id"))), "html", null, true);
         echo "\">
                     <button class=\"btn btn-group btn-small\">update</button>
@@ -926,6 +926,6 @@ class __TwigTemplate_60972ad692dfe931ecfca20d31fbf3c482bd6aa6ddb092dde315b0e7fc2
 
     public function getDebugInfo()
     {
-        return array (  903 => 616,  891 => 606,  882 => 603,  878 => 602,  875 => 601,  871 => 600,  854 => 585,  845 => 582,  841 => 581,  838 => 580,  834 => 579,  821 => 569,  803 => 553,  794 => 551,  790 => 550,  783 => 545,  774 => 543,  770 => 542,  762 => 536,  753 => 534,  749 => 533,  732 => 518,  720 => 512,  715 => 510,  710 => 508,  707 => 507,  703 => 506,  680 => 485,  669 => 480,  665 => 479,  660 => 477,  655 => 475,  652 => 474,  648 => 473,  626 => 454,  614 => 445,  602 => 436,  590 => 427,  574 => 414,  553 => 396,  532 => 378,  511 => 360,  493 => 345,  476 => 331,  455 => 313,  441 => 302,  425 => 289,  406 => 273,  384 => 254,  364 => 236,  360 => 234,  356 => 232,  354 => 231,  335 => 214,  331 => 212,  327 => 210,  325 => 209,  306 => 195,  285 => 177,  269 => 163,  263 => 161,  259 => 159,  257 => 158,  248 => 151,  242 => 149,  238 => 147,  236 => 146,  222 => 134,  216 => 132,  212 => 130,  210 => 129,  202 => 123,  196 => 121,  192 => 119,  190 => 118,  174 => 105,  166 => 99,  160 => 97,  156 => 95,  154 => 94,  136 => 79,  127 => 72,  121 => 70,  117 => 68,  115 => 67,  100 => 55,  93 => 50,  86 => 47,  80 => 45,  78 => 44,  61 => 30,  55 => 27,  31 => 5,  28 => 4,);
+        return array (  903 => 622,  891 => 612,  882 => 609,  878 => 608,  875 => 607,  871 => 606,  854 => 591,  845 => 588,  841 => 587,  838 => 586,  834 => 585,  821 => 575,  803 => 559,  794 => 557,  790 => 556,  782 => 550,  773 => 548,  769 => 547,  759 => 540,  750 => 534,  732 => 518,  720 => 512,  715 => 510,  710 => 508,  707 => 507,  703 => 506,  680 => 485,  669 => 480,  665 => 479,  660 => 477,  655 => 475,  652 => 474,  648 => 473,  626 => 454,  614 => 445,  602 => 436,  590 => 427,  574 => 414,  553 => 396,  532 => 378,  511 => 360,  493 => 345,  476 => 331,  455 => 313,  441 => 302,  425 => 289,  406 => 273,  384 => 254,  364 => 236,  360 => 234,  356 => 232,  354 => 231,  335 => 214,  331 => 212,  327 => 210,  325 => 209,  306 => 195,  285 => 177,  269 => 163,  263 => 161,  259 => 159,  257 => 158,  248 => 151,  242 => 149,  238 => 147,  236 => 146,  222 => 134,  216 => 132,  212 => 130,  210 => 129,  202 => 123,  196 => 121,  192 => 119,  190 => 118,  174 => 105,  166 => 99,  160 => 97,  156 => 95,  154 => 94,  136 => 79,  127 => 72,  121 => 70,  117 => 68,  115 => 67,  100 => 55,  93 => 50,  86 => 47,  80 => 45,  78 => 44,  61 => 30,  55 => 27,  31 => 5,  28 => 4,);
     }
 }

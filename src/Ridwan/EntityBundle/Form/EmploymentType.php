@@ -16,7 +16,21 @@ class EmploymentType extends AbstractType
     {
         $builder
             ->add('occupation')
-            ->add('organizationtype')
+            ->add('organizationtype', 'choice', array(
+                    'choices' => array(
+                        'Government State' => 'Government State',
+                        'Non Government Organization' => 'Non Government Organization',
+                        'Volunteering Organization' => 'Volunteering Organization',
+                        'Private Sector' => 'Private Sector',
+                        'Academia' => 'Academia',
+                        'Military' => 'Military',
+                        'Other' => 'Other'
+                    ),
+                    'attr' => array(
+                        'class' => 'controls',
+                        'data-rel' => 'chosen'
+                    )
+                ))
             ->add('organization')
 
         ;

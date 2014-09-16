@@ -23,6 +23,7 @@
       <parameter key="RidwanOpportunityBundle">Ridwan\OpportunityBundle\RidwanOpportunityBundle</parameter>
       <parameter key="RidwanUserBundle">Ridwan\UserBundle\RidwanUserBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="KnpSnappyBundle">Knp\Bundle\SnappyBundle\KnpSnappyBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -173,10 +174,10 @@
     <parameter key="validator.mapping.cache.apc.class">Symfony\Component\Validator\Mapping\Cache\ApcCache</parameter>
     <parameter key="validator.mapping.cache.prefix"></parameter>
     <parameter key="validator.validator_factory.class">Symfony\Bundle\FrameworkBundle\Validator\ConstraintValidatorFactory</parameter>
-    <parameter key="validator.legacy_validator_factory.class">Symfony\Bundle\FrameworkBundle\Validator\LegacyConstraintValidatorFactory</parameter>
     <parameter key="validator.expression.class">Symfony\Component\Validator\Constraints\ExpressionValidator</parameter>
     <parameter key="validator.email.class">Symfony\Component\Validator\Constraints\EmailValidator</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
+    <parameter key="validator.api">3</parameter>
     <parameter key="fragment.listener.class">Symfony\Component\HttpKernel\EventListener\FragmentListener</parameter>
     <parameter key="form.resolved_type_factory.data_collector_proxy.class">Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy</parameter>
     <parameter key="form.type_extension.form.data_collector.class">Symfony\Component\Form\Extension\DataCollector\Type\DataCollectorTypeExtension</parameter>
@@ -564,6 +565,16 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="knp_snappy.pdf.internal_generator.class">Knp\Snappy\Pdf</parameter>
+    <parameter key="knp_snappy.pdf.class">Knp\Bundle\SnappyBundle\Snappy\LoggableGenerator</parameter>
+    <parameter key="knp_snappy.pdf.binary">/usr/local/bin/wkhtmltopdf</parameter>
+    <parameter key="knp_snappy.pdf.options" type="collection"/>
+    <parameter key="knp_snappy.pdf.env" type="collection"/>
+    <parameter key="knp_snappy.image.internal_generator.class">Knp\Snappy\Image</parameter>
+    <parameter key="knp_snappy.image.class">Knp\Bundle\SnappyBundle\Snappy\LoggableGenerator</parameter>
+    <parameter key="knp_snappy.image.binary">/usr/local/bin/wkhtmltoimage</parameter>
+    <parameter key="knp_snappy.image.options" type="collection"/>
+    <parameter key="knp_snappy.image.env" type="collection"/>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -754,6 +765,7 @@
       <tag name="kernel.fragment_renderer"/>
       <argument>null</argument>
       <argument type="service" id="fragment.renderer.inline"/>
+      <argument type="service" id="uri_signer"/>
       <call method="setFragmentPath">
         <argument>/_fragment</argument>
       </call>
@@ -1192,7 +1204,9 @@
       <argument type="service" id="monolog.logger.security" on-invalid="ignore"/>
     </service>
     <service id="form.resolved_type_factory" class="Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy">
-      <argument type="service" id="5325a2e4b4caaaa6fad5f2728b2bda1a1acebf8de216fcbbbe74c9ebf12a3250_1"/>
+      <argument type="service">
+        <service class="Symfony\Component\Form\ResolvedFormTypeFactory" public="false"/>
+      </argument>
       <argument type="service" id="data_collector.form"/>
     </service>
     <service id="form.registry" class="Symfony\Component\Form\FormRegistry">
@@ -1507,6 +1521,9 @@
       <call method="addMethodMapping">
         <argument>loadValidatorMetadata</argument>
       </call>
+      <call method="setApiVersion">
+        <argument>3</argument>
+      </call>
       <call method="addObjectInitializers">
         <argument type="collection">
           <argument type="service" id="doctrine.orm.validator_initializer"/>
@@ -1535,7 +1552,6 @@
       <argument type="service" id="uri_signer"/>
       <argument>/_fragment</argument>
     </service>
-    <service id="5325a2e4b4caaaa6fad5f2728b2bda1a1acebf8de216fcbbbe74c9ebf12a3250_1" class="Symfony\Component\Form\ResolvedFormTypeFactory"/>
     <service id="form.type_extension.form.data_collector" class="Symfony\Component\Form\Extension\DataCollector\Type\DataCollectorTypeExtension">
       <tag name="form.type_extension" alias="form"/>
       <argument type="service" id="data_collector.form"/>
@@ -1778,7 +1794,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5416da66bb836</argument>
+            <argument>5417e627c2ca2</argument>
           </service>
         </argument>
       </argument>
@@ -2120,7 +2136,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5416da66bb836</argument>
+            <argument>5417e627c2ca2</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -2252,7 +2268,7 @@
           <service class="Symfony\Bundle\TwigBundle\Extension\AssetsExtension" public="false">
             <tag name="twig.extension"/>
             <argument type="service" id="service_container"/>
-            <argument type="service" id="router.request_context"/>
+            <argument type="service" id="router.request_context" on-invalid="null"/>
           </service>
         </argument>
       </call>
@@ -2400,9 +2416,6 @@
       <argument>false</argument>
       <argument type="collection"/>
     </service>
-    <service id="fbe5301f910c639c1c013f768881337e461c1e67ffdf5e51bb32153dbd65cb50_3" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator"/>
-    <service id="fbe5301f910c639c1c013f768881337e461c1e67ffdf5e51bb32153dbd65cb50_2" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator"/>
-    <service id="fbe5301f910c639c1c013f768881337e461c1e67ffdf5e51bb32153dbd65cb50_1" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator"/>
     <service id="swiftmailer.email_sender.listener" class="Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="service_container"/>
@@ -2810,6 +2823,28 @@
     <service id="fos_user.resetting.form.type" class="FOS\UserBundle\Form\Type\ResettingFormType">
       <tag name="form.type" alias="fos_user_resetting"/>
     </service>
+    <service id="knp_snappy.pdf" class="Knp\Bundle\SnappyBundle\Snappy\LoggableGenerator">
+      <tag name="monolog.logger" channel="snappy"/>
+      <argument type="service">
+        <service class="Knp\Snappy\Pdf" public="false">
+          <argument>/usr/local/bin/wkhtmltopdf</argument>
+          <argument type="collection"/>
+          <argument type="collection"/>
+        </service>
+      </argument>
+      <argument type="service" id="monolog.logger.snappy" on-invalid="null"/>
+    </service>
+    <service id="knp_snappy.image" class="Knp\Bundle\SnappyBundle\Snappy\LoggableGenerator">
+      <tag name="monolog.logger" channel="snappy"/>
+      <argument type="service">
+        <service class="Knp\Snappy\Image" public="false">
+          <argument>/usr/local/bin/wkhtmltoimage</argument>
+          <argument type="collection"/>
+          <argument type="collection"/>
+        </service>
+      </argument>
+      <argument type="service" id="monolog.logger.snappy" on-invalid="null"/>
+    </service>
     <service id="twig.extension.acme.demo" class="Acme\DemoBundle\Twig\Extension\DemoExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="twig.loader"/>
@@ -3015,6 +3050,18 @@
         <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
+    <service id="monolog.logger.snappy" class="Symfony\Bridge\Monolog\Logger">
+      <argument>snappy</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.console"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
+      </call>
+    </service>
     <service id="monolog.handler.debug" class="Symfony\Bridge\Monolog\Handler\DebugHandler">
       <argument>100</argument>
       <argument>true</argument>
@@ -3208,9 +3255,15 @@
         <argument type="service">
           <service class="Swift_Transport_Esmtp_AuthHandler" public="false">
             <argument type="collection">
-              <argument type="service" id="fbe5301f910c639c1c013f768881337e461c1e67ffdf5e51bb32153dbd65cb50_1"/>
-              <argument type="service" id="fbe5301f910c639c1c013f768881337e461c1e67ffdf5e51bb32153dbd65cb50_2"/>
-              <argument type="service" id="fbe5301f910c639c1c013f768881337e461c1e67ffdf5e51bb32153dbd65cb50_3"/>
+              <argument type="service">
+                <service class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator" public="false"/>
+              </argument>
+              <argument type="service">
+                <service class="Swift_Transport_Esmtp_Auth_LoginAuthenticator" public="false"/>
+              </argument>
+              <argument type="service">
+                <service class="Swift_Transport_Esmtp_Auth_PlainAuthenticator" public="false"/>
+              </argument>
             </argument>
             <call method="setUsername">
               <argument>null</argument>

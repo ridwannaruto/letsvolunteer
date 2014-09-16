@@ -23,6 +23,16 @@ class Opportunities
     /**
      * @var string
      */
+    private $role;
+
+    /**
+     * @var string
+     */
+    private $time;
+
+    /**
+     * @var string
+     */
     private $description;
 
     /**
@@ -128,7 +138,7 @@ class Opportunities
     /**
      * Set status
      *
-     * @param string $status
+     * @param integer $status
      * @return Project
      */
     public function setStatus($status)
@@ -141,7 +151,7 @@ class Opportunities
     /**
      * Get status
      *
-     * @return string
+     * @return integer
      */
     public function getStatus()
     {
@@ -170,6 +180,52 @@ class Opportunities
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set role
+     *
+     * @param string $role
+     * @return Opportunities
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Set time
+     *
+     * @param string $time
+     * @return Opportunities
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+    /**
+     * Get time
+     *
+     * @return string
+     */
+    public function getTime()
+    {
+        return $this->time;
     }
 
     /**

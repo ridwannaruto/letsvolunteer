@@ -19,6 +19,16 @@
         </div>
 
         <div class="control-group primary">
+            {{form_label(form.role, 'Role of the Volunteer',{ 'label_attr': {'class': 'control-label'} })}}
+
+            <div class="controls">
+                {{form_widget(form.role)}}
+                <span class="help-inline">{{ form_errors(form.role) }}</span>
+            </div>
+        </div>
+
+
+        <div class="control-group primary">
                     {{form_label(form.difficulty, 'Difficulty',{ 'label_attr': {'class': 'control-label'} })}}
 
             <div class="controls">
@@ -28,7 +38,7 @@
         </div>
 
         <div class="control-group primary">
-            {{form_label(form.cause, 'Cause',{ 'label_attr': {'class': 'control-label'} })}}
+            {{form_label(form.cause, 'Type',{ 'label_attr': {'class': 'control-label'} })}}
 
             <div class="controls">
                 {{form_widget(form.cause)}}

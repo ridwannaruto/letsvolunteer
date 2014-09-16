@@ -12,7 +12,7 @@ class Skills
     /**
      * @var string
      */
-    private $skills;
+    private $primary;
 
     /**
      * @var string
@@ -22,7 +22,7 @@ class Skills
     /**
      * @var string
      */
-    private $other;
+    private $secondary;
 
     /**
      * @var string
@@ -41,26 +41,26 @@ class Skills
 
 
     /**
-     * Set skills
+     * Set primary
      *
-     * @param string $skills
+     * @param string $primary
      * @return Skills
      */
-    public function setSkills($skills)
+    public function setPrimary($primary)
     {
-        $this->skills = $skills;
+        $this->primary = $primary;
 
         return $this;
     }
 
     /**
-     * Get skills
+     * Get primary
      *
      * @return string 
      */
-    public function getSkills()
+    public function getPrimary()
     {
-        return $this->skills;
+        return $this->primary;
     }
 
     /**
@@ -87,26 +87,26 @@ class Skills
     }
 
     /**
-     * Set other
+     * Set secondary
      *
-     * @param string $other
+     * @param string $secondary
      * @return Skills
      */
-    public function setOther($other)
+    public function setSecondary($secondary)
     {
-        $this->other = $other;
+        $this->secondary = $secondary;
 
         return $this;
     }
 
     /**
-     * Get other
+     * Get secondary
      *
      * @return string 
      */
-    public function getOther()
+    public function getSecondary()
     {
-        return $this->other;
+        return $this->secondary;
     }
 
     /**

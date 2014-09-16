@@ -7,173 +7,131 @@ class __TwigTemplate_f99f7215b9b3d002769ecac9aa64a036d5681df391d623fa030a9556eb1
     {
         parent::__construct($env);
 
-        $this->parent = false;
+        $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
+            'dashboard' => array($this, 'block_dashboard'),
+            'content' => array($this, 'block_content'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "::base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "
-<!DOCTYPE html>
-<html lang=\"en\" class=\"no-js\">
-<head>
-    <meta charset=\"UTF-8\" />
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <title>Let's Volunteer Register</title>
-    <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 10
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwanuser/choices/css/normalize.css"), "html", null, true);
-        echo "\"/>
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwanuser/choices/css/demo.css"), "html", null, true);
-        echo "\"/>
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 12
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwanuser/choices/css/component.css"), "html", null, true);
-        echo "\"/>
-    <link id=\"bs-css\" href=";
-        // line 13
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/css/bootstrap-slate.css"), "html", null, true);
-        echo " rel=\"stylesheet\">
-    <link href=";
-        // line 14
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwansite/css/charisma-app.css"), "html", null, true);
-        echo " rel=\"stylesheet\">
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
 
-    <script src=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwanuser/choices/js/modernizr.custom.js"), "html", null, true);
-        echo "\"></script>
+    // line 2
+    public function block_dashboard($context, array $blocks = array())
+    {
+    }
 
-</head>
-<body style=\"background: #3b3f45\">
-<div class=\"fs-title\">
-    <h1> &nbsp;&nbsp;&nbsp;Skills</h1>
-</div>
+    // line 4
+    public function block_content($context, array $blocks = array())
+    {
+        // line 5
+        echo "<div id=\"content\" class=\"span10\">
 
-<div class=\"container\">
-    <!-- Top Navigation -->
+    <div class=\"row-fluid\" style=\"margin-left: 10%\">
+        <br>
 
-    <section>
+        <h1>Skills</h1><hr>
+
+        <br><br>
+
        ";
-        // line 28
+        // line 14
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
-        <h2>Select your proficient languages</h2>
-        <hr>
-            <ul>
-                <li>";
-        // line 32
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "languages"), "children"), 0, array(), "array"), 'widget');
-        echo "<label for=\"cb1\">English</label></li>
-                <li>";
-        // line 33
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "languages"), "children"), 1, array(), "array"), 'widget');
-        echo "<label for=\"cb1\">Sinhala</label></li>
-                <li>";
-        // line 34
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "languages"), "children"), 2, array(), "array"), 'widget');
-        echo "<label for=\"cb1\">Tamil</label></li>
-                <li>";
-        // line 35
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "languages"), "children"), 3, array(), "array"), 'widget');
-        echo "<label for=\"cb1\">Hindi</label></li>
-                <li>";
-        // line 36
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "languages"), "children"), 4, array(), "array"), 'widget');
-        echo "<label for=\"cb1\">Spanish</label></li>
+        <h4>Select your proficient languages</h4>
 
-            </ul>
-
+        <br>
+        ";
+        // line 18
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "languages"));
+        foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
+            // line 19
+            echo "
+            <label>
+                ";
+            // line 21
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), 'widget', array("attr" => array("class" => (($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class"), "")) : ("")))));
+            echo "
+                ";
+            // line 22
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), "vars"), "label"), array()), "html", null, true);
+            echo "
+            </label>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 25
+        echo "
             <br><br>
 
-            <h2>Select your interested causes</h2>
-        <hr>
-            <ul>
-                <li>";
-        // line 45
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "causes"), "children"), 0, array(), "array"), 'widget');
-        echo "<label for=\"cb1\">Poverty Eradication</label></li>
-                <li>";
-        // line 46
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "causes"), "children"), 1, array(), "array"), 'widget');
-        echo "<label for=\"cb2\">Education</label></li>
-                <li>";
-        // line 47
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "causes"), "children"), 2, array(), "array"), 'widget');
-        echo "<label for=\"cb3\">Wild Life</label></li>
-                <li>";
-        // line 48
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "causes"), "children"), 3, array(), "array"), 'widget');
-        echo "<label for=\"cb4\">Peace and Reconciliation</label></li>
-                <li>";
-        // line 49
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "causes"), "children"), 4, array(), "array"), 'widget');
-        echo "<label for=\"cb5\">International Understanding</label></li>
-            </ul>
-
-            <br><br>
-            <h2>Select your skills</h2>
-        <hr>
-            <ul>
-                <li>";
-        // line 56
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "skills"), "children"), 0, array(), "array"), 'widget');
-        echo "<label for=\"cb1\">Photography</label></li>
-                <li>";
-        // line 57
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "skills"), "children"), 1, array(), "array"), 'widget');
-        echo "<label for=\"cb2\">Video and Graphic Design</label></li>
-                <li>";
-        // line 58
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "skills"), "children"), 2, array(), "array"), 'widget');
-        echo "<label for=\"cb3\">Teaching</label></li>
-                <li>";
-        // line 59
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "skills"), "children"), 3, array(), "array"), 'widget');
-        echo "<label for=\"cb4\">Consulting</label></li>
-                <li>";
-        // line 60
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "skills"), "children"), 4, array(), "array"), 'widget');
-        echo "<label for=\"cb5\">Team Management</label></li>
-            </ul>
-
-            <br><br>
-
-            <h2>Any other special skill you want to mention?</h2>
-            <hr>
-            ";
-        // line 67
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "other"), 'widget');
+            <h4>Select your interested causes</h4>
+        <br>
+        ";
+        // line 30
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "causes"));
+        foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
+            // line 31
+            echo "
+            <label>
+                ";
+            // line 33
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), 'widget', array("attr" => array("class" => (($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class"), "")) : ("")))));
+            echo "
+                ";
+            // line 34
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), "vars"), "label"), array()), "html", null, true);
+            echo "
+            </label>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 37
         echo "
         <br><br>
-        <p align=\"center\">
-            <input class='btn btn-success btn-large center span5' type=\"submit\" value = 'Submit'></p>
+
+            <h4>Select your primary role</h4>
 
         ";
-        // line 72
+        // line 42
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "primary"), 'widget');
+        echo "
+
+            <br><br>
+
+            <h4>Select a secondary role</h4>
+
+            ";
+        // line 48
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "secondary"), 'widget');
+        echo "
+        <br><br>
+
+            <input class='btn btn-success btn-small span2' type=\"submit\" value = 'Submit'>
+
+        ";
+        // line 53
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-    </section>
+        <br>
+        </div>
+    </div>
 
-
-</div><!-- /container -->
-
-<script src=\"";
-        // line 78
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ridwanuser/choices/js/svgcheckbx.js"), "html", null, true);
-        echo "\"></script>
-</body>
-</html>";
+";
     }
 
     public function getTemplateName()
@@ -188,6 +146,6 @@ class __TwigTemplate_f99f7215b9b3d002769ecac9aa64a036d5681df391d623fa030a9556eb1
 
     public function getDebugInfo()
     {
-        return array (  173 => 78,  164 => 72,  156 => 67,  146 => 60,  142 => 59,  138 => 58,  134 => 57,  130 => 56,  120 => 49,  116 => 48,  112 => 47,  108 => 46,  104 => 45,  92 => 36,  88 => 35,  84 => 34,  80 => 33,  76 => 32,  69 => 28,  54 => 16,  49 => 14,  45 => 13,  41 => 12,  37 => 11,  33 => 10,  29 => 9,  19 => 1,);
+        return array (  128 => 53,  120 => 48,  111 => 42,  104 => 37,  95 => 34,  91 => 33,  87 => 31,  83 => 30,  76 => 25,  67 => 22,  63 => 21,  59 => 19,  55 => 18,  48 => 14,  37 => 5,  34 => 4,  29 => 2,);
     }
 }

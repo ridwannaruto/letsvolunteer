@@ -1,80 +1,58 @@
+{% extends '::base.html.twig' %}
+{% block dashboard %}
+{% endblock %}
+{% block content %}
+<div id="content" class="span10">
 
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Let's Volunteer Register</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/ridwanuser/choices/css/normalize.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/ridwanuser/choices/css/demo.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/ridwanuser/choices/css/component.css') }}"/>
-    <link id="bs-css" href={{asset('bundles/ridwansite/css/bootstrap-slate.css')}} rel="stylesheet">
-    <link href={{asset('bundles/ridwansite/css/charisma-app.css')}} rel="stylesheet">
+    <div class="row-fluid" style="margin-left: 10%">
+        <br>
 
-    <script src="{{ asset('bundles/ridwanuser/choices/js/modernizr.custom.js') }}"></script>
+        <h1>Skills</h1><hr>
 
-</head>
-<body style="background: #3b3f45">
-<div class="fs-title">
-    <h1> &nbsp;&nbsp;&nbsp;Skills</h1>
-</div>
-
-<div class="container">
-    <!-- Top Navigation -->
-
-    <section>
-       {{ form_start(form) }}
-        <h2>Select your proficient languages</h2>
-        <hr>
-            <ul>
-                <li>{{ form_widget(form.languages.children[0]) }}<label for="cb1">English</label></li>
-                <li>{{ form_widget(form.languages.children[1]) }}<label for="cb1">Sinhala</label></li>
-                <li>{{ form_widget(form.languages.children[2]) }}<label for="cb1">Tamil</label></li>
-                <li>{{ form_widget(form.languages.children[3]) }}<label for="cb1">Hindi</label></li>
-                <li>{{ form_widget(form.languages.children[4]) }}<label for="cb1">Spanish</label></li>
-
-            </ul>
-
-            <br><br>
-
-            <h2>Select your interested causes</h2>
-        <hr>
-            <ul>
-                <li>{{ form_widget(form.causes.children[0]) }}<label for="cb1">Poverty Eradication</label></li>
-                <li>{{ form_widget(form.causes.children[1]) }}<label for="cb2">Education</label></li>
-                <li>{{ form_widget(form.causes.children[2]) }}<label for="cb3">Wild Life</label></li>
-                <li>{{ form_widget(form.causes.children[3]) }}<label for="cb4">Peace and Reconciliation</label></li>
-                <li>{{ form_widget(form.causes.children[4]) }}<label for="cb5">International Understanding</label></li>
-            </ul>
-
-            <br><br>
-            <h2>Select your skills</h2>
-        <hr>
-            <ul>
-                <li>{{ form_widget(form.skills.children[0]) }}<label for="cb1">Photography</label></li>
-                <li>{{ form_widget(form.skills.children[1]) }}<label for="cb2">Video and Graphic Design</label></li>
-                <li>{{ form_widget(form.skills.children[2]) }}<label for="cb3">Teaching</label></li>
-                <li>{{ form_widget(form.skills.children[3]) }}<label for="cb4">Consulting</label></li>
-                <li>{{ form_widget(form.skills.children[4]) }}<label for="cb5">Team Management</label></li>
-            </ul>
-
-            <br><br>
-
-            <h2>Any other special skill you want to mention?</h2>
-            <hr>
-            {{ form_widget(form.other) }}
         <br><br>
-        <p align="center">
-            <input class='btn btn-success btn-large center span5' type="submit" value = 'Submit'></p>
+
+       {{ form_start(form) }}
+        <h4>Select your proficient languages</h4>
+
+        <br>
+        {% for child in form.languages %}
+
+            <label>
+                {{ form_widget(child, {'attr': {'class': attr.widget_class|default('')}}) }}
+                {{ child.vars.label|trans({}) }}
+            </label>
+        {% endfor %}
+
+            <br><br>
+
+            <h4>Select your interested causes</h4>
+        <br>
+        {% for child in form.causes %}
+
+            <label>
+                {{ form_widget(child, {'attr': {'class': attr.widget_class|default('')}}) }}
+                {{ child.vars.label|trans({}) }}
+            </label>
+        {% endfor %}
+
+        <br><br>
+
+            <h4>Select your primary role</h4>
+
+        {{ form_widget(form.primary) }}
+
+            <br><br>
+
+            <h4>Select a secondary role</h4>
+
+            {{ form_widget(form.secondary) }}
+        <br><br>
+
+            <input class='btn btn-success btn-small span2' type="submit" value = 'Submit'>
 
         {{ form_end(form) }}
-    </section>
+        <br>
+        </div>
+    </div>
 
-
-</div><!-- /container -->
-
-<script src="{{ asset('bundles/ridwanuser/choices/js/svgcheckbx.js') }}"></script>
-</body>
-</html>
+{% endblock %}

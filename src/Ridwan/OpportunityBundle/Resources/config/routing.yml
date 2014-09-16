@@ -5,7 +5,15 @@ ridwan_opportunity_index:
 ridwan_opportunity_details:
     pattern:  /opportunitydetails/{opportunityID}
     defaults: { _controller: RidwanOpportunityBundle:Opportunity:detail }
-    
+
+ridwan_opportunity_assignment_index:
+    pattern:  /opportunities/assign
+    defaults: { _controller: RidwanOpportunityBundle:Assignment:index }
+
+ridwan_opportunity_assignment_details:
+    pattern:  /opportunity/{opportunityID}/assign/details
+    defaults: { _controller: RidwanOpportunityBundle:Assignment:details }
+
 ridwan_opportunity_details_notification:
     pattern:  /opportunitydetails/{opportunityID}/{notificationID}
     defaults: { _controller: RidwanOpportunityBundle:Opportunity:notification }

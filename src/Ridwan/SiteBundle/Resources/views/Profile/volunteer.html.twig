@@ -17,6 +17,7 @@
         <li><a href="#education" style="background-color: white; border: none"><h6>Education</h6></a></li>
         <li><a href="#employment" style="background-color: white; border: none"><h6>Employment</h6></a></li>
         <li><a href="#skills" style="background-color: white; border: none"><h6>Skills</h6></a></li>
+        <li><a href="#referees" style="background-color: white; border: none"><h6>Referees</h6></a></li>
     </ul>
 
     <hr>
@@ -503,21 +504,18 @@
         <br><br>
         <h3 align="center">Skills </h3>
         <br>
-        <strong>Languages</strong>
+
+        <strong>Primary Role</strong>
 
         <p align="center">
-            {% for language in skills.languages %}
-                {{ language }}<br>
-            {% endfor %}
+            {{ skills.primary }}
         </p>
         <br><br>
-
-        <strong>Capabilities</strong>
+        <strong>Secondary Role</strong>
 
         <p align="center">
-            {% for skill in skills.skills %}
-                {{ skill }}<br>
-            {% endfor %}
+            {{ skills.secondary }}
+
         </p>
         <br><br>
         <strong>Interested Causes</strong>
@@ -528,7 +526,82 @@
             {% endfor %}
 
         </p>
+        <br>
+        <strong>Languages</strong>
 
+        <p align="center">
+            {% for language in skills.languages %}
+                {{ language }}<br>
+            {% endfor %}
+        </p>
+        <br>
+    </div>
+
+    <div class="tab-pane" id="referees">
+        <br><br>
+        <h3 align="center">Referees </h3>
+        <br><br>
+        <table width = '100%'>
+            <tr>
+                <td width = '5%'></td>
+                <td width = '40%'>
+                <h6>Name</h6>
+                <h3>{{ referees[0].name }}</h3>
+                <br>
+                <h6>Address</h6>
+                <h3>{{ referees[0].address }}</h3>
+                <br>
+                <h6>Email</h6>
+                <h3>{{ referees[0].email }}</h3>
+                <br>
+                <h6>Land Line</h6>
+                <h3>{{ referees[0].contactnumber }}</h3>
+                <br>
+                <h6>Mobile</h6>
+                <h3>{{ referees[0].mobilenumber }}</h3>
+                <br>
+                <h6>Status</h6>
+                    {% if referees[1].approval == -1 %}
+                        <span class="label label-important">Rejected</span>
+                    {% elseif referees[1].approval == 1 %}
+                        <span class="label label-success">Approved</span>
+                    {% else %}
+                        <span class="label label-warning">Pending</span>
+                    {% endif %}
+
+                </td>
+                <td width = '10%'></td>
+                <td width = '40%'>
+                    <h6>Name</h6>
+                    <h3>{{ referees[1].name }}</h3>
+                    <br>
+                    <h6>Address</h6>
+                    <h3>{{ referees[1].address }}</h3>
+                    <br>
+                    <h6>Email</h6>
+                    <h3>{{ referees[1].email }}</h3>
+                    <br>
+                    <h6>Land Line</h6>
+                    <h3>{{ referees[1].contactnumber }}</h3>
+                    <br>
+                    <h6>Mobile</h6>
+                    <h3>{{ referees[1].mobilenumber }}</h3>
+                    <br>
+                    <h6>Status</h6>
+                    {% if referees[1].approval == -1 %}
+                        <span class="label label-important">Rejected</span>
+                    {% elseif referees[1].approval == 1 %}
+                        <span class="label label-success">Approved</span>
+                    {% else %}
+                        <span class="label label-warning">Pending</span>
+                    {% endif %}
+
+                </td>
+                <td width = '5%'></td>
+
+            </tr>
+        </table>
+        <br><br>
     </div>
 
 
@@ -538,9 +611,10 @@
     </div>
 
     <div class="box span2">
-        <div class="box-header well"><h2><i class="icon-calendar"></i>Availability</h2></div>
+        <div class="box-header well"><h2><i class="icon-calendar"></i> Availability</h2></div>
 
         <div class="box-content">
+
             {{ form_start(availability) }}
 
 
@@ -550,27 +624,13 @@
                 <strong>Volunteering Hours</strong><br>
                 <table width="100%">
                     <tr>
-
-                        {{ form_widget(availability.time[0],{'attr':{'disabled':'true' }}) }} 07:00 - 08:00<br>
-                        {{ form_widget(availability.time[1],{'attr':{'disabled':'true' }}) }} 08:00 - 09:00<br>
-                        {{ form_widget(availability.time[2],{'attr':{'disabled':'true' }}) }} 09:00 - 10:00<br>
-                        {{ form_widget(availability.time[3],{'attr':{'disabled':'true' }}) }} 10:00 - 11:00<br>
-                        {{ form_widget(availability.time[4],{'attr':{'disabled':'true' }}) }} 11:00 - 12:00<br>
-                        {{ form_widget(availability.time[5],{'attr':{'disabled':'true' }}) }} 12:00 - 13:00<br>
-                        {{ form_widget(availability.time[6],{'attr':{'disabled':'true' }}) }} 13:00 - 14:00<br>
-
-
-                        {{ form_widget(availability.time[7],{'attr':{'disabled':'true' }}) }} 14:00 - 15:00<br>
-                        {{ form_widget(availability.time[8],{'attr':{'disabled':'true' }}) }} 15:00 - 16:00<br>
-                        {{ form_widget(availability.time[9],{'attr':{'disabled':'true' }}) }} 16:00 - 17:00<br>
-                        {{ form_widget(availability.time[10],{'attr':{'disabled':'true' }}) }} 17:00 -
-                        18:00<br>
-                        {{ form_widget(availability.time[11],{'attr':{'disabled':'true' }}) }} 18:00 -
-                        19:00<br>
-                        {{ form_widget(availability.time[12],{'attr':{'disabled':'true' }}) }} 19:00 -
-                        20:00<br>
-                        {{ form_widget(availability.time[13],{'attr':{'disabled':'true' }}) }} 20:00 -
-                        21:00<br>
+                        <br>
+                        {% for child in availability.time %}
+                            <label>
+                                {{ form_widget(child, {'attr': {'disabled':'true','class': attr.widget_class|default('')}}) }}
+                                {{ child.vars.label|trans({}) }}
+                            </label>
+                        {% endfor %}
 
 
                     </tr>
@@ -585,16 +645,14 @@
 
                 <table>
                     <tr>
-
-                        {{ form_widget(availability.days[0],{'attr':{'disabled':'true' }}) }} Sunday<br>
-                        {{ form_widget(availability.days[1],{'attr':{'disabled':'true' }}) }} Monday<br>
-                        {{ form_widget(availability.days[2],{'attr':{'disabled':'true' }}) }} Tuesday<br>
-                        {{ form_widget(availability.days[3],{'attr':{'disabled':'true' }}) }} Wednesday<br>
-
-                        {{ form_widget(availability.days[4],{'attr':{'disabled':'true' }}) }} Thursday<br>
-                        {{ form_widget(availability.days[5],{'attr':{'disabled':'true' }}) }} Friday<br>
-                        {{ form_widget(availability.days[6],{'attr':{'disabled':'true' }}) }} Saturday<br>
-
+                        <br>
+                        {% for child in availability.days %}
+                            <label>
+                                {{ form_widget(child, {'attr': {'disabled':'true','class': attr.widget_class|default('')}}) }}
+                                {{ child.vars.label|trans({}) }}
+                            </label>
+                        {% endfor %}
+                    </tr>
 
                     </tr>
                 </table>
@@ -603,12 +661,15 @@
             </div>
 
             </form>
-
+            <div class="center">
+                <a href="{{ path('ridwan_availability_edit',{'id':profile.user.id}) }}">
+                    <button class="btn btn-group btn-small">update</button>
+                </a>
+            </div>
 
 
         </div>
     </div>
-
 
 {% endblock %}
 

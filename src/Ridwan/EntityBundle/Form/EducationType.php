@@ -19,13 +19,24 @@ class EducationType extends AbstractType
             ->add('degree', 'choice', array(
                     'choices' => array(
                         'Advance Level' => 'Advance Level',
-                        'BSc' => 'BSc',
-                        'PhD' => 'PhD',
-                        'NDT' => 'NDT',
                         'Diploma' => 'Diploma',
-                        'Masters' => 'Masters'
+                        'Certificate' => 'Certificate',
+                        'NDT' => 'NDT',
+                        'Associate of Arts (A.A.)' =>'Associate of Arts (A.A.)',
+                        'Associate of Science (A.S.)'=>'Associate of Science (A.S.)',
+                        'Associate of Applied Science (AAS)' => 'Associate of Applied Science (AAS)',
+                        'Bachelor of Arts (B.A.)' => 'Bachelor of Arts (B.A.)',
+                        'Bachelor of Science (B.S.)' => 'Bachelor of Science (B.S.)',
+                        'Bachelor of Fine Arts (BFA)' => 'Bachelor of Fine Arts (BFA)',
+                        'Master of Arts (M.A.)' => 'Master of Arts (M.A.)',
+                        'Master of Science (M.S.)' => 'Master of Science (M.S.)',
+                        'Master of Business Administration (MBA)' => 'Master of Business Administration (MBA)',
+                        'Master of Fine Arts (MFA)' => 'Master of Fine Arts (MFA)',
+                        'Doctor of Philosophy (Ph.D.)' => 'Doctor of Philosophy (Ph.D.)',
+                        'Juris Doctor (J.D.)' => 'Juris Doctor (J.D.)',
+                        'Doctor of Medicine (M.D.)' => 'Doctor of Medicine (M.D.)',
+                        'Doctor of Dental Surgery (DDS)' => 'Doctor of Dental Surgery (DDS)'
                     )
-
                 ))
             ->add('field')
             ->add('duration')

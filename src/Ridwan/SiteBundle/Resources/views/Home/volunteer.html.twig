@@ -526,22 +526,19 @@
         <br><br>
 
         <h3 align="center">Skills </h3>
-        <br>
-        <strong>Languages</strong>
+       <br>
+
+        <strong>Primary Role</strong>
 
         <p align="center">
-            {% for language in skills.languages %}
-                {{ language }}<br>
-            {% endfor %}
+            {{ skills.primary }}
         </p>
         <br><br>
-
-        <strong>Capabilities</strong>
+        <strong>Secondary Role</strong>
 
         <p align="center">
-            {% for skill in skills.skills %}
-                {{ skill }}<br>
-            {% endfor %}
+           {{ skills.secondary }}
+
         </p>
         <br><br>
         <strong>Interested Causes</strong>
@@ -552,6 +549,15 @@
             {% endfor %}
 
         </p>
+        <br>
+        <strong>Languages</strong>
+
+        <p align="center">
+            {% for language in skills.languages %}
+                {{ language }}<br>
+            {% endfor %}
+        </p>
+        <br>
 
     </div>
 

@@ -39,6 +39,11 @@ class Referees
      */
     private $id;
 
+    /**
+     * @var smallint
+     */
+    private $approval;
+
 
     /**
      * Set name
@@ -61,6 +66,29 @@ class Referees
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set approval
+     *
+     * @param smallint $approval
+     * @return Referees
+     */
+    public function setApproval($approval)
+    {
+        $this->approval = $approval;
+
+        return $this;
+    }
+
+    /**
+     * Get approval
+     *
+     * @return smallint
+     */
+    public function getApproval()
+    {
+        return $this->approval;
     }
 
     /**
