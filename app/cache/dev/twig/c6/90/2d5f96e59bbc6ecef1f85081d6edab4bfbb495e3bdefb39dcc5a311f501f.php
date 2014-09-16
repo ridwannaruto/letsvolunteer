@@ -236,6 +236,26 @@ class __TwigTemplate_c6902d5f96e59bbc6ecef1f85081d6edab4bfbb495e3bdefb39dcc5a311
         echo "</p>
                         <br>
 
+                        <h6>Volunteer Hours</h6>
+                        ";
+        // line 137
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "time"));
+        foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
+            // line 138
+            echo "                            <label>
+                                ";
+            // line 139
+            echo twig_escape_filter($this->env, (isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), "html", null, true);
+            echo "
+                            </label>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 142
+        echo "                        <br><br>
 
                     </div>
 
@@ -252,16 +272,16 @@ class __TwigTemplate_c6902d5f96e59bbc6ecef1f85081d6edab4bfbb495e3bdefb39dcc5a311
                     <hr>
                     <br>
                     ";
-        // line 151
+        // line 158
         if (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "status") != 1)) {
-            // line 152
+            // line 159
             echo "                        <p align=\"center\">list not generated</p>
                     ";
         } else {
-            // line 154
+            // line 161
             echo "                    ";
         }
-        // line 155
+        // line 162
         echo "                    <br>
                 </div>
 
@@ -274,10 +294,10 @@ class __TwigTemplate_c6902d5f96e59bbc6ecef1f85081d6edab4bfbb495e3bdefb39dcc5a311
         ";
     }
 
-    // line 166
+    // line 173
     public function block_delete($context, array $blocks = array())
     {
-        // line 167
+        // line 174
         echo "        <div class=\"modal hide fade\" id=\"delete\">
             <div class=\"modal-header\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"modal\">×</button>
@@ -317,6 +337,6 @@ class __TwigTemplate_c6902d5f96e59bbc6ecef1f85081d6edab4bfbb495e3bdefb39dcc5a311
 
     public function getDebugInfo()
     {
-        return array (  281 => 167,  278 => 166,  265 => 155,  262 => 154,  258 => 152,  256 => 151,  235 => 133,  227 => 128,  215 => 118,  211 => 116,  206 => 113,  201 => 110,  196 => 107,  192 => 105,  190 => 104,  183 => 100,  174 => 93,  170 => 91,  165 => 88,  160 => 85,  155 => 82,  151 => 80,  149 => 79,  140 => 73,  130 => 66,  122 => 61,  114 => 56,  106 => 51,  95 => 43,  87 => 38,  79 => 32,  70 => 26,  66 => 25,  58 => 21,  50 => 17,  48 => 16,  45 => 15,  43 => 14,  32 => 5,  29 => 4,);
+        return array (  301 => 174,  298 => 173,  285 => 162,  282 => 161,  278 => 159,  276 => 158,  258 => 142,  249 => 139,  246 => 138,  242 => 137,  235 => 133,  227 => 128,  215 => 118,  211 => 116,  206 => 113,  201 => 110,  196 => 107,  192 => 105,  190 => 104,  183 => 100,  174 => 93,  170 => 91,  165 => 88,  160 => 85,  155 => 82,  151 => 80,  149 => 79,  140 => 73,  130 => 66,  122 => 61,  114 => 56,  106 => 51,  95 => 43,  87 => 38,  79 => 32,  70 => 26,  66 => 25,  58 => 21,  50 => 17,  48 => 16,  45 => 15,  43 => 14,  32 => 5,  29 => 4,);
     }
 }

@@ -133,6 +133,13 @@
                         <p align="justify">{{ Opportunity.expenses }}</p>
                         <br>
 
+                        <h6>Volunteer Hours</h6>
+                        {% for child in Opportunity.time %}
+                            <label>
+                                {{ child}}
+                            </label>
+                        {% endfor %}
+                        <br><br>
 
                     </div>
 

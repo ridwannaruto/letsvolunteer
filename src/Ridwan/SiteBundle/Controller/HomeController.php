@@ -60,7 +60,6 @@ class HomeController extends Controller
     }
 
     private function generateVolunteerHome(Request $request){
-
         $user = $this->getUser();
         $em = $this->getDoctrine()->getManager();
         $personalDetails = $em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findOneBy(array('user'=>$user));
@@ -135,11 +134,9 @@ class HomeController extends Controller
         $ongoingOp = count($em->getRepository('RidwanEntityBundle:Opportunities')->findBy(array('status'=>0)));
         $pendingOp = count($em->getRepository('RidwanEntityBundle:Opportunities')->findBy(array('status'=>1)));
         $completedOp = count($em->getRepository('RidwanEntityBundle:Opportunities')->findBy(array('status'=>2)));
-
         $rejectedOrg = count($em->getRepository('RidwanEntityBundle:Organization')->findBy(array('status'=>-1)));
         $activeOrg = count($em->getRepository('RidwanEntityBundle:Organization')->findBy(array('status'=>3)));
         $pendingOrg = count($em->getRepository('RidwanEntityBundle:Organization')->findBy(array('status'=>1)));
-
         $rejectedVol = count($em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>-1)));
         $activeVol = count($em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>3)));
         $pendingVol = count($em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>1)));

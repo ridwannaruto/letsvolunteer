@@ -274,10 +274,45 @@ class __TwigTemplate_2e9e701aa21e101898b5c0df0c9df9877aec191551b76b8245af65acbd8
         echo "</span>
             </div>
         </div>
+
+        <div class=\"control-group primary\">
+            ";
+        // line 133
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "time"), 'label', array("label_attr" => array("class" => "control-label"), "label" => "Volunteering Hours"));
+        echo "
+
+            <div class=\"controls\">
+                ";
+        // line 136
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "time"));
+        foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
+            // line 137
+            echo "                    <label>
+                        ";
+            // line 138
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), 'widget', array("attr" => array("class" => (($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute((isset($context["attr"]) ? $context["attr"] : null), "widget_class"), "")) : ("")))));
+            echo "
+                        ";
+            // line 139
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : $this->getContext($context, "child")), "vars"), "label"), array()), "html", null, true);
+            echo "
+                    </label>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 142
+        echo "                <span class=\"help-inline\">";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "enddate"), 'errors');
+        echo "</span>
+            </div>
+        </div>
         
                     ";
-        // line 132
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "enddate"), 'widget', array("type" => "hidden"));
+        // line 146
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "_token"), 'widget', array("type" => "hidden"));
         echo "
                
        
@@ -287,14 +322,15 @@ class __TwigTemplate_2e9e701aa21e101898b5c0df0c9df9877aec191551b76b8245af65acbd8
 
             <div class=\"controls\">
                     ";
-        // line 140
+        // line 154
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "submit"), 'widget', array("attr" => array("class" => "btn btn-success span3")));
         echo "
        
             </div>
         </div>
+
         ";
-        // line 144
+        // line 159
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
         
@@ -320,6 +356,6 @@ class __TwigTemplate_2e9e701aa21e101898b5c0df0c9df9877aec191551b76b8245af65acbd8
 
     public function getDebugInfo()
     {
-        return array (  298 => 144,  291 => 140,  280 => 132,  273 => 128,  269 => 127,  263 => 124,  255 => 119,  251 => 118,  245 => 115,  235 => 108,  231 => 107,  225 => 104,  217 => 99,  213 => 98,  207 => 95,  199 => 90,  195 => 89,  189 => 86,  181 => 81,  177 => 80,  171 => 77,  163 => 72,  159 => 71,  153 => 68,  145 => 63,  141 => 62,  135 => 59,  127 => 54,  123 => 53,  117 => 50,  109 => 45,  105 => 44,  99 => 41,  91 => 36,  87 => 35,  81 => 32,  72 => 26,  68 => 25,  62 => 22,  54 => 17,  50 => 16,  44 => 13,  38 => 10,  31 => 5,  28 => 4,);
+        return array (  334 => 159,  326 => 154,  315 => 146,  307 => 142,  298 => 139,  294 => 138,  291 => 137,  287 => 136,  281 => 133,  273 => 128,  269 => 127,  263 => 124,  255 => 119,  251 => 118,  245 => 115,  235 => 108,  231 => 107,  225 => 104,  217 => 99,  213 => 98,  207 => 95,  199 => 90,  195 => 89,  189 => 86,  181 => 81,  177 => 80,  171 => 77,  163 => 72,  159 => 71,  153 => 68,  145 => 63,  141 => 62,  135 => 59,  127 => 54,  123 => 53,  117 => 50,  109 => 45,  105 => 44,  99 => 41,  91 => 36,  87 => 35,  81 => 32,  72 => 26,  68 => 25,  62 => 22,  54 => 17,  50 => 16,  44 => 13,  38 => 10,  31 => 5,  28 => 4,);
     }
 }

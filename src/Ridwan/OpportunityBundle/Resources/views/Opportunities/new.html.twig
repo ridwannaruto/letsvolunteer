@@ -128,8 +128,22 @@
                 <span class="help-inline">{{ form_errors(form.enddate) }}</span>
             </div>
         </div>
+
+        <div class="control-group primary">
+            {{form_label(form.time, 'Volunteering Hours',{ 'label_attr': {'class': 'control-label'} })}}
+
+            <div class="controls">
+                {% for child in form.time %}
+                    <label>
+                        {{ form_widget(child, {'attr': {'class': attr.widget_class|default('')}}) }}
+                        {{ child.vars.label|trans({}) }}
+                    </label>
+                {% endfor %}
+                <span class="help-inline">{{ form_errors(form.enddate) }}</span>
+            </div>
+        </div>
         
-                    {{form_widget(form.enddate, {'type':'hidden'})}}
+                    {{form_widget(form._token, {'type':'hidden'})}}
                
        
         
@@ -141,6 +155,7 @@
        
             </div>
         </div>
+
         {{ form_end(form) }}
         
 
