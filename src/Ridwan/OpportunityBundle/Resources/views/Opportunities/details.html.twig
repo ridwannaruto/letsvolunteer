@@ -38,6 +38,11 @@
                         <h3>{{ Opportunity.title }}</h3>
                         <br>
 
+                        <h6>Volunteer Role</h6>
+
+                        <p align="justify">{{ Opportunity.role }}</p>
+                        <br>
+
                         <h6>Description</h6>
 
                         <p align="justify">{{ Opportunity.description }}</p>
@@ -153,11 +158,42 @@
 
                 <div id="content" class="span12">
                     <h6>Volunteers List</h6>
-                    <hr>
-                    <br>
-                    {% if Opportunity.status != 1   %}
-                        <p align="center">list not generated</p>
-                    {% else %}
+
+                        {% if volunteers == null %}
+
+                            <hr>
+                            <p align="center">list not generated</p>
+                        {% else %}
+                            <br>
+                            <table class="table" width="100%">
+
+                                <tbody>
+                                {% for i in range(0, volunteers|length -1) %}
+                                    {% if i < 20 and volunteers[i].user != null%}
+                                        <tr>
+                                            <td class="center">
+                                                <a href="{{ path('ridwan_site_profile',{'ID' :volunteers[i].user.id}) }}">
+                                                    {{ volunteers[i].firstname }} {{ volunteers[i].lastname }}</a>
+                                                </a>
+
+
+                                            </td>
+
+
+                                        </tr>
+                                    {% endif %}
+
+
+                                {% endfor %}
+
+
+                                </tbody>
+                            </table><hr>
+                            <p align="center"><a href="#"><button class="btn btn-info btn-small">see full list</button></a></p>
+
+
+
+
                     {% endif %}
                     <br>
                 </div>

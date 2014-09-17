@@ -267,20 +267,46 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // ridwan_opportunity_completePage
-        if (0 === strpos($pathinfo, '/feedbackopportunity') && preg_match('#^/feedbackopportunity/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_completePage')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::completePageAction',));
+        if (0 === strpos($pathinfo, '/completeopportunity') && preg_match('#^/completeopportunity/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_completePage')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\CompletionController::completePageAction',));
         }
 
-        // ridwan_opportunity_complete
-        if (0 === strpos($pathinfo, '/completeopportunity') && preg_match('#^/completeopportunity/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_ridwan_opportunity_complete;
+        if (0 === strpos($pathinfo, '/feedback')) {
+            // ridwan_volunteer_feedbackPage
+            if (0 === strpos($pathinfo, '/feedbackPage/volunteer') && preg_match('#^/feedbackPage/volunteer/(?P<userID>[^/]++)/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_volunteer_feedbackPage')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\CompletionController::volunteerFeedbackAction',));
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_complete')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\OpportunityController::completeopportunityAction',));
+            // ridwan_volunteer_feedback
+            if (0 === strpos($pathinfo, '/feedback/volunteer') && preg_match('#^/feedback/volunteer/(?P<userID>[^/]++)/(?P<opportunityID>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_ridwan_volunteer_feedback;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_volunteer_feedback')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\CompletionController::updateVolunteerAction',));
+            }
+            not_ridwan_volunteer_feedback:
+
         }
-        not_ridwan_opportunity_complete:
+
+        // ridwan_opportunity_suggest
+        if (0 === strpos($pathinfo, '/volunteer/suggest') && preg_match('#^/volunteer/suggest/(?P<userID>[^/]++)/(?P<opID>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_suggest')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\AssignmentController::suggestAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/opportunity')) {
+            // ridwan_opportunity_accept
+            if (0 === strpos($pathinfo, '/opportunity/accept') && preg_match('#^/opportunity/accept/(?P<opID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_accept')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\AcceptanceController::acceptAction',));
+            }
+
+            // ridwan_opportunity_deny
+            if (0 === strpos($pathinfo, '/opportunity/deny') && preg_match('#^/opportunity/deny/(?P<opID>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ridwan_opportunity_deny')), array (  '_controller' => 'Ridwan\\OpportunityBundle\\Controller\\AcceptanceController::denyAction',));
+            }
+
+        }
 
         if (0 === strpos($pathinfo, '/project')) {
             // ridwan_project_index

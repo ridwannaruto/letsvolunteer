@@ -178,6 +178,9 @@ class AvailabilityController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
+        if ($this->getUser()->getId() != $id){
+            $this->render('RidwanSiteBundle:Error:permission.html.twig');
+        }
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('RidwanEntityBundle:Availability')->find($id);

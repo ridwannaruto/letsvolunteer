@@ -2,16 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aa29cc9-f6e4-44ff-9bc5-11fdcabfca51" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/AcceptanceController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/CompletionController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/feedback/organization.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/feedback/volunteer.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a6/b1/18e665667f6bf870f94999696cc92d80816fe2c7268c372da6f26a5f1df4.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a6/b1/18e665667f6bf870f94999696cc92d80816fe2c7268c372da6f26a5f1df4.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c6/90/2d5f96e59bbc6ecef1f85081d6edab4bfbb495e3bdefb39dcc5a311f501f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c6/90/2d5f96e59bbc6ecef1f85081d6edab4bfbb495e3bdefb39dcc5a311f501f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/2e/9e/701aa21e101898b5c0df0c9df9877aec191551b76b8245af65acbd818293.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/2e/9e/701aa21e101898b5c0df0c9df9877aec191551b76b8245af65acbd818293.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a9/b9/976cbff9194e891e2c2f23709187112bff4f8397130ab02bd169f7417893.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a9/b9/976cbff9194e891e2c2f23709187112bff4f8397130ab02bd169f7417893.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/HomeController.php" afterPath="$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/23/f5/47150edd30b64c001b3c8363b209952b2114063c314786baf117ffe9237f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/23/f5/47150edd30b64c001b3c8363b209952b2114063c314786baf117ffe9237f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/AssignmentController.php" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/AssignmentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/AvailabilityController.php" afterPath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/AvailabilityController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Opportunities.orm.xml" afterPath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Opportunities.orm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Opportunities.php" afterPath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Opportunities.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/OpportunitiesType.php" afterPath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/OpportunitiesType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/OpportunityController.php" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/OpportunityController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/ProfileController.php" afterPath="$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/ProfileController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/complete.html.twig" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/complete.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/58/57/ddc7d7bbc92bf99d631502d48dbb55ec896c41e491eb762fa709994930e4.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/58/57/ddc7d7bbc92bf99d631502d48dbb55ec896c41e491eb762fa709994930e4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Assignment/details.html.twig" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Assignment/details.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/details.html.twig" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/details.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Opportunities/edit.html.twig" afterPath="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Opportunities/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/new.html.twig" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/nvs.html.twig" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/nvs.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/volunteer.html.twig" afterPath="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/volunteer.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Profile/volunteer.html.twig" afterPath="$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Profile/volunteer.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LetsVolunteer.iws" />
@@ -35,64 +54,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HomeController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/HomeController.php">
+      <file leaf-file-name="volunteer.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Home/volunteer.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="111" selection-start="6410" selection-end="6410" vertical-scroll-proportion="-49.925926" vertical-offset="1046" max-vertical-offset="3222">
+            <state line="589" column="36" selection-start="15959" selection-end="16299" vertical-scroll-proportion="4.814815" vertical-offset="10732" max-vertical-offset="11520">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Availability/edit.html.twig">
+      <file leaf-file-name="CompletionController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/CompletionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="40" selection-start="497" selection-end="863" vertical-scroll-proportion="-7.3333335" vertical-offset="270" max-vertical-offset="1224">
+            <state line="75" column="56" selection-start="3301" selection-end="3301" vertical-scroll-proportion="0.4909091" vertical-offset="1053" max-vertical-offset="2844">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpportunityController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/OpportunityController.php">
+      <file leaf-file-name="ProfileController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/ProfileController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="375" column="55" selection-start="16387" selection-end="16629" vertical-scroll-proportion="-9.37037" vertical-offset="6425" max-vertical-offset="9918">
+            <state line="39" column="37" selection-start="1776" selection-end="1776" vertical-scroll-proportion="6.6666665" vertical-offset="756" max-vertical-offset="1890">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpportunitiesController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/OpportunitiesController.php">
+      <file leaf-file-name="complete.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/complete.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="199" column="0" selection-start="5827" selection-end="5827" vertical-scroll-proportion="-39.333332" vertical-offset="2412" max-vertical-offset="4716">
+            <state line="20" column="78" selection-start="732" selection-end="732" vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="972">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="volunteer.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/feedback/volunteer.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="40" selection-start="4703" selection-end="4703" vertical-scroll-proportion="-44.0" vertical-offset="324" max-vertical-offset="2520">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/new.html.twig">
+      <file leaf-file-name="organization.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/feedback/organization.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="8" selection-start="4940" selection-end="5520" vertical-scroll-proportion="-2.7777777" vertical-offset="2283" max-vertical-offset="3114">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3330">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Opportunities/edit.html.twig">
+      <file leaf-file-name="Opportunities.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Opportunities.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="34" selection-start="5092" selection-end="5092" vertical-scroll-proportion="6.0740743" vertical-offset="2486" max-vertical-offset="3024">
+            <state line="530" column="32" selection-start="8029" selection-end="8029" vertical-scroll-proportion="-8.333333" vertical-offset="9315" max-vertical-offset="10782">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.html.twig" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Opportunities.orm.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Opportunities.orm.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="58" selection-start="1747" selection-end="1747" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="684">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/details.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="32" selection-start="6087" selection-end="6087" vertical-scroll-proportion="0.55279505" vertical-offset="2360" max-vertical-offset="3654">
+            <state line="146" column="32" selection-start="1511" selection-end="6236" vertical-scroll-proportion="-14.518518" vertical-offset="2236" max-vertical-offset="4302">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="24" selection-start="0" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044">
               <folding />
             </state>
           </provider>
@@ -137,27 +185,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Referees.php" />
-        <option value="$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Profile/volunteer.html.twig" />
-        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/VolunteerController.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/vendor/knplabs/knp-snappy/src/Knp/Snappy/AbstractGenerator.php" />
-        <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Profile.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Profile.orm.xml" />
-        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/volunteer.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Assignment/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Assignment/details.html.twig" />
-        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/AssignmentController.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/EmploymentType.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/OrganizationType.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/ProfileType.php" />
@@ -166,16 +199,12 @@
         <option value="$PROJECT_DIR$/src/Ridwan/UserBundle/Resources/views/Welcome/skills.html.twig" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/SkillsType.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Skills.orm.xml" />
-        <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Opportunities.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Locations.orm.xml" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Profession.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Locations.php" />
-        <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Opportunities.orm.xml" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/routing/profile.xml" />
         <option value="$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/OpportunityController.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/organization.html.twig" />
-        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/nvs.html.twig" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/VolunteercontactdetailsType.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Volunteercontactdetails/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Ridwan/UserBundle/Resources/views/Welcome/contact.html.twig" />
@@ -188,12 +217,28 @@
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Organizationcontactdetails/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/OrganizationController.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/OrganizationcontactdetailsController.php" />
-        <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/OpportunitiesType.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/new.html.twig" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Opportunities/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/OpportunitiesController.php" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/nvs.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Home/NVS.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Profile/volunteer.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/AvailabilityController.php" />
+        <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/OpportunitiesType.php" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Assignment/details.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/volunteer.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/OpportunityController.php" />
         <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/details.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/AssignmentController.php" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/AcceptanceController.php" />
+        <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Opportunities.php" />
+        <option value="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Opportunities.orm.xml" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/complete.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/feedback/volunteer.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/ProfileController.php" />
+        <option value="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/CompletionController.php" />
       </list>
     </option>
   </component>
@@ -230,6 +275,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1143,6 +1189,40 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feedback" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LetsVolunteer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LetsVolunteer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ridwan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpportunityBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1672,7 +1752,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1687,11 +1766,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/feedback" />
+      <recent name="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller" />
       <recent name="$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity" />
       <recent name="$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine" />
       <recent name="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Assignment" />
-      <recent name="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities" />
-      <recent name="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Assignment" />
@@ -1735,15 +1814,14 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3429003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33004925" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3218391" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33761328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32405892" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1752,6 +1830,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33004925" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1808,159 +1887,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/VolunteerpersonalType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="40" selection-start="1657" selection-end="1657" vertical-scroll-proportion="1.4945848" vertical-offset="0" max-vertical-offset="1404">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/VolunteerfeedbackType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Profession.orm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.26422018" vertical-offset="0" max-vertical-offset="545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/UserBundle/Resources/views/Welcome/referees.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="242" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2538">
-          <folding>
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1410509014045" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Skills.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="32" selection-start="1665" selection-end="1677" vertical-scroll-proportion="-78.0" vertical-offset="0" max-vertical-offset="3114">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Locations.orm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="57" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Locations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="19" selection-start="940" selection-end="940" vertical-scroll-proportion="0.5065913" vertical-offset="955" max-vertical-offset="2412">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/UserBundle/Resources/views/Welcome/skills.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="12" selection-start="1283" selection-end="1283" vertical-scroll-proportion="-27.666666" vertical-offset="207" max-vertical-offset="1134">
-          <folding>
-            <element signature="e#152#176#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/SkillsType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="18" selection-start="2222" selection-end="2677" vertical-scroll-proportion="-11.185185" vertical-offset="670" max-vertical-offset="1998">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Availability.orm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Skills.orm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Opportunities.orm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="37" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/ProfileType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="18" selection-start="452" selection-end="452" vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="1638">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="9" selection-start="1300" selection-end="1300" vertical-scroll-proportion="-17.333334" vertical-offset="0" max-vertical-offset="1674">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="36" selection-start="3811" selection-end="3811" vertical-scroll-proportion="-66.21429" vertical-offset="0" max-vertical-offset="2268">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/UserBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="815" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/change_password.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="108" selection-start="16247" selection-end="16247" vertical-scroll-proportion="-104.666664" vertical-offset="1836" max-vertical-offset="7344">
-          <folding />
-        </state>
+        <state line="259" column="108" selection-start="16247" selection-end="16247" vertical-scroll-proportion="-104.666664" vertical-offset="1836" max-vertical-offset="7344" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/routing/change_password.xml">
@@ -1979,170 +1908,97 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/UserBundle/Controller/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="28.333334" vertical-offset="765" max-vertical-offset="2016">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Opportunities.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="19" selection-start="3083" selection-end="3091" vertical-scroll-proportion="-2.0545454" vertical-offset="4045" max-vertical-offset="10278">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="28.333334" vertical-offset="765" max-vertical-offset="2016" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Profession.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="32" selection-start="741" selection-end="753" vertical-scroll-proportion="-3.3333333" vertical-offset="936" max-vertical-offset="1908">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/organization.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="44" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.43636364" vertical-offset="378" max-vertical-offset="1602">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/nvs.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="144" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.4909091" vertical-offset="153" max-vertical-offset="3420">
-          <folding />
-        </state>
+        <state line="57" column="32" selection-start="741" selection-end="753" vertical-scroll-proportion="-3.3333333" vertical-offset="936" max-vertical-offset="1908" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="43" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.67811936" vertical-offset="363" max-vertical-offset="1368">
-          <folding />
-        </state>
+        <state line="41" column="43" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.67811936" vertical-offset="363" max-vertical-offset="1368" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Volunteercontactdetails/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="14" selection-start="2346" selection-end="2346" vertical-scroll-proportion="0.3146718" vertical-offset="1061" max-vertical-offset="1998">
-          <folding />
-        </state>
+        <state line="68" column="14" selection-start="2346" selection-end="2346" vertical-scroll-proportion="0.3146718" vertical-offset="1061" max-vertical-offset="1998" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/UserBundle/Resources/views/Welcome/contact.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="18" selection-start="2993" selection-end="2993" vertical-scroll-proportion="0.46580407" vertical-offset="1242" max-vertical-offset="2124">
-          <folding />
-        </state>
+        <state line="83" column="18" selection-start="2993" selection-end="2993" vertical-scroll-proportion="0.46580407" vertical-offset="1242" max-vertical-offset="2124" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Volunteercontactdetails.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="12" selection-start="568" selection-end="574" vertical-scroll-proportion="0.37288135" vertical-offset="648" max-vertical-offset="6642">
-          <folding />
-        </state>
+        <state line="47" column="12" selection-start="568" selection-end="574" vertical-scroll-proportion="0.37288135" vertical-offset="648" max-vertical-offset="6642" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Organizationcontactdetails.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4594594" vertical-offset="756" max-vertical-offset="7182">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4594594" vertical-offset="756" max-vertical-offset="7182" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/VolunteercontactdetailsType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="658" selection-end="1119" vertical-scroll-proportion="0.6101695" vertical-offset="270" max-vertical-offset="1134">
-          <folding />
-        </state>
+        <state line="35" column="0" selection-start="658" selection-end="1119" vertical-scroll-proportion="0.6101695" vertical-offset="270" max-vertical-offset="1134" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/UserBundle/Resources/views/Welcome/Organizationcontact.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="14" selection-start="3101" selection-end="3101" vertical-scroll-proportion="0.6545454" vertical-offset="1368" max-vertical-offset="2376">
-          <folding />
-        </state>
+        <state line="94" column="14" selection-start="3101" selection-end="3101" vertical-scroll-proportion="0.6545454" vertical-offset="1368" max-vertical-offset="2376" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Organizationcontactdetails/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="14" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.45173746" vertical-offset="1080" max-vertical-offset="1872">
-          <folding />
-        </state>
+        <state line="73" column="14" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.45173746" vertical-offset="1080" max-vertical-offset="1872" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/OrganizationcontactdetailsType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.84745765" vertical-offset="162" max-vertical-offset="1134">
-          <folding />
-        </state>
+        <state line="36" column="0" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.84745765" vertical-offset="162" max-vertical-offset="1134" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/OrganizationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="35" selection-start="5508" selection-end="5508" vertical-scroll-proportion="0.7297297" vertical-offset="2988" max-vertical-offset="4464">
-          <folding />
-        </state>
+        <state line="193" column="35" selection-start="5508" selection-end="5508" vertical-scroll-proportion="0.7297297" vertical-offset="2988" max-vertical-offset="4464" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/OrganizationcontactdetailsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="61" selection-start="6317" selection-end="6317" vertical-scroll-proportion="0.9034749" vertical-offset="2970" max-vertical-offset="4536">
-          <folding />
-        </state>
+        <state line="197" column="61" selection-start="6317" selection-end="6317" vertical-scroll-proportion="0.9034749" vertical-offset="2970" max-vertical-offset="4536" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/UserBundle/Controller/OrganizationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="5" selection-start="841" selection-end="841" vertical-scroll-proportion="-1.5619223" vertical-offset="1205" max-vertical-offset="2232">
-          <folding />
-        </state>
+        <state line="25" column="5" selection-start="841" selection-end="841" vertical-scroll-proportion="-1.5619223" vertical-offset="1205" max-vertical-offset="2232" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/UserBundle/Controller/VolunteerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="253" column="59" selection-start="8913" selection-end="8913" vertical-scroll-proportion="0.46580407" vertical-offset="3996" max-vertical-offset="7056">
-          <folding />
-        </state>
+        <state line="253" column="59" selection-start="8913" selection-end="8913" vertical-scroll-proportion="0.46580407" vertical-offset="3996" max-vertical-offset="7056" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Opportunities/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="581">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="581" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/VolunteercontactdetailsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="12" selection-start="5954" selection-end="6245" vertical-scroll-proportion="0.3585952" vertical-offset="3208" max-vertical-offset="4590">
-          <folding />
-        </state>
+        <state line="195" column="12" selection-start="5954" selection-end="6245" vertical-scroll-proportion="0.3585952" vertical-offset="3208" max-vertical-offset="4590" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="8" selection-start="4940" selection-end="5520" vertical-scroll-proportion="-2.7777777" vertical-offset="2283" max-vertical-offset="3114">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Home/volunteer.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="589" column="36" selection-start="15959" selection-end="16299" vertical-scroll-proportion="0.60248446" vertical-offset="10408" max-vertical-offset="11520">
-          <folding />
-        </state>
+        <state line="131" column="8" selection-start="4940" selection-end="5520" vertical-scroll-proportion="-2.7777777" vertical-offset="2283" max-vertical-offset="3114" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Opportunities/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="34" selection-start="5092" selection-end="5092" vertical-scroll-proportion="6.0740743" vertical-offset="2486" max-vertical-offset="3024">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/OpportunitiesType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="17" selection-start="6908" selection-end="6908" vertical-scroll-proportion="1.1273292" vertical-offset="2373" max-vertical-offset="3456">
-          <folding />
-        </state>
+        <state line="129" column="34" selection-start="5092" selection-end="5092" vertical-scroll-proportion="6.0740743" vertical-offset="2486" max-vertical-offset="3024" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/AvailabilityType.php">
@@ -2154,42 +2010,190 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/views/Availability/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="40" selection-start="497" selection-end="863" vertical-scroll-proportion="-7.3333335" vertical-offset="270" max-vertical-offset="1224">
-          <folding />
-        </state>
+        <state line="26" column="40" selection-start="497" selection-end="863" vertical-scroll-proportion="-7.3333335" vertical-offset="270" max-vertical-offset="1224" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/OpportunityController.php">
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="375" column="55" selection-start="16387" selection-end="16629" vertical-scroll-proportion="-9.37037" vertical-offset="6425" max-vertical-offset="9918">
+        <state line="138" column="111" selection-start="6410" selection-end="6410" vertical-scroll-proportion="-49.925926" vertical-offset="1046" max-vertical-offset="3222" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/OpportunitiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="199" column="0" selection-start="5827" selection-end="5827" vertical-scroll-proportion="-39.333332" vertical-offset="2412" max-vertical-offset="4716" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Skills.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="32" selection-start="1665" selection-end="1677" vertical-scroll-proportion="-78.0" vertical-offset="0" max-vertical-offset="3114" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Home/NVS.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="35" selection-start="4301" selection-end="4301" vertical-scroll-proportion="-76.666664" vertical-offset="0" max-vertical-offset="4302">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/AvailabilityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-9.210702" vertical-offset="2754" max-vertical-offset="4446">
+        <state line="181" column="73" selection-start="5073" selection-end="5073" vertical-scroll-proportion="-0.06923077" vertical-offset="3186" max-vertical-offset="4500">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/HomeController.php">
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Profile/volunteer.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="111" selection-start="6410" selection-end="6410" vertical-scroll-proportion="-49.925926" vertical-offset="1046" max-vertical-offset="3222">
+        <state line="615" column="8" selection-start="17448" selection-end="17448" vertical-scroll-proportion="-6.4074073" vertical-offset="10897" max-vertical-offset="12204">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Controller/OpportunitiesController.php">
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Profile.orm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="0" selection-start="5827" selection-end="5827" vertical-scroll-proportion="-39.333332" vertical-offset="2412" max-vertical-offset="4716">
+        <state line="18" column="36" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.57042253" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="8" selection-start="14" selection-end="15" vertical-scroll-proportion="0.06844106" vertical-offset="0" max-vertical-offset="7146">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Skills.orm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="39" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/volunteer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="66" selection-start="6731" selection-end="6731" vertical-scroll-proportion="0.14972274" vertical-offset="2727" max-vertical-offset="6282">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/nvs.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="36" selection-start="1604" selection-end="1604" vertical-scroll-proportion="-3.996139" vertical-offset="2700" max-vertical-offset="3510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/AssignmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="129" selection-start="3159" selection-end="3159" vertical-scroll-proportion="-17.666666" vertical-offset="621" max-vertical-offset="2988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/AcceptanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="961" selection-end="962" vertical-scroll-proportion="-10.0" vertical-offset="216" max-vertical-offset="1674">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/organization.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="44" selection-start="1076" selection-end="1076" vertical-scroll-proportion="-0.0" vertical-offset="594" max-vertical-offset="1602">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Assignment/details.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="157" column="43" selection-start="6614" selection-end="6614" vertical-scroll-proportion="-1.1370656" vertical-offset="3415" max-vertical-offset="4068">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Form/OpportunitiesType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="39" selection-start="4306" selection-end="4306" vertical-scroll-proportion="0.24903475" vertical-offset="1509" max-vertical-offset="3474">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Entity/Opportunities.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="530" column="32" selection-start="8029" selection-end="8029" vertical-scroll-proportion="-8.333333" vertical-offset="9315" max-vertical-offset="10782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/EntityBundle/Resources/config/doctrine/Opportunities.orm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="58" selection-start="1747" selection-end="1747" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="684">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/details.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="32" selection-start="6087" selection-end="6087" vertical-scroll-proportion="0.55279505" vertical-offset="2360" max-vertical-offset="3654">
+        <state line="146" column="32" selection-start="1511" selection-end="6236" vertical-scroll-proportion="-14.518518" vertical-offset="2236" max-vertical-offset="4302">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/OpportunityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="0" selection-start="5833" selection-end="5833" vertical-scroll-proportion="-1.6385281" vertical-offset="3151" max-vertical-offset="8622">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/feedback/organization.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/Opportunities/complete.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="78" selection-start="732" selection-end="732" vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="972">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Resources/views/Home/volunteer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="589" column="36" selection-start="15959" selection-end="16299" vertical-scroll-proportion="4.814815" vertical-offset="10732" max-vertical-offset="11520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/views/feedback/volunteer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="40" selection-start="4703" selection-end="4703" vertical-scroll-proportion="-44.0" vertical-offset="324" max-vertical-offset="2520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="24" selection-start="0" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/SiteBundle/Controller/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="37" selection-start="1776" selection-end="1776" vertical-scroll-proportion="6.6666665" vertical-offset="756" max-vertical-offset="1890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ridwan/OpportunityBundle/Controller/CompletionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="56" selection-start="3301" selection-end="3301" vertical-scroll-proportion="0.4909091" vertical-offset="1053" max-vertical-offset="2844">
           <folding />
         </state>
       </provider>

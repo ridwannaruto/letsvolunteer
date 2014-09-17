@@ -24,11 +24,29 @@ ridwan_opportunity_new:
 
     
 ridwan_opportunity_completePage:
-    pattern:  /feedbackopportunity/{opportunityID}
-    defaults: { _controller: RidwanOpportunityBundle:Opportunity:completePage }
-    
-ridwan_opportunity_complete:
     pattern:  /completeopportunity/{opportunityID}
-    defaults: { _controller: RidwanOpportunityBundle:Opportunity:completeopportunity }
-    methods: POST
+    defaults: { _controller: RidwanOpportunityBundle:Completion:completePage }
     
+ridwan_volunteer_feedbackPage:
+    pattern:  /feedbackPage/volunteer/{userID}/{opportunityID}
+    defaults: { _controller: RidwanOpportunityBundle:Completion:volunteerFeedback }
+
+ridwan_volunteer_feedback:
+    pattern:  /feedback/volunteer/{userID}/{opportunityID}
+    defaults: { _controller: RidwanOpportunityBundle:Completion:updateVolunteer }
+    methods: POST
+
+
+ridwan_opportunity_suggest:
+    pattern:  /volunteer/suggest/{userID}/{opID}
+    defaults: { _controller: RidwanOpportunityBundle:Assignment:suggest }
+
+ridwan_opportunity_accept:
+    pattern:  /opportunity/accept/{opID}
+    defaults: { _controller: RidwanOpportunityBundle:Acceptance:accept }
+
+ridwan_opportunity_deny:
+    pattern:  /opportunity/deny/{opID}
+    defaults: { _controller: RidwanOpportunityBundle:Acceptance:deny }
+
+

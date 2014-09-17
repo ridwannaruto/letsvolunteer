@@ -19,11 +19,12 @@
     <field name="training" type="text" column="training" nullable="true"/>
     <field name="expenses" type="text" column="expenses" nullable="true"/>
     <field name="difficulty" type="string" column="difficulty" length="2" nullable="false"/>
-    <field name="systemmatch" type="text" column="systemMatch" nullable="true"/>
-    <field name="interested" type="text" column="interested" nullable="true"/>
+    <field name="systemmatch" type="array" column="systemMatch" nullable="true"/>
+    <field name="completed" type="array" column="completed" nullable="true"/>
+    <field name="interested" type="array" column="notinterested" nullable="true"/>
     <field name="organization" type="integer" column="organization"/>
     <field name="status" type="integer" column="status"/>
-    <field name="enrolled" type="text" column="enrolled" nullable="true"/>
+    <field name="enrolled" type="array" column="enrolled" nullable="true"/>
     <field name="role" type="text" column="role" nullable="true"/>
     <field name="time" type="array" column="time" nullable="true"/>
 

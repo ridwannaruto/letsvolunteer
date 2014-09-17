@@ -93,6 +93,11 @@ class Opportunities
     /**
      * @var string
      */
+    private $completed;
+
+    /**
+     * @var string
+     */
     private $interested;
 
     /**
@@ -503,6 +508,29 @@ class Opportunities
     public function getSystemmatch()
     {
         return $this->systemmatch;
+    }
+
+    /**
+     * Set completed
+     *
+     * @param string $completed
+     * @return Opportunities
+     */
+    public function setCompleted($completed)
+    {
+        $this->completed = $completed;
+
+        return $this;
+    }
+
+    /**
+     * Get completed
+     *
+     * @return string
+     */
+    public function getCompleted()
+    {
+        return $this->completed;
     }
 
     /**

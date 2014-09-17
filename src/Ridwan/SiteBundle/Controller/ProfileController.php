@@ -32,6 +32,18 @@ class ProfileController extends Controller {
                 return $this->render('RidwanSiteBundle:Profile:organization.html.twig', $profile[1]);
             }
 	    }
+            elseif($type == 'ORGANIZATION'){
+                $em = $this->getDoctrine()->getManager();
+                $repository = $em->getRepository('RidwanEntityBundle:Opportunities');
+                $profile = $em->getRepository('RidwanEntityBundle:Profile')->findOneBy(array('user'=>$ID));
+                $organization= $em->getRepository('RidwanEntityBundle:Organization')->findOneBy(array('user'=>$authenticatedUser->getId()));
+                if ($profile->getCurrent() != $organization->getId()){
+                    return $this->render('RidwanSiteBundle:Error:permission.html.twig');
+                }
+                $profile = $this->getProfile($ID);
+                return $this->render('RidwanSiteBundle:Profile:volunteer.html.twig', $profile[1]);
+
+            }
             return $this->render('RidwanSiteBundle:Error:permission.html.twig');
         }
         return $this->redirect($this->generateUrl('ridwan_site_home'));

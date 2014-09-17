@@ -80,10 +80,18 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
             echo "</h3>
                                 <br>
 
-                                <h6>Description</h6>
+                                <h6>Volunteer Role</h6>
 
                                 <p align=\"justify\">";
             // line 35
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "role"), "html", null, true);
+            echo "</p>
+                                <br>
+
+                                <h6>Description</h6>
+
+                                <p align=\"justify\">";
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "description"), "html", null, true);
             echo "</p>
                                 <br>
@@ -94,7 +102,7 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
                                             <h6>Location</h6>
 
                                             <p align=\"justify\">";
-            // line 43
+            // line 48
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "location"), "html", null, true);
             echo "</p>
                                             <br>
@@ -102,7 +110,7 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
                                             <h6>Start Date</h6>
 
                                             <p align=\"justify\">";
-            // line 48
+            // line 53
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "startdate"), "Y-m-d"), "html", null, true);
             echo "</p>
                                             <br>
@@ -110,7 +118,7 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
                                             <h6>Expected End Date</h6>
 
                                             <p align=\"justify\">";
-            // line 53
+            // line 58
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "enddate"), "Y-m-d"), "html", null, true);
             echo "</p>
                                             <br>
@@ -118,7 +126,7 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
                                             <h6>Number of Volunteers</h6>
 
                                             <p align=\"justify\">";
-            // line 58
+            // line 63
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "numberofvolunteers"), "html", null, true);
             echo "</p>
                                             <br>
@@ -128,7 +136,7 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
                                             <h6>Age Group</h6>
 
                                             <p align=\"justify\">";
-            // line 65
+            // line 70
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "agegroup"), "html", null, true);
             echo "</p>
                                             <br>
@@ -137,32 +145,32 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
 
                                             <p align=\"justify\">
                                                 ";
-            // line 71
+            // line 76
             if (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "difficulty") == 8)) {
-                // line 72
+                // line 77
                 echo "                                            <h3><span class=\"label label-important\"> Extreme</span></h3>
                                             ";
             } elseif (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "difficulty") == 6)) {
-                // line 74
+                // line 79
                 echo "                                                <h3><span class=\"label label-warning\"> Hard</span></h3>
 
                                             ";
             } elseif (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "difficulty") == 4)) {
-                // line 77
+                // line 82
                 echo "                                                <h3><span class=\"label label-inverse\"> Normal</span></h3>
 
                                             ";
             } elseif (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "difficulty") == 2)) {
-                // line 80
+                // line 85
                 echo "                                                <h3><span class=\"label label-inverse\"> Easy </span></h3>
 
                                             ";
             } elseif (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "difficulty") == 0)) {
-                // line 83
+                // line 88
                 echo "                                                <h3><span class=\"label label-info\"> Very Easy</span></h3>
                                             ";
             }
-            // line 85
+            // line 90
             echo "
 
                                             </p>
@@ -171,39 +179,39 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
                                             <h6>Cause</h6>
 
                                             <p align=\"justify\">";
-            // line 92
+            // line 97
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "cause"), "html", null, true);
             echo "</p>
                                             <br>
 
                                             <h6>Status</h6>
                                             ";
-            // line 96
+            // line 101
             if (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "status") == (-1))) {
-                // line 97
+                // line 102
                 echo "                                                <h3><span class=\"label label-important\"> Rejected</span></h3>
                                             ";
             } elseif (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "status") == 0)) {
-                // line 99
+                // line 104
                 echo "                                                <h3><span class=\"label label-warning\"> Pending Approval</span></h3>
 
                                             ";
             } elseif (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "status") == 1)) {
-                // line 102
+                // line 107
                 echo "                                                <h3><span class=\"label label-inverse\"> Assigning Volunteers</span></h3>
 
                                             ";
             } elseif (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "status") == 2)) {
-                // line 105
+                // line 110
                 echo "                                                <h3><span class=\"label label-inverse\"> On going</span></h3>
 
                                             ";
             } elseif (($this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "status") == 3)) {
-                // line 108
+                // line 113
                 echo "                                                <h3><span class=\"label label-info\">Completed</span></h3>
                                             ";
             }
-            // line 110
+            // line 115
             echo "                                            <br>
                                         </td>
                                         <td width='10%'></td>
@@ -215,7 +223,7 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
                                 <h6>Training</h6>
 
                                 <p align=\"justify\">";
-            // line 120
+            // line 125
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "training"), "html", null, true);
             echo "</p>
                                 <br>
@@ -223,7 +231,7 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
                                 <h6>Expenses</h6>
 
                                 <p align=\"justify\">";
-            // line 125
+            // line 130
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["Opportunity"]) ? $context["Opportunity"] : $this->getContext($context, "Opportunity")), "expenses"), "html", null, true);
             echo "</p>
                                 <br>
@@ -236,7 +244,7 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['Opportunity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 132
+        // line 137
         echo "
 
                     </ul>
@@ -305,6 +313,6 @@ class __TwigTemplate_23f547150edd30b64c001b3c8363b209952b2114063c314786baf117ffe
 
     public function getDebugInfo()
     {
-        return array (  240 => 132,  227 => 125,  219 => 120,  207 => 110,  203 => 108,  198 => 105,  193 => 102,  188 => 99,  184 => 97,  182 => 96,  175 => 92,  166 => 85,  162 => 83,  157 => 80,  152 => 77,  147 => 74,  143 => 72,  141 => 71,  132 => 65,  122 => 58,  114 => 53,  106 => 48,  98 => 43,  87 => 35,  79 => 30,  73 => 26,  65 => 23,  59 => 22,  56 => 21,  54 => 20,  50 => 18,  46 => 17,  31 => 4,  28 => 3,);
+        return array (  248 => 137,  235 => 130,  227 => 125,  215 => 115,  211 => 113,  206 => 110,  201 => 107,  196 => 104,  192 => 102,  190 => 101,  183 => 97,  174 => 90,  170 => 88,  165 => 85,  160 => 82,  155 => 79,  151 => 77,  149 => 76,  140 => 70,  130 => 63,  122 => 58,  114 => 53,  106 => 48,  95 => 40,  87 => 35,  79 => 30,  73 => 26,  65 => 23,  59 => 22,  56 => 21,  54 => 20,  50 => 18,  46 => 17,  31 => 4,  28 => 3,);
     }
 }

@@ -114,6 +114,7 @@ class OpportunityController extends Controller
             return $this->render(
                 'RidwanOpportunityBundle:Opportunities:details.html.twig', array(
                     'Opportunity' => $Opportunity,
+                'volunteers' => $this->generateVolunteers($Opportunity),
                     'message' => $request->get('message'),
                     'type' => $request->get('type'),
                     'organization' => $this->getOrganization()->getId()
@@ -133,98 +134,25 @@ class OpportunityController extends Controller
         return $manager;
     }
 
-  
-
-    public function editOpportunityAction(Request $request, $OpportunityID)
-    {
-
-        $user = $this->authenticateAction();
-        if ($user) {
-            $access = $user->getAccesslevel();
-            if ($access == 'Head' || $access == 'Admin') {
-                $em = $this->getDoctrine()->getManager();
-                $repository = $em->getRepository('ridwanEntityBundle:Opportunity');
-                $Opportunity = $repository->find($OpportunityID);
-                $NotificationRepository = $em->getRepository('ridwanEntityBundle:Notification');
-                $NotificationsQuery = $NotificationRepository->createQueryBuilder('p')
-                    ->where('p.userid = :id AND p.seen = 0')
-                    ->setParameter('id', $user->getId())
-                    ->setMaxResults(10)
-                    ->orderBy('p.id', 'DESC')
-                    ->getQuery();
-                $Notifications = $NotificationsQuery->getResult();
-
-                $form = $this->createForm(
-                    new OpportunityType(), $Opportunity, array(
-                        'action' => $this->generateUrl('ridwan_Opportunity_edit', array('OpportunityID' => $OpportunityID)),
-                        'method' => 'PUT',
-                        'attr' => array(
-                            'class' => 'form-horizontal center'
-                        )
-                    )
-                );
-                $form->handleRequest($request);
-
-                if ($form->isValid()) {
-                    $User = $this->getUserAction($Opportunity->getUser()->getId())->getFirstname();
-                    $Opportunity->setLeader($Opportunity->getLeader()->getId());
-                    $Opportunity->setUser($Opportunity->getUser()->getId());
-                    $Opportunity->setProject($Opportunity->getProject()->getId());
-
-                    $subscribers = array();
-                    $subscribers[] = $Opportunity->getLeader()->getId();
-                    $subscribers[] = $Opportunity->getUser()->getId();
-
-                    $Opportunity->setSubscribers($subscribers);
-
-                    try {
-                        $em->persist($Opportunity);
-                        $em->flush();
-                    } catch (\Exception $e) {
-                        // echo $e;
-                        return $this->render(
-                            'ridwanOpportunityBundle:Opportunitys:edit.html.twig', array(
-                                'message' => ' Opz! something went wrong!',
-                                'type' => 'E',
-                                'form' => $form->createView(),
-                                'Notifications' => $Notifications
-                            )
-                        );
-                    }
 
 
-                    $this->setNotification(
-                        'Opportunity Details Updated',
-                        "Details of your Opportunity has been updated. Click the following link to get the latest details.", 1,
-                        $Opportunity->getUser(), $Opportunity->getId(), $Opportunity->getProject()
-                    );
+    private function generateVolunteers($opportunity){
 
-
-                    return $this->redirect(
-                        $this->generateUrl(
-                            'ridwan_Opportunity_index', array(
-                                'type' => 'S',
-                                'message' => "succesfully updated new details and notified user"
-                            )
-                        )
-                    );
-                }
-
-                return $this->render(
-                    'ridwanOpportunityBundle:Opportunitys:edit.html.twig', array(
-                        'form' => $form->createView(),
-                        'Notifications' => $Notifications
-                    )
-                );
-            } else {
-                return $this->render(
-                    'ridwanStyleBundle:Error:permission.html.twig', array(
-                        'Notifications' => $Notifications
-                    )
-                );
-            }
+        $volunteerList = $opportunity->getEnrolled();
+        if ($volunteerList == null){
+            return null;
         }
-        return $this->redirect($this->generateUrl('ridwan_site_login'));
+        $em = $this->getDoctrine()->getManager();
+        $repositoryVolunteers = $em->getRepository('RidwanEntityBundle:Volunteerpersonal');
+        $volunteers = array();
+        foreach ($volunteerList as $member){
+            $volunteerProfile = $repositoryVolunteers->findOneBy(array('user'=>$member));
+            $volunteers[] = $volunteerProfile;
+        }
+
+
+        return $volunteers;
+
     }
 
     public function completePageAction($OpportunityID)
