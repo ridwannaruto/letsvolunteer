@@ -18,7 +18,13 @@ class ProfileController extends Controller {
 	    $type = $authenticatedUser->getRoles()[0];
  	    if ($type == 'NVS' || $type == 'Administrator'){
             $em = $this->getDoctrine()->getManager();
-            $profile = $this->getProfile($ID);
+            $repository = $em->getRepository('RidwanEntityBundle:Authentication');
+            $user = $repository->find($ID);
+            if ($user == null ){
+                return $this->render('RidwanSiteBundle:Error:error.html.twig', array('message'=>" user doesn't exists"));
+            }
+
+            $profile = $this->getProfile($user);
             if ($profile == null){
                 return $this->render('RidwanSiteBundle:Error:error.html.twig', array('message'=>" user doesn't exists"));
             }
@@ -49,13 +55,7 @@ class ProfileController extends Controller {
         return $this->redirect($this->generateUrl('ridwan_site_home'));
     }
 
-    private function getProfile($ID) {
-        $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('RidwanEntityBundle:Authentication');
-        $profile = $repository->find($ID);
-        if ($profile == null){
-            return null;
-        }
+    private function getProfile($profile) {
         $profileType = $profile->getRoles()[0];
         $profileInfo = null;
         switch ($profileType){

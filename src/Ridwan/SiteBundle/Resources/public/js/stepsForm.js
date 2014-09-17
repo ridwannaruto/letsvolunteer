@@ -213,9 +213,10 @@
             return false;
         }
 
-        if (id =='userType'){
+        if (id =='fos_user_registration_form_type'){
             var lower = input.toLowerCase();
             if ( lower == 'volunteer' || lower == 'organization'){
+                this.questions[ this.current ].querySelector('input').value = input.toUpperCase();
                 return true;
             }
             this._showError('USERTYPE');
@@ -227,13 +228,11 @@
             xmlhttp.open("POST","checkUserName/".concat(input),false);
             xmlhttp.send();
             var response = xmlhttp.response;
-
+            //alert(response);
             if (response=='true'){
                 this._showError('USERNAMEEXISTS');
-
                 return false;
             }
-
 
         }
 

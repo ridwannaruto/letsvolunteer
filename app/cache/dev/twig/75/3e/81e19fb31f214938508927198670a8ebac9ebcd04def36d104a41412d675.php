@@ -83,7 +83,7 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
         <div class=\"row-fluid\">
 
             <div class=\"box span12\">
-                <div id=\"panel-title\" class=\"box-header well\">Select Category</div>
+
                 <div class=\"box-content\">
                     <div id=\"panel\">
                         <div class=\"panel panel-info\">
@@ -94,94 +94,92 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
                                 <div  id=\"panel-body\" >
                                     <div class=\"row\">
 
+
                             ";
-        // line 63
+        // line 64
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable(range(0, 1));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 64
+            // line 65
             echo "
                                     ";
-            // line 65
+            // line 66
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable(range(0, 1));
             foreach ($context['_seq'] as $context["_key"] => $context["j"]) {
-                // line 66
-                echo "                                        <div class=\"box span3\">
-                                            <div class=\"col-md-4\">
-                                                <div  id=\"sub-panel\">
-                                                    <div class=\"panel panel-default\">
-                                                        <div class=\"panel-body\">
-                                                ";
-                // line 71
+                // line 67
+                echo "                                        <a data-rel=\"tooltip\" class=\"well span3 top-block\" href=\"#\" data-original-title=\"click to get statistics\">
+                                            <span class=\"icon32 icon-color icon-pdf\"></span><br>
+                                            <div>";
+                // line 69
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["description"]) ? $context["description"] : $this->getContext($context, "description")), ((3 * (isset($context["i"]) ? $context["i"] : $this->getContext($context, "i"))) + (isset($context["j"]) ? $context["j"] : $this->getContext($context, "j"))), array(), "array"), "html", null, true);
-                echo "
-                                                            </div>
-                                                            <button id=\"panel-button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#";
-                // line 73
+                echo "</div>
+                                            <button id=\"panel-button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#";
+                // line 70
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["modal"]) ? $context["modal"] : $this->getContext($context, "modal")), ((3 * (isset($context["i"]) ? $context["i"] : $this->getContext($context, "i"))) + (isset($context["j"]) ? $context["j"] : $this->getContext($context, "j"))), array(), "array"), "html", null, true);
                 echo "\">
-                                                                Go
-                                                            </button>
+                                                Generate
+                                            </button>
 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        </a>
+
                                     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['j'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 82
+            // line 77
             echo "
                             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 79
         echo "
 
-                                            <div class=\"modal fade\" id=\"Individual\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"\" aria-hidden=\"true\">
+                                            <div class=\"modal hide fade\" id=\"Individual\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"\" aria-hidden=\"true\">
                                                 <div class=\"modal-dialog\">
-                                                    <div class=\"modal-content\">
+
                                                         <div class=\"modal-header\">
-                                                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>
-                                                            <h2 class=\"modal-title\" id=\"myModalLabel\">Individual Information</h2>
+                                                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\"></span></button>
+                                                            <h3>Individual Information</h3>
                                                         </div>
+
                                                         <div class=\"modal-body\">
-                                                            <form class=\"form-inline\" role=\"form\" method=\"post\" action=\"";
-        // line 94
+                                                            <form class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"";
+        // line 90
         echo $this->env->getExtension('routing')->getPath("isuru_stat_individual");
         echo "\" target=\"_blank\" onsubmit=\"return validate(1)\">
-                                                                <div>
-                                                                    <select name ='id' class=\"form-control custom\">
-                                                                        ";
-        // line 97
+
+                                                                <div class=\"control-group primary\">
+                                                                    <label class=\"control-label required\">National ID</label>
+
+                                                                        <select name ='id' class=\"controls chzn-done\">
+                                                                            ";
+        // line 96
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["volid"]) ? $context["volid"] : $this->getContext($context, "volid")));
         foreach ($context['_seq'] as $context["_key"] => $context["id"]) {
-            // line 98
-            echo "                                                                            <option value=\"";
+            // line 97
+            echo "                                                                                <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "nicORpassport"), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "nicORpassport"), "html", null, true);
             echo "</option>
-                                                                        ";
+                                                                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['id'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 100
+        // line 99
         echo "
-                                                                        </select> 
-                                                                    </div>
+                                                                        </select> <span class=\"help-inline\"> </span>
 
-
+                                                                </div>
 
                                                 ";
-        // line 106
+        // line 104
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["individualModalAttribute"]) ? $context["individualModalAttribute"] : $this->getContext($context, "individualModalAttribute")));
         $context['loop'] = array(
@@ -198,23 +196,28 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["iMAttribute"]) {
+            // line 105
+            echo "
+                                                    <label>
+                                                        <input type=\"checkbox\" class=\"switch-input\" name=\"check_list1[]\" value=\"";
             // line 107
-            echo "                                                                    <!--  <div class=\"row\">
-                                                                         <div id=\"attribute\" class=\"col-md-6\">-->
-                                                                    <h6>";
-            // line 109
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), "html", null, true);
+            echo "\" checked>
+                                                        <span  class=\"switch-label\" data-on=\"On\" data-off=\"Off\"></span>
+                                                        <span class=\"switch-handle\"></span>
+                                                        <strong>";
+            // line 110
             echo twig_escape_filter($this->env, (isset($context["iMAttribute"]) ? $context["iMAttribute"] : $this->getContext($context, "iMAttribute")), "html", null, true);
-            echo "</h6>
+            echo "</strong>
+                                                    </label>
+                                                                    <!--  <div class=\"row\">
+                                                                         <div id=\"attribute\" class=\"col-md-6\">-->
+
                                                                     <!--  </div>
                                                                       <div class=\"col-md-4\">
                                                                           <div id =\"swt\" class=\"container\">
                                                                               <label class=\"switch\">-->
-                                                                    <input type=\"checkbox\" class=\"switch-input\" name=\"check_list1[]\" value=\"";
-            // line 114
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), "html", null, true);
-            echo "\" checked>
-                                                                    <span  class=\"switch-label\" data-on=\"On\" data-off=\"Off\"></span>
-                                                                    <span class=\"switch-handle\"></span>
+
                                                                     <!--    </label>
                                                                     </div>
                                                                     <!--    </div>
@@ -232,7 +235,7 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['iMAttribute'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 122
+        // line 125
         echo "
 
 
@@ -243,7 +246,7 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
                                                                 <button type=\"submit\" name=\"submit\" class=\"btn btn-primary\">View Report</button>
                                                             </div>
                                                             </form>
-                                                        </div>
+
                                                     </div>
                                                 </div>
 
@@ -251,18 +254,18 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
                                                     <div class=\"modal-dialog\">
                                                         <div class=\"modal-content\">
                                                             <div class=\"modal-header\">
-                                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>
-                                                                <h2 class=\"modal-title\" id=\"myModalLabel\">Overall Information</h2>
+                                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\"></span></button>
+                                                                <h3>Overall Information</h3>
                                                             </div>
                                                             <div class=\"modal-body\">
                                                                 <form class=\"form-inline\" role=\"form\" method=\"post\" action=\"";
-        // line 144
+        // line 147
         echo $this->env->getExtension('routing')->getPath("isuru_stat_overall");
         echo "\" target=\"_blank\" onsubmit=\"return validate(2)\">
 
 
                                                 ";
-        // line 147
+        // line 150
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["overallModalAttribute"]) ? $context["overallModalAttribute"] : $this->getContext($context, "overallModalAttribute")));
         $context['loop'] = array(
@@ -279,19 +282,20 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["oMAttribute"]) {
-            // line 148
+            // line 151
             echo "
-                                                                    <h6>";
-            // line 149
-            echo twig_escape_filter($this->env, (isset($context["oMAttribute"]) ? $context["oMAttribute"] : $this->getContext($context, "oMAttribute")), "html", null, true);
-            echo "</h6>
+
 
                                                                     <input type=\"checkbox\" class=\"switch-input\" name=\"check_list2[]\" value=\"";
-            // line 151
+            // line 154
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), "html", null, true);
             echo "\" checked>
                                                                     <span  class=\"switch-label\" data-on=\"On\" data-off=\"Off\"></span>
                                                                     <span class=\"switch-handle\"></span>
+                                                                    <strong>";
+            // line 157
+            echo twig_escape_filter($this->env, (isset($context["oMAttribute"]) ? $context["oMAttribute"] : $this->getContext($context, "oMAttribute")), "html", null, true);
+            echo "</strong><br>
 
                                                 ";
             ++$context['loop']['index0'];
@@ -306,7 +310,7 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['oMAttribute'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 156
+        // line 160
         echo "
 
                                                             </div>
@@ -323,17 +327,17 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
                                                     <div class=\"modal-dialog\">
                                                         <div class=\"modal-content\">
                                                             <div class=\"modal-header\">
-                                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>
-                                                                <h2 class=\"modal-title\" id=\"myModalLabel\">Monthly Information</h2>
+                                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\"></span></button>
+                                                                <h3>Monthly Information</h3>
                                                             </div>
                                                             <div class=\"modal-body\">
                                                                 <form class=\"form-inline\" role=\"form\" method=\"post\" action=\"";
-        // line 176
+        // line 180
         echo $this->env->getExtension('routing')->getPath("isuru_stat_monthly");
         echo "\" target=\"_blank\" onsubmit=\"return validate(3)\">
 
                                                 ";
-        // line 178
+        // line 182
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["monthlyModalAttribute"]) ? $context["monthlyModalAttribute"] : $this->getContext($context, "monthlyModalAttribute")));
         $context['loop'] = array(
@@ -350,19 +354,19 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["mMAttribute"]) {
-            // line 179
+            // line 183
             echo "
-                                                                    <h6>";
-            // line 180
-            echo twig_escape_filter($this->env, (isset($context["mMAttribute"]) ? $context["mMAttribute"] : $this->getContext($context, "mMAttribute")), "html", null, true);
-            echo "</h6>
+
 
                                                                     <input type=\"checkbox\" class=\"switch-input\" name=\"check_list3[]\" value=\"";
-            // line 182
+            // line 186
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), "html", null, true);
             echo "\" checked>
                                                                     <span  class=\"switch-label\" data-on=\"On\" data-off=\"Off\"></span>
-                                                                    <span class=\"switch-handle\"></span>
+                                                                    <span class=\"switch-handle\"></span><strong>";
+            // line 188
+            echo twig_escape_filter($this->env, (isset($context["mMAttribute"]) ? $context["mMAttribute"] : $this->getContext($context, "mMAttribute")), "html", null, true);
+            echo "</strong><br>
 
                                                 ";
             ++$context['loop']['index0'];
@@ -377,7 +381,7 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mMAttribute'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 187
+        // line 191
         echo "
                                                             </div>
                                                             <div class=\"modal-footer\">
@@ -393,39 +397,44 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
                                                     <div class=\"modal-dialog\">
                                                         <div class=\"modal-content\">
                                                             <div class=\"modal-header\">
-                                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>
-                                                                <h2 class=\"modal-title\" id=\"myModalLabel\">District Information</h2>
+                                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\"></span></button>
+                                                                <h3>District Information</h3>
                                                             </div>
                                                             <div class=\"modal-body\">
                                                                 <form class=\"form-inline\" role=\"form\" method=\"post\" action=\"";
-        // line 206
+        // line 210
         echo $this->env->getExtension('routing')->getPath("isuru_stat_district");
         echo "\" target=\"_blank\" onsubmit=\"return validate(4)\">
-                                                                    <div>
+
+                                                                    <div class=\"control-group primary\">
+                                                                        <label class=\"control-label required\">Select District</label>
+
                                                                         <select name ='district' class=\"form-control custom\">
-                                                                        ";
-        // line 209
+                                                                            ";
+        // line 216
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["districts"]) ? $context["districts"] : $this->getContext($context, "districts")));
         foreach ($context['_seq'] as $context["_key"] => $context["district"]) {
-            // line 210
+            // line 217
             echo "                                                                                <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["district"]) ? $context["district"] : $this->getContext($context, "district")), "district"), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["district"]) ? $context["district"] : $this->getContext($context, "district")), "district"), "html", null, true);
             echo "</option>
-                                                                        ";
+                                                                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['district'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 212
+        // line 219
         echo "
-                                                                            </select> 
-                                                                        </div>
+                                                                        </select>  <span class=\"help-inline\"> </span>
+
+                                                                    </div>
+
 
                                                 ";
-        // line 216
+        // line 225
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["districtModalAttribute"]) ? $context["districtModalAttribute"] : $this->getContext($context, "districtModalAttribute")));
         $context['loop'] = array(
@@ -442,20 +451,20 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["dMAttribute"]) {
-            // line 217
+            // line 226
             echo "
-                                                                        <h6>";
-            // line 218
-            echo twig_escape_filter($this->env, (isset($context["dMAttribute"]) ? $context["dMAttribute"] : $this->getContext($context, "dMAttribute")), "html", null, true);
-            echo "</h6>
+
 
                                                                         <input type=\"checkbox\" class=\"switch-input\" name=\"check_list4[]\" value=\"";
-            // line 220
+            // line 229
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), "html", null, true);
             echo "\" checked>
                                                                         <span  class=\"switch-label\" data-on=\"On\" data-off=\"Off\"></span>
                                                                         <span class=\"switch-handle\"></span>
-
+                                                                         <strong>";
+            // line 232
+            echo twig_escape_filter($this->env, (isset($context["dMAttribute"]) ? $context["dMAttribute"] : $this->getContext($context, "dMAttribute")), "html", null, true);
+            echo "</strong><br>
                                                 ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -469,7 +478,7 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dMAttribute'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 225
+        // line 234
         echo "
                                                                 </div>
                                                                 <div class=\"modal-footer\">
@@ -485,40 +494,44 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
                                                         <div class=\"modal-dialog\">
                                                             <div class=\"modal-content\">
                                                                 <div class=\"modal-header\">
-                                                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>
-                                                                    <h2 class=\"modal-title\" id=\"myModalLabel\">Profession Information</h2>
+                                                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\"></span></button>
+                                                                    <h3>Profession Information</h3>
                                                                 </div>
                                                                 <div class=\"modal-body\">
                                                                     <form class=\"form-inline\" role=\"form\" method=\"post\" action=\"";
-        // line 244
+        // line 253
         echo $this->env->getExtension('routing')->getPath("isuru_stat_profession");
         echo "\" target=\"_blank\" onsubmit=\"return validate(5)\">
 
-                                                                        <div>
+                                                                        <div class=\"control-group primary\">
+                                                                            <label class=\"control-label required\">Select Profession</label>
+
                                                                             <select name ='profession' class=\"form-control custom\">
-                                                                        ";
-        // line 248
+                                                                                ";
+        // line 259
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["professions"]) ? $context["professions"] : $this->getContext($context, "professions")));
         foreach ($context['_seq'] as $context["_key"] => $context["profession"]) {
-            // line 249
+            // line 260
             echo "                                                                                    <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["profession"]) ? $context["profession"] : $this->getContext($context, "profession")), "occupation"), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["profession"]) ? $context["profession"] : $this->getContext($context, "profession")), "occupation"), "html", null, true);
             echo "</option>
-                                                                        ";
+                                                                                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['profession'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 251
+        // line 262
         echo "
-                                                                                </select> 
-                                                                            </div>    
+                                                                            </select>  <span class=\"help-inline\"> </span>
+
+                                                                        </div>
+
 
                                                 ";
-        // line 255
+        // line 268
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["professionModalAttribute"]) ? $context["professionModalAttribute"] : $this->getContext($context, "professionModalAttribute")));
         $context['loop'] = array(
@@ -535,19 +548,19 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["pMAttribute"]) {
-            // line 256
+            // line 269
             echo "
-                                                                            <h6>";
-            // line 257
-            echo twig_escape_filter($this->env, (isset($context["pMAttribute"]) ? $context["pMAttribute"] : $this->getContext($context, "pMAttribute")), "html", null, true);
-            echo "</h6>
+
 
                                                                             <input type=\"checkbox\" class=\"switch-input\" name=\"check_list5[]\" value=\"";
-            // line 259
+            // line 272
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), "html", null, true);
             echo "\" checked>
                                                                             <span  class=\"switch-label\" data-on=\"On\" data-off=\"Off\"></span>
-                                                                            <span class=\"switch-handle\"></span>
+                                                                            <span class=\"switch-handle\"></span><strong>";
+            // line 274
+            echo twig_escape_filter($this->env, (isset($context["pMAttribute"]) ? $context["pMAttribute"] : $this->getContext($context, "pMAttribute")), "html", null, true);
+            echo "</strong><br>
 
                                                 ";
             ++$context['loop']['index0'];
@@ -562,7 +575,7 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pMAttribute'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 264
+        // line 277
         echo "
                                                                     </div>
                                                                     <div class=\"modal-footer\">
@@ -583,12 +596,12 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
                                                                     </div>
                                                                     <div class=\"modal-body\">
                                                                         <form class=\"form-inline\" role=\"form\" method=\"post\" action=\"";
-        // line 283
+        // line 296
         echo $this->env->getExtension('routing')->getPath("isuru_stat_gender");
         echo "\" target=\"_blank\" onsubmit=\"return validate(6)\">
 
                                                 ";
-        // line 285
+        // line 298
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["genderModalAttribute"]) ? $context["genderModalAttribute"] : $this->getContext($context, "genderModalAttribute")));
         $context['loop'] = array(
@@ -605,15 +618,15 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["gMAttribute"]) {
-            // line 286
+            // line 299
             echo "
                                                                             <h6>";
-            // line 287
+            // line 300
             echo twig_escape_filter($this->env, (isset($context["gMAttribute"]) ? $context["gMAttribute"] : $this->getContext($context, "gMAttribute")), "html", null, true);
             echo "</h6>
 
                                                                             <input type=\"checkbox\" class=\"switch-input\" name=\"check_list6[]\" value=\"";
-            // line 289
+            // line 302
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), "html", null, true);
             echo "\" checked>
                                                                             <span  class=\"switch-label\" data-on=\"On\" data-off=\"Off\"></span>
@@ -632,7 +645,7 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['gMAttribute'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 294
+        // line 307
         echo "
                                                                     </div>
                                                                     <div class=\"modal-footer\">
@@ -644,6 +657,7 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
                                                             </div>
                                                         </div>
                                                     </div>
+                                <br>
                                                 </div>
                                             </div>
                                         </div>
@@ -657,10 +671,10 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
 ";
     }
 
-    // line 317
+    // line 331
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 318
+        // line 332
         echo "                    <script>
             //validate user input before submit
             function validate(value){
@@ -697,6 +711,6 @@ class __TwigTemplate_753e81e19fb31f214938508927198670a8ebac9ebcd04def36d104a4141
 
     public function getDebugInfo()
     {
-        return array (  664 => 318,  661 => 317,  636 => 294,  617 => 289,  612 => 287,  609 => 286,  592 => 285,  587 => 283,  566 => 264,  547 => 259,  542 => 257,  539 => 256,  522 => 255,  516 => 251,  505 => 249,  501 => 248,  494 => 244,  473 => 225,  454 => 220,  449 => 218,  446 => 217,  429 => 216,  423 => 212,  412 => 210,  408 => 209,  402 => 206,  381 => 187,  362 => 182,  357 => 180,  354 => 179,  337 => 178,  332 => 176,  310 => 156,  291 => 151,  286 => 149,  283 => 148,  266 => 147,  260 => 144,  236 => 122,  214 => 114,  206 => 109,  202 => 107,  185 => 106,  177 => 100,  166 => 98,  162 => 97,  156 => 94,  144 => 84,  137 => 82,  122 => 73,  117 => 71,  110 => 66,  106 => 65,  103 => 64,  99 => 63,  82 => 48,  79 => 47,  33 => 4,  30 => 3,);
+        return array (  678 => 332,  675 => 331,  649 => 307,  630 => 302,  625 => 300,  622 => 299,  605 => 298,  600 => 296,  579 => 277,  562 => 274,  557 => 272,  552 => 269,  535 => 268,  527 => 262,  516 => 260,  512 => 259,  503 => 253,  482 => 234,  466 => 232,  460 => 229,  455 => 226,  438 => 225,  430 => 219,  419 => 217,  415 => 216,  406 => 210,  385 => 191,  368 => 188,  363 => 186,  358 => 183,  341 => 182,  336 => 180,  314 => 160,  297 => 157,  291 => 154,  286 => 151,  269 => 150,  263 => 147,  239 => 125,  210 => 110,  204 => 107,  200 => 105,  183 => 104,  176 => 99,  165 => 97,  161 => 96,  152 => 90,  139 => 79,  132 => 77,  119 => 70,  115 => 69,  111 => 67,  107 => 66,  104 => 65,  100 => 64,  82 => 48,  79 => 47,  33 => 4,  30 => 3,);
     }
 }

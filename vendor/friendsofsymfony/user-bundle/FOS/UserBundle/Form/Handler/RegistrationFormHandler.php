@@ -71,7 +71,10 @@ class RegistrationFormHandler
         } else {
             $user->setEnabled(true);
         }
-
+        $roles = array();
+        $roles[] = $this->request->get('fos_user_registration_form')['type'];
+        $user->setRoles($roles);
+       // echo $this->request->getUser()->getType();
         $this->userManager->updateUser($user);
     }
 

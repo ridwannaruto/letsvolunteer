@@ -20,8 +20,8 @@ class UserController extends Controller {
 
             $em = $this->getDoctrine()->getManager();
             $staff = $em->getRepository('RidwanEntityBundle:Authentication')->findAll();
-            $volunteers = $em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findAll();
-            $organizations = $em->getRepository('RidwanEntityBundle:Organization')->findAll();
+            $volunteers = $em->getRepository('RidwanEntityBundle:Volunteerpersonal')->findBy(array('status'=>3));
+            $organizations = $em->getRepository('RidwanEntityBundle:Organization')->findBy(array('status'=>3));
             $referees = $em->getRepository('RidwanEntityBundle:Referees')->findAll();
 
             return $this->render('RidwanUserBundle:Users:nvs.html.twig', array('volunteers' => $volunteers, 'organizations' => $organizations, 'staff' => $staff, 'referees' => $referees));
