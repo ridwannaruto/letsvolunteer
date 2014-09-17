@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Ridwan\ProjectBundle\RidwanProjectBundle(),
             new Ridwan\OpportunityBundle\RidwanOpportunityBundle(),
             new Ridwan\UserBundle\RidwanUserBundle(),
+            new Isuru\StatBundle\IsuruStatBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
         );

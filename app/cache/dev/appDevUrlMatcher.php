@@ -848,6 +848,44 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_fos_user_change_password:
 
+        if (0 === strpos($pathinfo, '/statistics')) {
+            // isuru_stat_homepage
+            if ($pathinfo === '/statistics') {
+                return array (  '_controller' => 'Isuru\\StatBundle\\Controller\\DefaultController::indexAction',  '_route' => 'isuru_stat_homepage',);
+            }
+
+            // isuru_stat_individual
+            if ($pathinfo === '/statistics/individual') {
+                return array (  '_controller' => 'Isuru\\StatBundle\\Controller\\IndividualReportController::indexAction',  '_route' => 'isuru_stat_individual',);
+            }
+
+            // isuru_stat_overall
+            if ($pathinfo === '/statistics/overall') {
+                return array (  '_controller' => 'Isuru\\StatBundle\\Controller\\OverallReportController::indexAction',  '_route' => 'isuru_stat_overall',);
+            }
+
+            // isuru_stat_district
+            if ($pathinfo === '/statistics/district') {
+                return array (  '_controller' => 'Isuru\\StatBundle\\Controller\\DistrictReportController::indexAction',  '_route' => 'isuru_stat_district',);
+            }
+
+            // isuru_stat_profession
+            if ($pathinfo === '/statistics/profession') {
+                return array (  '_controller' => 'Isuru\\StatBundle\\Controller\\ProfessionReportController::indexAction',  '_route' => 'isuru_stat_profession',);
+            }
+
+            // isuru_stat_monthly
+            if ($pathinfo === '/statistics/monthly') {
+                return array (  '_controller' => 'Isuru\\StatBundle\\Controller\\MonthlyReportController::indexAction',  '_route' => 'isuru_stat_monthly',);
+            }
+
+            // isuru_stat_gender
+            if ($pathinfo === '/statistics/gender') {
+                return array (  '_controller' => 'Isuru\\StatBundle\\Controller\\GenderReportController::indexAction',  '_route' => 'isuru_stat_gender',);
+            }
+
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

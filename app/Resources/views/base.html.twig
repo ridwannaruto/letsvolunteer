@@ -259,7 +259,7 @@
                         {% if app.user.roles[0] == 'ADMINISTRATOR' or app.user.roles[0] == 'NVS' %}
                             <li><a class="ajax-link" href="{{ path('ridwan_opportunity_assignment_index') }}"><i class="icon-list-alt"></i><span class="hidden-tablet"> Assignments</span></a></li>
                             <li><a class="ajax-link" href="{{ path('ridwan_admin_users') }}"><i class="icon-user"></i><span class="hidden-tablet"> Users</span></a></li>
-                            <li><a class="ajax-link" href=""><i class="icon-align-justify"></i><span class="hidden-tablet"> Statistics</span></a></li>
+                            <li><a class="ajax-link" href="{{ path('isuru_stat_homepage') }}"><i class="icon-align-justify"></i><span class="hidden-tablet"> Statistics</span></a></li>
                         {% else %}
                         <li><a class="ajax-link" href=""><i class="icon-list-alt"></i><span class="hidden-tablet"> Resources</span></a></li>
 
